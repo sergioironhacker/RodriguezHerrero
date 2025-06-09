@@ -83,7 +83,7 @@ const About = () => {
             <img  
               className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               alt="Equipo profesional de seguros"
-             src="https://images.unsplash.com/photo-1493882552576-fce827c6161e" />
+             src="/iStock.jpg" />
           </motion.div>
 
           {/* Content */}
