@@ -88,8 +88,8 @@ const FAQ = () => {
                   Estamos aquí para ayudarte. Si no encuentras la respuesta que buscas, contáctanos directamente.
                 </p>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>📞 +1 (555) 123-4567</p>
-                  <p>📧 info@securelife.com</p>
+                  <p>📞 607 726 826</p>
+                  <p>📧 segurosrodriguezherrero23@gmail.com</p>
                   <p>💬 Chat en vivo disponible</p>
                 </div>
               </div>
