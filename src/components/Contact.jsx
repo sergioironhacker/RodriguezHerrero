@@ -26,62 +26,85 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Construir los datos para enviar
-    const formPayload = new FormData();
-    formPayload.append('name', formData.name);
-    formPayload.append('email', formData.email);
-    formPayload.append('phone', formData.phone);
-    formPayload.append('insuranceType', formData.insuranceType);
-    formPayload.append('message', formData.message);
-    formPayload.append('_captcha', 'false'); // evitar captcha
-    // Puedes añadir otros campos de formsubmit.co si quieres
+    // Preparamos los datos para enviar con fetch (FormData o URLSearchParams)
+    const payload = new URLSearchParams();
+    payload.append('name', formData.name);
+    payload.append('email', formData.email);
+    payload.append('phone', formData.phone);
+    payload.append('insuranceType', formData.insuranceType);
+    payload.append('message', formData.message);
+    // Añadimos campos necesarios para FormSubmit
+    payload.append('_captcha', 'false');
 
     try {
-      // Enviar formulario vía fetch a FormSubmit.co
       const response = await fetch('https://formsubmit.co/ajax/sergioss772022@gmail.com', {
         method: 'POST',
-        headers: { 
-          'Accept': 'application/json'
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: formPayload
+        body: payload.toString()
       });
 
-      const data = await response.json();
+      if (!response.ok) throw new Error('Error en el envío');
 
-      if (response.ok) {
-        toast({
-          title: "¡Mensaje enviado exitosamente!",
-          description: "Nos pondremos en contacto contigo en las próximas 24 horas.",
-        });
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          insuranceType: '',
-          message: ''
-        });
-      } else {
-        throw new Error(data.message || "Error al enviar el mensaje");
-      }
+      toast({
+        title: "¡Mensaje enviado exitosamente!",
+        description: "Nos pondremos en contacto contigo en las próximas 24 horas.",
+      });
+
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        insuranceType: '',
+        message: ''
+      });
     } catch (error) {
       toast({
-        variant: "destructive",
         title: "Error al enviar el mensaje",
-        description: error.message || "Inténtalo de nuevo más tarde.",
+        description: "Por favor intenta nuevamente más tarde.",
+        variant: 'destructive'
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // resto del componente queda igual
-
   const contactInfo = [
-    // ... (sin cambios)
+    {
+      icon: MapPin,
+      title: 'Dirección',
+      content: 'Av. Padre Claret 12\nSegovia, España',
+      link: 'https://www.google.com/maps?q=Av.+Padre+Claret+12,+Segovia,+España'
+    },
+    {
+      icon: Phone,
+      title: 'Teléfono',
+      content: '607 726 826',
+      link: 'tel:607 726 826'
+    },
+    {
+      icon: Mail,
+      title: 'Email',
+      content: 'sergioss772022@gmail.com',
+      link: 'mailto:sergioss772022@gmail.com'
+    },
+    {
+      icon: Clock,
+      title: 'Horarios',
+      content: 'Lun - Vie: 8:00 AM - 6:00 PM\nSáb: 9:00 AM - 2:00 PM',
+      link: null
+    }
   ];
 
   const insuranceTypes = [
-    // ... (sin cambios)
+    'Seguro de Auto',
+    'Seguro de Hogar',
+    'Seguro de Salud',
+    'Seguro de Vida',
+    'Seguro Empresarial',
+    'Seguro de Viajes',
+    'Otro'
   ];
 
   return (
@@ -127,9 +150,6 @@ const Contact = () => {
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >
-                {/* Para evitar spam */}
-                <input type="hidden" name="_captcha" value="false" />
-
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
