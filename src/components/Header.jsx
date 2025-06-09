@@ -31,13 +31,22 @@ const Header = ({ darkMode, setDarkMode }) => {
   ];
 
   const scrollToSection = (href) => {
+  setIsMenuOpen(false);
+
+  setTimeout(() => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
+      const headerOffset = 70; // Ajusta a la altura de tu header fijo
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
 
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  }, 100); // pequeño retraso para que el menú cierre primero
+};
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -54,6 +63,7 @@ const Header = ({ darkMode, setDarkMode }) => {
           <motion.div
             className="flex items-center space-x-2 shrink-0"
             whileHover={{ scale: 1.05 }}
+             onClick={() => scrollToSection('#inicio')}
           >
             <img
               src="/private-issuer-squared-7DDVG.png"
