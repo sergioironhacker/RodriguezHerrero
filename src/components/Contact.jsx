@@ -37,7 +37,7 @@ const Contact = () => {
     payload.append('_captcha', 'false');
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/sergioss772022@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/segurosrodriguezherrero23@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -86,8 +86,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      content: 'sergioss772022@gmail.com',
-      link: 'mailto:sergioss772022@gmail.com'
+      content: 'segurosrodriguezherrero23@gmail.com',
+      link: 'mailto:segurosrodriguezherrero23@gmail.com'
     },
     {
       icon: Clock,
