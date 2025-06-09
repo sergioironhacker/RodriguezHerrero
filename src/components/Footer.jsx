@@ -9,7 +9,7 @@ const TikTok = (props) => (
     fill="currentColor"
     {...props}
   >
-    <path d="M223.9 80.4c-22.1 0-40-17.9-40-40V24h-39.2v135.2c0 14.6-11.9 26.4-26.5 26.4-14.6 0-26.5-11.8-26.5-26.4 0-14.6 11.9-26.5 26.5-26.5 2.2 0 4.4.3 6.5.9v-37.6a64.2 64.2 0 00-6.5-.3c-35.3 0-64 28.7-64 64.1 0 35.3 28.7 64 64 64 35.4 0 64.1-28.7 64.1-64.1v-58.6c10.9 9.4 25 15.1 40.1 15.1v-39.2z"/>
+    <path d="M223.9 80.4c-22.1 0-40-17.9-40-40V24h-39.2v135.2c0 14.6-11.9 26.4-26.5 26.4-14.6 0-26.5-11.8-26.5-26.4 0-14.6 11.9-26.5 26.5-26.5 2.2 0 4.4.3 6.5.9v-37.6a64.2 64.2 0 00-6.5-.3c-35.3 0-64 28.7-64 64.1 0 35.3 28.7 64 64 64 35.4 0 64.1-28.7 64.1-64.1v-58.6c10.9 9.4 25 15.1 40.1 15.1v-39.2z" />
   </svg>
 );
 
@@ -49,8 +49,8 @@ const Footer = () => {
     { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
     { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
     { icon: LinkedIn, href: 'https://linkedin.com', label: 'LinkedIn' },
-      { icon: TikTok, href: 'https://tiktok.com', label: 'TikTok' },
-   
+    { icon: TikTok, href: 'https://tiktok.com', label: 'TikTok' },
+
   ];
 
   const scrollToSection = (href) => {
@@ -82,7 +82,7 @@ const Footer = () => {
                   <span className="text-2xl font-bold text-foreground">Rodríguez Herrero 23</span>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Protegemos lo que más valoras desde 2008. Somos tu socio confiable en seguros, 
+                  Protegemos lo que más valoras desde 2008. Somos tu socio confiable en seguros,
                   brindando tranquilidad y seguridad a más de 50,000 familias y empresas.
                 </p>
               </motion.div>
@@ -177,16 +177,16 @@ const Footer = () => {
 
         {/* Newsletter Section */}
         <div className="py-8 border-t border-border">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
                 Mantente Informado
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground break-words whitespace-normal">
                 Recibe consejos de seguridad, noticias del sector y ofertas especiales
               </p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 placeholder="Tu email"
@@ -199,19 +199,20 @@ const Footer = () => {
           </div>
         </div>
 
+
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
               © {currentYear} Rodríguez Herrero. C0109B44577583. Todos los derechos reservados.
             </p>
-           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-  <span>Supervisado por la DGSFP</span>
-  <span>•</span>
-  <span>Miembro de UNESPA</span>
-  <span>•</span>
-  <span>ISO 9001:2015</span>
-</div>
+            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <span>Supervisado por la DGSFP</span>
+              <span>•</span>
+              <span>Miembro de UNESPA</span>
+              <span>•</span>
+              <span>ISO 9001:2015</span>
+            </div>
           </div>
         </div>
       </div>

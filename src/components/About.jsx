@@ -1,7 +1,12 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Users, Award, Clock } from 'lucide-react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const About = () => {
   const stats = [
@@ -71,61 +76,101 @@ const About = () => {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="fade-in"
-          >
-            <img  
-              className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
-              alt="Equipo profesional de seguros"
-             src="/iStock.jpg" />
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="fade-in"
+        >
+          <h3 className="text-3xl font-bold mb-6 text-foreground">
+            Nuestra Historia
+          </h3>
+          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            Desde 2008, hemos estado dedicados a proteger lo que más importa a nuestros clientes. 
+            Comenzamos como una pequeña agencia familiar y hemos crecido hasta convertirnos en 
+            una de las aseguradoras más confiables de la región.
+          </p>
+          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            Nuestro enfoque personalizado y nuestro compromiso con la excelencia nos han permitido 
+            construir relaciones duraderas con más de 50,000 clientes satisfechos.
+          </p>
 
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="fade-in"
-          >
-            <h3 className="text-3xl font-bold mb-6 text-foreground">
-              Nuestra Historia
-            </h3>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Desde 2008, hemos estado dedicados a proteger lo que más importa a nuestros clientes. 
-              Comenzamos como una pequeña agencia familiar y hemos crecido hasta convertirnos en 
-              una de las aseguradoras más confiables de la región.
-            </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Nuestro enfoque personalizado y nuestro compromiso con la excelencia nos han permitido 
-              construir relaciones duraderas con más de 50,000 clientes satisfechos.
-            </p>
+          {/* Slider */}
+          <div className="relative w-full mb-12">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              loop={true}
+              spaceBetween={20}
+              slidesPerView={1}
+              className="rounded-xl overflow-hidden shadow-lg"
+            >
+              <SwiperSlide>
+                <div className="relative w-full h-64 sm:h-96">
+                  <img
+                    src="/iStock.jpg"
+                    alt="Compromiso con el cliente"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <h4 className="text-white text-xl sm:text-2xl font-semibold text-center px-4">
+                      Compromiso con el Cliente
+                    </h4>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="relative w-full h-64 sm:h-96">
+                  <img
+                    src="/Poliza-Hogar.avif"
+                    alt="Innovación y Confianza"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <h4 className="text-white text-xl sm:text-2xl font-semibold text-center px-4">
+                      Innovación y Confianza
+                    </h4>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="relative w-full h-64 sm:h-96">
+                  <img
+                    src="/SEGUROS-1024x576.jpg"
+                    alt="Protección Integral"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <h4 className="text-white text-xl sm:text-2xl font-semibold text-center px-4">
+                      Protección Integral
+                    </h4>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
 
-            {/* Mission & Vision */}
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Misión</h4>
-                <p className="text-muted-foreground">
-                  Brindar protección integral y tranquilidad a nuestros clientes a través de 
-                  soluciones de seguros personalizadas y un servicio excepcional.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Visión</h4>
-                <p className="text-muted-foreground">
-                  Ser la aseguradora líder reconocida por nuestra innovación, confiabilidad 
-                  y compromiso con el bienestar de nuestros clientes.
-                </p>
-              </div>
+          {/* Mission & Vision */}
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Misión</h4>
+              <p className="text-muted-foreground">
+                Brindar protección integral y tranquilidad a nuestros clientes a través de 
+                soluciones de seguros personalizadas y un servicio excepcional.
+              </p>
             </div>
-          </motion.div>
-        </div>
+            <div>
+              <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Visión</h4>
+              <p className="text-muted-foreground">
+                Ser la aseguradora líder reconocida por nuestra innovación, confiabilidad 
+                y compromiso con el bienestar de nuestros clientes.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 fade-in">

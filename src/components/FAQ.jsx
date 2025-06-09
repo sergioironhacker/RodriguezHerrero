@@ -89,7 +89,7 @@ const FAQ = () => {
                 </p>
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <p>📞 607 726 826</p>
-                  <p>📧 segurosrodriguezherrero23@gmail.com</p>
+                  <p className="break-words">📧 segurosrodriguezherrero23@gmail.com</p>
                   <p>💬 Chat en vivo disponible</p>
                 </div>
               </div>
@@ -167,7 +167,7 @@ const FAQ = () => {
                 Contactar Asesor
               </button>
               <a 
-                href="https://wa.me/5551234567" 
+                href="https://wa.me/607726826" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
