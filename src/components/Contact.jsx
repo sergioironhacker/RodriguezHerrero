@@ -317,8 +317,7 @@ const Contact = () => {
   <h4 className="font-semibold text-foreground mb-4">Oficina Navas de Oro</h4>
   <div className="aspect-video rounded-lg overflow-hidden">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.8385255784053!2d-4.544143623654091!3d41.29164860329469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd409d96be61b8cd%3A0x82387b1c52ffcbcb!2sPl.%20Mayor%2C%2016%2C%2040420%20Navas%20de%20Oro%2C%20Segovia!5e0!3m2!1ses!2ses!4v1718025271234!5m2!1ses!2ses"
-      width="100%"
+      src="https://www.google.com/maps/dir//Pl.+Mayor,+16,+40470+Navas+de+Oro,+Segovia/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0xd472ad5558f64e9:0x91b960cd7f8eaabd?sa=X&ved=1t:707&ictx=111"
       height="100%"
       style={{ border: 0 }}
       allowFullScreen=""
