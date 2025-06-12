@@ -296,28 +296,31 @@ const Contact = () => {
     ))}
   </div>
 
-  {/* Map */}
-  <div className="bg-card rounded-2xl p-6 border border-border">
-    <h4 className="font-semibold text-foreground mb-4">Oficina Segovia</h4>
-    <div className="aspect-video rounded-lg overflow-hidden">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.123456789!2d-4.1187654321!3d40.9501234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4faaa123456789%3A0xabcdef123456!2sAvda.%20del%20Padre%20Claret%2C%2012%2C%2040001%20Segovia%2C%20España!5e0!3m2!1ses!2ses!4v1700000000000"
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Ubicación Rodríguez Herrero - Segovia"
-      ></iframe>
-    </div>
+  {/* Oficina Segovia */}
+<div className="bg-card rounded-2xl p-6 border border-border">
+  <h4 className="font-semibold text-foreground mb-4">Oficina Segovia</h4>
+  <div className="aspect-video rounded-lg overflow-hidden">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.123456789!2d-4.1187654321!3d40.9501234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4faaa123456789%3A0xabcdef123456!2sAvda.%20del%20Padre%20Claret%2C%2012%2C%2040001%20Segovia%2C%20España!5e0!3m2!1ses!2ses!4v1700000000000"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Ubicación Rodríguez Herrero - Segovia"
+    ></iframe>
   </div>
+</div>
 
-  <div className="bg-card rounded-2xl p-6 border border-border">
+{/* Oficina Navas de Oro */}
+<div className="bg-card rounded-2xl p-6 border border-border">
   <h4 className="font-semibold text-foreground mb-4">Oficina Navas de Oro</h4>
   <div className="aspect-video rounded-lg overflow-hidden">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.789153676813!2d-4.441360524034265!3d41.19582257131395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd472ad5558f64e9%3A0x91b960cd7f8eaabd!2sPl.%20Mayor%2C%2016%2C%2040470%20Navas%20de%20Oro%2C%20Segovia!5e0!3m2!1ses!2ses!4v1718028023456!5m2!1ses!2ses"
+      width="100%"
+      height="100%"
       style={{ border: 0 }}
       allowFullScreen=""
       loading="lazy"
@@ -326,6 +329,7 @@ const Contact = () => {
     ></iframe>
   </div>
 </div>
+
 
   {/* Trust Badges */}
   <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
