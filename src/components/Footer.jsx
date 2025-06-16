@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Facebook, Twitter, Instagram, Linkedin as LinkedIn, Mail, Phone, MapPin } from 'lucide-react';
+import { Shield, /* Facebook, Twitter, Instagram, */ Linkedin as LinkedIn, Mail, Phone, MapPin } from 'lucide-react';
 
 const TikTok = (props) => (
   <svg
@@ -45,9 +45,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+    /*  { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
+     { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+     { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' }, */
     { icon: LinkedIn, href: 'https://linkedin.com', label: 'LinkedIn' },
     { icon: TikTok, href: 'https://tiktok.com', label: 'TikTok' },
 
@@ -88,7 +88,7 @@ const Footer = () => {
               </motion.div>
 
               {/* Contact Info */}
-              <div className="space-y-3">
+              {/*  <div className="space-y-3">
                 <div className="flex items-center text-muted-foreground">
                   <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
                   <span className="text-sm">Av. Padre Claret, 12 P1 (Negocios Exitus)</span>
@@ -100,6 +100,24 @@ const Footer = () => {
                 <div className="flex items-center text-muted-foreground">
                   <Mail className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
                   <span className="text-sm">segurosrogriguezherrero23@gmail.com</span>
+                </div>
+              </div> */}
+              <div className="space-y-3">
+                <div className="flex items-center text-muted-foreground">
+                  <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                  <span className="text-sm">Av. Padre Claret, 12 P1 (Negocios Exitus)</span>
+                </div>
+                <div className="flex items-center text-muted-foreground">
+                  <Phone className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                  <a href="tel:+34607726826" className="text-sm hover:underline">
+                    +34 607 726 826
+                  </a>
+                </div>
+                <div className="flex items-center text-muted-foreground">
+                  <Mail className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                  <a href="mailto:segurosrogriguezherrero23@gmail.com" className="text-sm hover:underline">
+                    segurosrogriguezherrero23@gmail.com
+                  </a>
                 </div>
               </div>
 
@@ -176,7 +194,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Section */}
-      {/*   <div className="py-8 border-t border-border">
+        {/*   <div className="py-8 border-t border-border">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-2">

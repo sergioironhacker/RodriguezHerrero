@@ -50,7 +50,7 @@ const FAQ = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 fade-in">
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold mb-6 text-foreground"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ const FAQ = () => {
           >
             Preguntas <span className="text-primary">Frecuentes</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-muted-foreground max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -88,8 +88,18 @@ const FAQ = () => {
                   Estamos aquí para ayudarte. Si no encuentras la respuesta que buscas, contáctanos directamente.
                 </p>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>📞 607 726 826</p>
-                  <p className="break-words">📧 segurosrodriguezherrero23@gmail.com</p>
+                  <p>
+                    📞{' '}
+                    <a href="tel:+34607726826" className="hover:underline">
+                      607 726 826
+                    </a>
+                  </p>
+                  <p className="break-words">
+                    📧{' '}
+                    <a href="mailto:segurosrodriguezherrero23@gmail.com" className="hover:underline">
+                      segurosrodriguezherrero23@gmail.com
+                    </a>
+                  </p>
                   {/* <p>💬 Chat en vivo disponible</p> */}
                 </div>
               </div>
@@ -113,13 +123,12 @@ const FAQ = () => {
                     <span className="font-semibold text-foreground pr-4">
                       {faq.question}
                     </span>
-                    <ChevronDown 
-                      className={`h-5 w-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${
-                        openIndex === index ? 'rotate-180' : ''
-                      }`}
+                    <ChevronDown
+                      className={`h-5 w-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''
+                        }`}
                     />
                   </button>
-                  
+
                   <AnimatePresence>
                     {openIndex === index && (
                       <motion.div
@@ -157,7 +166,7 @@ const FAQ = () => {
               Nuestro equipo de expertos está listo para ayudarte con cualquier consulta
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
+              <button
                 onClick={() => {
                   const element = document.querySelector('#contacto');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -166,9 +175,9 @@ const FAQ = () => {
               >
                 Contactar Asesor
               </button>
-              <a 
-                href="https://wa.me/607726826" 
-                target="_blank" 
+              <a
+                href="https://wa.me/607726826"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
               >

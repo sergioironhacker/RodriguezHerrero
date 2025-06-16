@@ -332,7 +332,7 @@ const Contact = () => {
   </div>
 
   {/* Horario de atención */}
-  <div className="bg-blue-500/20 p-4 rounded-lg border-2 border-blue-500">
+  <div className="bg-blue-500/60 p-4 rounded-lg border-2 border-blue-500">
     <h5 className="font-semibold text-black mb-2">
       Horario de Atención
     </h5>
@@ -383,7 +383,7 @@ const Contact = () => {
   </div>
 
   {/* Horario de atención */}
-  <div className="bg-blue-500/20 p-4 rounded-lg border-2 border-blue-500">
+  <div className="bg-blue-500/60 p-4 rounded-lg border-2 border-blue-500">
     <h5 className="font-semibold text-black mb-2">
       Horario de Atención
     </h5>
