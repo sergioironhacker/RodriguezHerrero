@@ -79,11 +79,11 @@ const Footer = () => {
               >
                 <div className="flex items-center space-x-3 mb-4">
                   <Shield className="h-8 w-8 text-primary" />
-                  <span className="text-2xl font-bold text-foreground">Rodríguez Herrero 23</span>
+                  <span className="text-2xl font-bold text-foreground">Rodríguez Herrero 23 SL</span>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Protegemos lo que más valoras desde 2008. Somos tu socio confiable en seguros,
-                  brindando tranquilidad y seguridad a más de 50,000 familias y empresas.
+                  Protegemos lo que más valoras desde 2014. Somos tu socio confiable en seguros,
+                  brindando tranquilidad y seguridad a más de 2000 familias y empresas.
                 </p>
               </motion.div>
 
@@ -176,7 +176,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Section */}
-        <div className="py-8 border-t border-border">
+      {/*   <div className="py-8 border-t border-border">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
@@ -197,14 +197,14 @@ const Footer = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Rodríguez Herrero. C0109B44577583. Todos los derechos reservados.
+              © {currentYear} Rodríguez Herrero SL. C0109B44577583. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
               <span>Supervisado por la DGSFP</span>

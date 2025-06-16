@@ -12,12 +12,12 @@ const About = () => {
   const stats = [
     {
       icon: Users,
-      number: '50,000+',
+      number: '2000+',
       label: 'Clientes Satisfechos'
     },
     {
       icon: Shield,
-      number: '15+',
+      number: '10+',
       label: 'Años de Experiencia'
     },
     {
@@ -40,7 +40,7 @@ const About = () => {
     },
     {
       title: 'Experiencia',
-      description: 'Más de 15 años protegiendo a familias y empresas con soluciones integrales.',
+      description: 'Más de 10 años protegiendo a familias y empresas con soluciones integrales.',
       icon: Award
     },
     {
@@ -87,13 +87,13 @@ const About = () => {
             Nuestra Historia
           </h3>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            Desde 2008, hemos estado dedicados a proteger lo que más importa a nuestros clientes. 
+            Desde 2014, hemos estado dedicados a proteger lo que más importa a nuestros clientes. 
             Comenzamos como una pequeña agencia familiar y hemos crecido hasta convertirnos en 
             una de las aseguradoras más confiables de la región.
           </p>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
             Nuestro enfoque personalizado y nuestro compromiso con la excelencia nos han permitido 
-            construir relaciones duraderas con más de 50,000 clientes satisfechos.
+            construir relaciones duraderas con más de 2000 clientes satisfechos.
           </p>
 
           {/* Slider */}
@@ -159,13 +159,13 @@ const About = () => {
               <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Misión</h4>
               <p className="text-muted-foreground">
                 Brindar protección integral y tranquilidad a nuestros clientes a través de 
-                soluciones de seguros personalizadas y un servicio excepcional.
+                soluciones de seguros e inversiones personalizadas y un servicio excepcional.
               </p>
             </div>
             <div>
               <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Visión</h4>
               <p className="text-muted-foreground">
-                Ser la aseguradora líder reconocida por nuestra innovación, confiabilidad 
+                Ser una agencia líder reconocida por nuestra innovación, confiabilidad 
                 y compromiso con el bienestar de nuestros clientes.
               </p>
             </div>

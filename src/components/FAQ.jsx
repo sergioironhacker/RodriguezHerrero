@@ -90,7 +90,7 @@ const FAQ = () => {
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <p>📞 607 726 826</p>
                   <p className="break-words">📧 segurosrodriguezherrero23@gmail.com</p>
-                  <p>💬 Chat en vivo disponible</p>
+                  {/* <p>💬 Chat en vivo disponible</p> */}
                 </div>
               </div>
             </motion.div>

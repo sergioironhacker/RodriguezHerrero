@@ -25,7 +25,7 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover mix-blend-overlay "
           alt="Familia feliz protegida por seguros"
           src="https://images.unsplash.com/photo-1694185752018-2ff397cb99b4"
-           style={{opacity: 0.9}}
+          style={{ opacity: 0.9 }}
         />
       </div>
 
@@ -62,7 +62,7 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-8"
           >
-         {/* <Shield className="hidden sm:inline mb-4 sm:w-24 sm:h-24 lg:w-40 lg:h-40" /> */}
+            {/* <Shield className="hidden sm:inline mb-4 sm:w-24 sm:h-24 lg:w-40 lg:h-40" /> */}
           </motion.div>
 
           <motion.h1
@@ -115,7 +115,16 @@ const Hero = () => {
               <MessageCircle className="mr-2 h-5 w-5" />
               Habla con un Asesor
             </Button>
+            {/* nuevo botón Descuento */}
+            <Button
+              size="lg"
+              onClick={() => scrollToSection("#contacto")} // Misma funcionalidad
+              className=" text-white font-semibold px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:shadow-red-500/25 hover:shadow-2xl hover:scale-105 bg-blue-500/50"
+            >
+              Oferta el primer año
+            </Button>
           </motion.div>
+
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -125,7 +134,7 @@ const Hero = () => {
           >
             <div className="flex items-center gap-2">
               <Shield className="h-5 w-5" />
-              <span className="text-sm font-medium">+15 años de experiencia</span>
+              <span className="text-sm font-medium">+10 años de experiencia</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5" />
@@ -158,7 +167,7 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
-    </section>
+    </section >
   );
 };
 
