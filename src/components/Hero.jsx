@@ -62,16 +62,20 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-8"
           >
-            {/* <Shield className="hidden sm:inline mb-4 sm:w-24 sm:h-24 lg:w-40 lg:h-40" /> */}
+           
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            className="mt-16 text-3xl sm:text-5xl md:text-5xl font-bold mb-7 leading-tight text-center"
           >
-            Protegemos lo que más <span className="text-yellow-400">valoras</span>
+            Seguros e inversiones <span className="text-yellow-400">Seguros</span>
+            <br />
+            <span className="text-base sm:text-lg md:text-4xl font-medium">
+              Protegemos lo que más <span className="text-yellow-400">valoras</span>
+            </span>
           </motion.h1>
 
           <motion.p

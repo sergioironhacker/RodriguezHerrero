@@ -13,7 +13,6 @@ const Header = ({ darkMode, setDarkMode }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,46 +30,37 @@ const Header = ({ darkMode, setDarkMode }) => {
   ];
 
   const scrollToSection = (href) => {
-  setIsMenuOpen(false);
+    setIsMenuOpen(false);
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        const headerOffset = 70;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
 
-  setTimeout(() => {
-    const element = document.querySelector(href);
-    if (element) {
-      const headerOffset = 70; // Ajusta a la altura de tu header fijo
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  }, 100); // pequeño retraso para que el menú cierre primero
-};
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border'
-          : 'bg-transparent'
+        isScrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="flex items-center space-x-2 shrink-0"
+            className="flex items-center space-x-2 shrink-0 cursor-pointer"
             whileHover={{ scale: 1.05 }}
-             onClick={() => scrollToSection('#inicio')}
+            onClick={() => scrollToSection("#inicio")}
           >
-            <img
-              src="/logoMain.png"
-              alt="Allianz Seguros"
-              className="h-8 w-auto sm:h-10"
-            />
-            <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">
+            <img src="/logoMain.png" alt="Allianz Seguros" className="h-8 w-auto sm:h-10" />
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-100">
               Rodríguez Herrero 23
             </span>
           </motion.div>
@@ -81,7 +71,7 @@ const Header = ({ darkMode, setDarkMode }) => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="text-gray-100 hover:text-yellow-400 transition-colors duration-200 font-semibold"
               >
                 {item.label}
               </button>
@@ -94,14 +84,14 @@ const Header = ({ darkMode, setDarkMode }) => {
               variant="ghost"
               size="icon"
               onClick={() => setDarkMode(!darkMode)}
-              className="text-foreground hover:text-primary"
+              className="text-gray-100 hover:text-yellow-400"
               aria-label="Toggle theme"
             >
               {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
             <Button
-              onClick={() => scrollToSection('#contacto')}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => scrollToSection("#contacto")}
+              className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold"
             >
               Contratar ahora
             </Button>
@@ -113,7 +103,7 @@ const Header = ({ darkMode, setDarkMode }) => {
               variant="ghost"
               size="icon"
               onClick={() => setDarkMode(!darkMode)}
-              className="text-foreground hover:text-primary"
+              className="text-gray-100 hover:text-yellow-400"
               aria-label="Toggle theme"
             >
               {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -122,7 +112,7 @@ const Header = ({ darkMode, setDarkMode }) => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-foreground hover:text-primary"
+              className="text-gray-100 hover:text-yellow-400"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
@@ -132,41 +122,60 @@ const Header = ({ darkMode, setDarkMode }) => {
         </div>
 
         {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 py-4 border-t border-border"
-            >
-              <div className="flex flex-col space-y-4">
-                {navItems.map((item) => (
-                  <button
-                    key={item.href}
-                    onClick={() => scrollToSection(item.href)}
-                    className="text-left text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-                <Button
-                  onClick={() => scrollToSection('#contacto')}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground mt-4"
-                >
-                  Contratar Ahora
-                </Button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+   <AnimatePresence>
+  {isMenuOpen && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="fixed inset-0 z-40 bg-black/70 backdrop-blur-lg flex flex-col items-center justify-center px-6 md:hidden"
+    >
+      {/* Encabezado con X y tema */}
+      <div className="absolute top-4 right-4 flex items-center space-x-4">
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="text-gray-200 hover:text-yellow-400"
+          aria-label="Toggle theme"
+        >
+          {darkMode ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+        </button>
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="text-gray-200 hover:text-yellow-400"
+          aria-label="Cerrar menú"
+        >
+          <X className="h-8 w-8" />
+        </button>
+      </div>
+
+      {/* Navegación */}
+      <div className="flex flex-col items-center space-y-6 mt-10">
+        {navItems.map((item) => (
+          <button
+            key={item.href}
+            onClick={() => scrollToSection(item.href)}
+            className="text-gray-100 text-2xl font-semibold hover:text-yellow-400 transition-colors duration-200"
+          >
+            {item.label}
+          </button>
+        ))}
+        <Button
+          onClick={() => scrollToSection("#contacto")}
+          className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-lg mt-6 px-6 py-3"
+        >
+          Contratar ahora
+        </Button>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
+
       </nav>
     </motion.header>
   );
 };
 
 export default Header;
-
-
-
-/* md:hidden mt-4 py-4 border-t border-border bg-background/95 backdrop-blur-md shadow-lg */

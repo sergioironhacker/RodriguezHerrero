@@ -55,7 +55,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 fade-in">
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold mb-6 text-foreground"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ const About = () => {
           >
             Sobre <span className="text-primary">Nosotros</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-muted-foreground max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -87,12 +87,12 @@ const About = () => {
             Nuestra Historia
           </h3>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            Desde 2014, hemos estado dedicados a proteger lo que más importa a nuestros clientes. 
-            Comenzamos como una pequeña agencia familiar y hemos crecido hasta convertirnos en 
+            Desde 2014, hemos estado dedicados a proteger lo que más importa a nuestros clientes.
+            Comenzamos como una pequeña agencia familiar y hemos crecido hasta convertirnos en
             una de las aseguradoras más confiables de la región.
           </p>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Nuestro enfoque personalizado y nuestro compromiso con la excelencia nos han permitido 
+            Nuestro enfoque personalizado y nuestro compromiso con la excelencia nos han permitido
             construir relaciones duraderas con más de 2000 clientes satisfechos.
           </p>
 
@@ -154,18 +154,18 @@ const About = () => {
           </div>
 
           {/* Mission & Vision */}
-          <div className="space-y-6">
+          <div className="space-y-6 mb-16">
             <div>
               <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Misión</h4>
               <p className="text-muted-foreground">
-                Brindar protección integral y tranquilidad a nuestros clientes a través de 
+                Brindar protección integral y tranquilidad a nuestros clientes a través de
                 soluciones de seguros e inversiones personalizadas y un servicio excepcional.
               </p>
             </div>
             <div>
               <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Visión</h4>
               <p className="text-muted-foreground">
-                Ser una agencia líder reconocida por nuestra innovación, confiabilidad 
+                Ser una agencia líder reconocida por nuestra innovación, confiabilidad
                 y compromiso con el bienestar de nuestros clientes.
               </p>
             </div>
@@ -192,7 +192,7 @@ const About = () => {
 
         {/* Values */}
         <div className="fade-in">
-          <motion.h3 
+          <motion.h3
             className="text-3xl font-bold text-center mb-12 text-foreground"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
