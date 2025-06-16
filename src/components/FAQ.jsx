@@ -173,16 +173,25 @@ const FAQ = () => {
                 }}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-colors duration-200"
               >
-                Contactar Asesor
+                Formulario de contacto
               </button>
+
               <a
+                href="tel:607726826"
+                className="bg-green-500 hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-colors duration-200 inline-block"
+              >
+                Contactar con nuestro asesor
+              </a>
+
+
+              {/* <a
                 href="https://wa.me/607726826"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
               >
                 WhatsApp
-              </a>
+              </a> */}
             </div>
           </div>
         </motion.div>
