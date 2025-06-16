@@ -315,7 +315,7 @@ const Contact = () => {
 
 
 <div className="bg-card rounded-2xl p-6 border border-border">
-  <h4 className="font-semibold text-foreground mb-4">
+  <h4 className="font-semibold text-foreground mb-4 text-2xl">
     Oficina Segovia
   </h4>
   <div className="aspect-video rounded-lg overflow-hidden mb-4">
@@ -333,10 +333,10 @@ const Contact = () => {
 
   {/* Horario de atención */}
   <div className="bg-blue-500/60 p-4 rounded-lg border-2 border-blue-500">
-    <h5 className="font-semibold text-black mb-2">
+    <h5 className="font-semibold text-black mb-2 text-2xl">
       Horario de Atención
     </h5>
-    <ul className="text-black space-y-1">
+    <ul className="font-semibold text-black space-y-1">
       <li>Lun - Vie: 8:00 AM - 6:00 PM</li>
       <li>Sábado: 9:00 AM - 2:00 PM</li>
     </ul>
@@ -366,7 +366,7 @@ const Contact = () => {
 
 
 <div className="bg-card rounded-2xl p-6 border border-border">
-  <h4 className="font-semibold text-foreground mb-4">
+  <h4 className="font-semibold text-foreground mb-4 text-2xl">
     Oficina Navas de Oro
   </h4>
   <div className="aspect-video rounded-lg overflow-hidden mb-4">
@@ -384,10 +384,10 @@ const Contact = () => {
 
   {/* Horario de atención */}
   <div className="bg-blue-500/60 p-4 rounded-lg border-2 border-blue-500">
-    <h5 className="font-semibold text-black mb-2">
+    <h5 className="font-semibold text-black mb-2 text-2xl">
       Horario de Atención
     </h5>
-    <ul className="text-black space-y-1">
+    <ul className="font-semibold text-black space-y-1">
       <li>Martes: 9:00 AM - 2:00 PM</li>
       <li>Jueves: 9:00 AM - 2:00 PM</li>
     </ul>

@@ -71,7 +71,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="mt-16 text-3xl sm:text-5xl md:text-5xl font-bold mb-7 leading-tight text-center"
           >
-            Seguros e inversiones <span className="text-yellow-400">Seguros</span>
+            <span className="text-yellow-400">Seguros</span> e inversiones
             <br />
             <span className="text-base sm:text-lg md:text-4xl font-medium">
               Protegemos lo que más <span className="text-yellow-400">valoras</span>
@@ -93,7 +93,7 @@ const Hero = () => {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-base sm:text-lg md:text-xl mb-12 text-white/80 max-w-3xl mx-auto"
           >
-            Seguros diseñados para personas, familias y empresas con respaldo,
+            <span className="text-yellow-400">Seguros</span> diseñados para personas, familias y empresas con respaldo,
             experiencia y confianza
           </motion.p>
 

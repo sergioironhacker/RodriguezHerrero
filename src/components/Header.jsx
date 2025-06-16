@@ -57,7 +57,7 @@ const Header = ({ darkMode, setDarkMode }) => {
           <motion.div
             className="flex items-center space-x-2 shrink-0 cursor-pointer"
             whileHover={{ scale: 1.05 }}
-            onClick={() => scrollToSection("#inicio")}
+            onClick={() => scrollToSection("#inicio")} 
           >
             <img src="/logoMain.png" alt="Allianz Seguros" className="h-8 w-auto sm:h-10" />
             <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-100">
@@ -65,7 +65,7 @@ const Header = ({ darkMode, setDarkMode }) => {
             </span>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
@@ -78,7 +78,7 @@ const Header = ({ darkMode, setDarkMode }) => {
             ))}
           </div>
 
-          {/* Theme Toggle & CTA */}
+          {/* Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <Button
               variant="ghost"
@@ -90,14 +90,14 @@ const Header = ({ darkMode, setDarkMode }) => {
               {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
             <Button
-              onClick={() => scrollToSection("#contacto")}
+              onClick={() => scrollToSection("#contacto")} 
               className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold"
             >
               Contratar ahora
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <Button
               variant="ghost"
@@ -121,57 +121,60 @@ const Header = ({ darkMode, setDarkMode }) => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-   <AnimatePresence>
-  {isMenuOpen && (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-40 bg-black/70 backdrop-blur-lg flex flex-col items-center justify-center px-6 md:hidden"
-    >
-      {/* Encabezado con X y tema */}
-      <div className="absolute top-4 right-4 flex items-center space-x-4">
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="text-gray-200 hover:text-yellow-400"
-          aria-label="Toggle theme"
-        >
-          {darkMode ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
-        </button>
-        <button
-          onClick={() => setIsMenuOpen(false)}
-          className="text-gray-200 hover:text-yellow-400"
-          aria-label="Cerrar menú"
-        >
-          <X className="h-8 w-8" />
-        </button>
-      </div>
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{opacity: 0}}
 
-      {/* Navegación */}
-      <div className="flex flex-col items-center space-y-6 mt-10">
-        {navItems.map((item) => (
-          <button
-            key={item.href}
-            onClick={() => scrollToSection(item.href)}
-            className="text-gray-100 text-2xl font-semibold hover:text-yellow-400 transition-colors duration-200"
-          >
-            {item.label}
-          </button>
-        ))}
-        <Button
-          onClick={() => scrollToSection("#contacto")}
-          className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-lg mt-6 px-6 py-3"
-        >
-          Contratar ahora
-        </Button>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
+              animate={{opacity: 1}}
 
+              exit={{opacity: 0}}
 
+              transition={{duration: 0.3}}
+
+              className="fixed top-0 left-0 w-full h-screen z-40 bg-black/70 backdrop-blur-lg flex flex-col items-center justify-center px-6 md:hidden"
+            >
+              {/* Header of Menu */}
+              <div className="absolute top-4 right-4 flex items-center space-x-4">
+                <button
+                   onClick={() => setDarkMode(!darkMode)}
+                   aria-label="Toggle theme"
+                   className="text-gray-200 hover:text-yellow-400"
+                 >
+                   {darkMode ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+                 </button>
+                 <button
+                   onClick={() => setIsMenuOpen(false)}
+                   aria-label="Close Menu"
+                   className="text-gray-200 hover:text-yellow-400"
+                 >
+                   <X className="h-8 w-8" />
+                 </button>
+               </div>
+
+               {/* Menu Links */}
+               <div className="flex flex-col items-center space-y-6 mt-10">
+                 {navItems.map((item) => (
+                   <button
+                     key={item.href}
+                     onClick={() => scrollToSection(item.href)}
+                     className="text-gray-100 text-2xl font-semibold hover:text-yellow-400 transition-colors duration-200"
+                   >
+                     {item.label}
+                   </button>
+                 ))}
+                 <Button
+                   onClick={() => scrollToSection("#contacto")} 
+                   className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-lg mt-6 px-6 py-3"
+                 >
+                   Contratar ahora
+                 </Button>
+               </div>
+            </motion.div>
+          )}
+
+        </AnimatePresence>
 
       </nav>
     </motion.header>
