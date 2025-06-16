@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
@@ -10,42 +9,42 @@ const Testimonials = () => {
       role: 'Madre de familia',
       content: 'Alberto nos ha brindado la tranquilidad que necesitábamos. Cuando tuvimos un accidente, su respuesta fue inmediata y profesional. Recomiendo sus servicios sin dudarlo.',
       rating: 5,
-      image: 'Happy mother with family insurance protection'
+      image: 'https://randomuser.me/api/portraits/women/44.jpg'
     },
     {
       name: 'Carlos Rodríguez',
       role: 'Empresario',
       content: 'Como dueño de una empresa, necesitaba un seguro confiable. El equipo de Alberto diseñó una póliza perfecta para mis necesidades. Su atención al cliente es excepcional.',
       rating: 5,
-      image: 'Professional businessman with business insurance'
+      image: 'https://randomuser.me/api/portraits/men/45.jpg'
     },
     {
       name: 'Ana Martínez',
       role: 'Profesional independiente',
       content: 'El seguro de salud que contraté me ha salvado de gastos enormes. La red de médicos es excelente y los trámites son muy sencillos. Estoy muy satisfecha.',
       rating: 5,
-      image: 'Professional woman with health insurance coverage'
+      image: 'https://randomuser.me/api/portraits/women/46.jpg'
     },
     {
       name: 'Roberto Silva',
       role: 'Jubilado',
       content: 'Después de 40 años trabajando, quería proteger mi patrimonio. Alberto me ofreció opciones claras y honestas. Su asesoría fue fundamental para tomar la mejor decisión.',
       rating: 5,
-      image: 'Senior man with retirement insurance planning'
+      image: 'https://randomuser.me/api/portraits/men/47.jpg'
     },
     {
       name: 'Laura Fernández',
       role: 'Joven profesional',
       content: 'Como recién graduada, pensé que los seguros eran muy caros. Alberto me mostró opciones accesibles y me explicó todo de manera muy clara. Excelente servicio.',
       rating: 5,
-      image: 'Young professional woman with affordable insurance'
+      image: 'https://randomuser.me/api/portraits/women/48.jpg'
     },
     {
       name: 'Miguel Torres',
       role: 'Conductor frecuente',
       content: 'Mi seguro de auto con Alberto me ha dado mucha confianza. Cuando necesité asistencia en carretera, llegaron en menos de 30 minutos. Servicio de primera.',
       rating: 5,
-      image: 'Man with car insurance roadside assistance'
+      image: 'https://randomuser.me/api/portraits/men/49.jpg'
     }
   ];
 
@@ -54,7 +53,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 fade-in">
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold mb-6 text-foreground"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +62,7 @@ const Testimonials = () => {
           >
             Lo que dicen nuestros <span className="text-primary">Clientes</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-muted-foreground max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,20 +73,26 @@ const Testimonials = () => {
           </motion.p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
+        {/* Testimonials Slider */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex space-x-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent"
+        >
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
+              className="min-w-[320px] bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105 relative flex-shrink-0"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105 relative"
             >
               {/* Quote Icon */}
               <Quote className="h-8 w-8 text-primary/30 absolute top-6 right-6" />
-              
+
               {/* Rating */}
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -102,10 +107,11 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center">
-                <img  
+                <img
                   className="w-12 h-12 rounded-full object-cover mr-4"
                   alt={`${testimonial.name} - Cliente satisfecho`}
-                 src="https://images.unsplash.com/photo-1644424235476-295f24d503d9" />
+                  src={testimonial.image}
+                />
                 <div>
                   <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
@@ -113,7 +119,7 @@ const Testimonials = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Stats Section */}
         <motion.div
