@@ -78,7 +78,11 @@ const Footer = () => {
                 className="mb-6"
               >
                 <div className="flex items-center space-x-3 mb-4">
-                  <Shield className="h-8 w-8 text-primary" />
+                  <img
+                    src="/logoMain.png"  // Reemplaza esto por el nombre real de tu icono, ej: "/logo-empresa.png"
+                    alt="Logo Rodríguez Herrero 23 SL"
+                    className="h-8 w-8"
+                  />
                   <span className="text-2xl font-bold text-foreground">Rodríguez Herrero 23 SL</span>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-6">
@@ -105,7 +109,9 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center text-muted-foreground">
                   <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                  <span className="text-sm">Av. Padre Claret, 12 P1 (Negocios Exitus)</span>
+                  <span className="text-sm">Av. Padre Claret, 12 P1 40001 (Negocios Exitus)</span>
+                  <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                  <span className="text-sm">Plz. Mayor, 16 40470 (Navas de Oro)</span>
                 </div>
                 <div className="flex items-center text-muted-foreground">
                   <Phone className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
@@ -222,7 +228,7 @@ const Footer = () => {
         <div className="py-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Rodríguez Herrero SL. C0109B44577583. Todos los derechos reservados.
+              © {currentYear} Rodríguez Herrero 23 SL. C0109B44577583. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
               <span>Supervisado por la DGSFP</span>
