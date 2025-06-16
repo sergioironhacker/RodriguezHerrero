@@ -20,11 +20,12 @@ const Hero = () => {
     >
       {/* Background Layer */}
       <div className="absolute inset-0 hero-gradient">
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
         <img
-          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30"
+          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay "
           alt="Familia feliz protegida por seguros"
           src="https://images.unsplash.com/photo-1694185752018-2ff397cb99b4"
+           style={{opacity: 0.9}}
         />
       </div>
 
@@ -61,7 +62,7 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-8"
           >
-         <Shield className="hidden sm:inline mb-4 sm:w-24 sm:h-24 lg:w-40 lg:h-40" />
+         {/* <Shield className="hidden sm:inline mb-4 sm:w-24 sm:h-24 lg:w-40 lg:h-40" /> */}
           </motion.div>
 
           <motion.h1

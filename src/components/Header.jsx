@@ -66,7 +66,7 @@ const Header = ({ darkMode, setDarkMode }) => {
              onClick={() => scrollToSection('#inicio')}
           >
             <img
-              src="/private-issuer-squared-7DDVG.png"
+              src="/logoMain.png"
               alt="Allianz Seguros"
               className="h-8 w-auto sm:h-10"
             />
