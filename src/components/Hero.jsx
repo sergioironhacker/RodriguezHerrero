@@ -19,15 +19,29 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center bg-black z-0"
     >
       {/* Background Layer */}
-      <div className="absolute inset-0 hero-gradient">
+      {/*  <div className="absolute inset-0 hero-gradient">
         <div className="absolute inset-0 bg-black/20"></div>
         <img
           className="absolute inset-0 w-full h-full object-cover mix-blend-overlay "
           alt="Familia feliz protegida por seguros"
           src="https://images.unsplash.com/photo-1694185752018-2ff397cb99b4"
-          style={{ opacity: 0.9 }}
+          style={{ opacity: 1 }}
         />
-      </div>
+      </div> */}
+
+<div className="absolute inset-0">
+  {/* Imagen de fondo con brillo ligeramente reducido */}
+  <img
+    className="w-full h-full object-cover brightness-95 contrast-95"
+    alt="Familia feliz protegida por seguros"
+    src="https://images.unsplash.com/photo-1694185752018-2ff397cb99b4"
+  />
+
+  {/* Overlay sutil: negro clarito para claro, azul intenso para oscuro */}
+  <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] dark:bg-blue-950/55"></div>
+</div>
+
+{/* bg-[rgba(240,240,240,0.15)] */}
 
       {/* Floating Decorations */}
       <div className="absolute inset-0 pointer-events-none">
@@ -62,7 +76,7 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-8"
           >
-           
+
           </motion.div>
 
           <motion.h1
