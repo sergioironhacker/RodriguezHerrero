@@ -2,23 +2,23 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Users, Award, Clock } from 'lucide-react';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
 const About = () => {
   const stats = [
     {
-      icon: Users,
-      number: '2000+',
-      label: 'Clientes Satisfechos'
-    },
-    {
       icon: Shield,
       number: '10+',
       label: 'Años de Experiencia'
+    },
+    {
+      icon: Users,
+      number: '2000+',
+      label: 'Clientes Satisfechos'
     },
     {
       icon: Award,
@@ -71,7 +71,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Somos una agencia de seguros comprometida con brindar tranquilidad y seguridad a nuestros clientes
+            Somos una agencia de seguros e inversiones enfocada en brindar protección y confianza a nuestros clientes, con un servicio comprometido y profesional.
           </motion.p>
         </div>
 
@@ -87,16 +87,32 @@ const About = () => {
             Nuestra Historia
           </h3>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            Desde 2014, hemos estado dedicados a proteger lo que más importa a nuestros clientes.
-            Comenzamos como una pequeña agencia familiar y hemos crecido hasta convertirnos en
-            una de las aseguradoras más confiables de la región.
+            Desde 1992, nuestra agencia se ha comprometido a cuidar lo que más valoran nuestros clientes. Comenzamos como un pequeño negocio familiar y, gracias al respaldo de quienes nos eligieron, hemos crecido hasta convertirnos en un apoyo sólido para quienes depositan en nosotros su seguridad.
           </p>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Nuestro enfoque personalizado y nuestro compromiso con la excelencia nos han permitido
-            construir relaciones duraderas con más de 2000 clientes satisfechos.
+            Con un enfoque personalizado y un compromiso constante con la calidad, hemos construido relaciones sólidas y duraderas con más de 2000 clientes satisfechos.
           </p>
 
-          {/* Slider */}
+          {/* Stats aquí, justo debajo del texto anterior */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 fade-in">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-all duration-300"
+              >
+                <stat.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
+                <div className="text-muted-foreground font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Slider comentado */}
+          {/*
           <div className="relative w-full mb-12">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
@@ -152,45 +168,27 @@ const About = () => {
               </SwiperSlide>
             </Swiper>
           </div>
+          */}
 
-          {/* Mission & Vision */}
+          {/* Misión y Visión */}
           <div className="space-y-6 mb-16">
             <div>
               <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Misión</h4>
               <p className="text-muted-foreground">
-                Brindar protección integral y tranquilidad a nuestros clientes a través de
-                soluciones de seguros e inversiones personalizadas y un servicio excepcional.
+                Brindar tranquilidad y protección integral a nuestros clientes, mediante soluciones personalizadas en seguros e inversiones, acompañadas de un servicio excepcional.
               </p>
             </div>
-            <div>
+          {/*   <div>
               <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Visión</h4>
               <p className="text-muted-foreground">
                 Ser una agencia líder reconocida por nuestra innovación, confiabilidad
                 y compromiso con el bienestar de nuestros clientes.
               </p>
-            </div>
+            </div> */}
           </div>
         </motion.div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 fade-in">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-all duration-300"
-            >
-              <stat.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-              <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
-              <div className="text-muted-foreground font-medium">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Values */}
+        {/* Valores */}
         <div className="fade-in">
           <motion.h3
             className="text-3xl font-bold text-center mb-12 text-foreground"
