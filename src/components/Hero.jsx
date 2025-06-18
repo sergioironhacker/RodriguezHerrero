@@ -115,13 +115,14 @@ const Hero = () => {
             transition={{ delay: 0.9, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button
-              size="lg"
-              onClick={() => scrollToSection('#contacto')}
-              className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105"
-            >
-              Contrata Ahora
-            </Button>
+       <Button
+  size="lg"
+  onClick={() => scrollToSection('#contacto')}
+  className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
+  style={{ backgroundColor: 'rgb(21, 54, 151)' }}
+>
+  Contrata Ahora
+</Button>
             <Button
               size="lg"
               variant="outline"

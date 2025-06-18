@@ -26,7 +26,7 @@ const Header = ({ darkMode, setDarkMode }) => {
     { href: '#nosotros', label: 'Nosotros' },
     { href: '#servicios', label: 'Servicios' },
     { href: '#testimonios', label: 'Testimonios' },
-    { href: '#contacto', label: 'Contacto' }
+    { href: '#contacto', label: 'Contacto' },
   ];
 
   const scrollToSection = (href) => {
@@ -47,29 +47,29 @@ const Header = ({ darkMode, setDarkMode }) => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-         <motion.div
-  className="flex items-center space-x-2 shrink-0 cursor-pointer"
-  whileHover={{ scale: 1.05 }}
-  onClick={() => scrollToSection("#inicio")}
->
-  <img src="/logoMain.png" alt="Rodríguez Herrero 23" className="h-10 w-auto" />
+          <motion.div
+            className="flex items-center space-x-2 shrink-0 cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            onClick={() => scrollToSection('#inicio')}
+          >
+            <img src="/logoMain.png" alt="Rodríguez Herrero 23" className="h-10 w-auto" />
 
-  <div className="flex flex-col justify-center">
-    <span className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-none">
-      Rodríguez Herrero 23
-    </span>
-    <span className="text-[13px] sm:text-xs text-white font-medium text-center mt-0.5">
-      Seguros e Inversiones
-    </span>
-  </div>
-</motion.div>
-
+            <div className="flex flex-col justify-center">
+              <span className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-none">
+                Rodríguez Herrero 23
+              </span>
+              <span className="text-[13px] sm:text-xs text-white font-medium text-center mt-0.5">
+                Seguros e Inversiones
+              </span>
+            </div>
+          </motion.div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -95,12 +95,14 @@ const Header = ({ darkMode, setDarkMode }) => {
             >
               {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
-            <Button
-              onClick={() => scrollToSection("#contacto")}
-              className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold"
-            >
-              Contratar ahora
-            </Button>
+         <Button
+  size="lg"
+  onClick={() => scrollToSection('#contacto')}
+  className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
+  style={{ backgroundColor: 'rgb(21, 54, 151)' }}
+>
+  Contrata Ahora
+</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -132,13 +134,9 @@ const Header = ({ darkMode, setDarkMode }) => {
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0 }}
-
               animate={{ opacity: 1 }}
-
               exit={{ opacity: 0 }}
-
               transition={{ duration: 0.3 }}
-
               className="fixed top-0 left-0 w-full h-screen z-40 bg-black/70 backdrop-blur-lg flex flex-col items-center justify-center px-6 md:hidden"
             >
               {/* Header of Menu */}
@@ -170,18 +168,18 @@ const Header = ({ darkMode, setDarkMode }) => {
                     {item.label}
                   </button>
                 ))}
-                <Button
-                  onClick={() => scrollToSection("#contacto")}
-                  className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-lg mt-6 px-6 py-3"
-                >
-                  Contratar ahora
-                </Button>
+              <Button
+  size="lg"
+  onClick={() => scrollToSection('#contacto')}
+  className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
+  style={{ backgroundColor: 'rgb(21, 54, 151)' }}
+>
+  Contrata Ahora
+</Button>
               </div>
             </motion.div>
           )}
-
         </AnimatePresence>
-
       </nav>
     </motion.header>
   );
