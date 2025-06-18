@@ -70,26 +70,31 @@ const Footer = () => {
           <div className="grid lg:grid-cols-5 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="mb-6"
-              >
-                <div className="flex items-center space-x-3 mb-4">
-                  <img
-                    src="/logoMain.png"  // Reemplaza esto por el nombre real de tu icono, ej: "/logo-empresa.png"
-                    alt="Logo Rodríguez Herrero 23 SL"
-                    className="h-8 w-8"
-                  />
-                  <span className="text-2xl font-bold text-foreground">Rodríguez Herrero 23 SL</span>
-                </div>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Protegemos lo que más valoras desde 2014. Somos tu socio confiable en seguros,
-                  brindando tranquilidad y seguridad a más de 2000 familias y empresas.
-                </p>
-              </motion.div>
+           <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="mb-6 cursor-pointer"
+  onClick={() => scrollToSection("#inicio")}
+>
+  <div className="flex items-center space-x-2 shrink-0">
+    <img src="/logoMain.png" alt="Rodríguez Herrero 23" className="h-10 w-auto" />
+    <div className="flex flex-col justify-center">
+      <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-none">
+        Rodríguez Herrero 23
+      </span>
+      <span className="text-[13px] sm:text-xs font-medium text-center mt-0.5 text-foreground/70">
+        Seguros e Inversiones
+      </span>
+    </div>
+  </div>
+  <p className="text-muted-foreground leading-relaxed mt-4">
+    Protegemos lo que más valoras desde 2014. Somos tu socio confiable en seguros, 
+    brindando tranquilidad y seguridad a más de 2000 familias y empresas.
+  </p>
+</motion.div>
+
 
               {/* Contact Info */}
               {/*  <div className="space-y-3">
