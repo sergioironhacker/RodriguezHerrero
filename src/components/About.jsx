@@ -12,12 +12,12 @@ const About = () => {
   const stats = [
     {
       icon: Shield,
-      number: '10+',
+      number: '+10',
       label: 'Años de Experiencia'
     },
     {
       icon: Users,
-      number: '2000+',
+      number: '+2000',
       label: 'Clientes Satisfechos'
     },
     {
