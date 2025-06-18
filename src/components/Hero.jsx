@@ -29,19 +29,19 @@ const Hero = () => {
         />
       </div> */}
 
-<div className="absolute inset-0">
-  {/* Imagen de fondo con brillo ligeramente reducido */}
-  <img
-    className="w-full h-full object-cover brightness-95 contrast-95"
-    alt="Familia feliz protegida por seguros"
-    src="https://images.unsplash.com/photo-1694185752018-2ff397cb99b4"
-  />
+      <div className="absolute inset-0">
+        {/* Imagen de fondo con brillo ligeramente reducido */}
+        <img
+          className="w-full h-full object-cover brightness-95 contrast-95"
+          alt="Familia feliz protegida por seguros"
+          src="https://images.unsplash.com/photo-1694185752018-2ff397cb99b4"
+        />
 
-  {/* Overlay sutil: negro clarito para claro, azul intenso para oscuro */}
-  <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] dark:bg-blue-950/55"></div>
-</div>
+        {/* Overlay sutil: negro clarito para claro, azul intenso para oscuro */}
+        <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] dark:bg-blue-950/55"></div>
+      </div>
 
-{/* bg-[rgba(240,240,240,0.15)] */}
+      {/* bg-[rgba(240,240,240,0.15)] */}
 
       {/* Floating Decorations */}
       <div className="absolute inset-0 pointer-events-none">
@@ -75,21 +75,19 @@ const Hero = () => {
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-8"
-          >
-
-          </motion.div>
+          ></motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="mt-16 text-3xl sm:text-5xl md:text-5xl font-bold mb-7 leading-tight text-center"
+            className="mt-24 text-2xl sm:text-5xl md:text-5xl font-bold mb-7 leading-tight text-center"
           >
-            <span className="text-yellow-400">Seguros</span> e inversiones
+            Tu <span style={{ color: 'rgb(12, 46, 148)' }}>futuro</span> protegido por quienes se preocupan de verdad.
             <br />
-            <span className="text-base sm:text-lg md:text-4xl font-medium">
+            {/*  <span className="text-base sm:text-lg md:text-4xl font-medium">
               Protegemos lo que más <span className="text-yellow-400">valoras</span>
-            </span>
+            </span> */}
           </motion.h1>
 
           <motion.p
@@ -98,7 +96,7 @@ const Hero = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-lg sm:text-xl md:text-2xl mb-4 text-white/90 font-light"
           >
-            Tu tranquilidad es nuestra prioridad
+            Soluciones diseñadas para cuidar lo que más valoras, con respaldo, experiencia y cercanía.
           </motion.p>
 
           <motion.p
@@ -107,8 +105,8 @@ const Hero = () => {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-base sm:text-lg md:text-xl mb-12 text-white/80 max-w-3xl mx-auto"
           >
-            <span className="text-yellow-400">Seguros</span> diseñados para personas, familias y empresas con respaldo,
-            experiencia y confianza
+            {/* <span className="text-yellow-400">Seguros</span> diseñados para personas, familias y empresas con respaldo,
+            experiencia y confianza */}
           </motion.p>
 
           <motion.div
@@ -143,22 +141,21 @@ const Hero = () => {
             </Button>
           </motion.div>
 
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.8 }}
-            className="mt-16 flex flex-wrap justify-center items-center gap-8 text-white/70"
+            className="mt-16 flex flex-wrap justify-center items-center gap-8 text-white/70 -translate-y-3"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 -translate-y-2">
               <Shield className="h-5 w-5" />
               <span className="text-sm font-medium">+10 años de experiencia</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 -translate-y-3">
               <Phone className="h-5 w-5" />
               <span className="text-sm font-medium">Atención 24/7</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 -translate-y-3">
               <MessageCircle className="h-5 w-5" />
               <span className="text-sm font-medium">Asesoría personalizada</span>
             </div>
@@ -185,7 +182,7 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
-    </section >
+    </section>
   );
 };
 
