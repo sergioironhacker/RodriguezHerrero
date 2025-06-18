@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Car, Home, Heart, Shield, Building, Plane, ArrowRight, Users, AlertTriangle, Briefcase, Factory, PiggyBank, TrendingUp, CreditCard } from 'lucide-react';
+import { Car, Home, Heart, Shield, Building, Plane, ArrowRight, Users, AlertTriangle, Briefcase, Factory, PiggyBank, TrendingUp, CreditCard, Dog } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Services = () => {
@@ -9,118 +9,120 @@ const Services = () => {
     {
       icon: Home,
       title: 'Seguro de Hogar',
-      description: 'Protege tu hogar y pertenencias contra incendios, robos, daños por agua y desastres naturales.',
-      features: ['Protección estructural', 'Contenidos', 'Responsabilidad civil', 'Gastos adicionales'],
+      description: 'Protección para tu vivienda y pertenencias ante daños y riesgos imprevistos.',
+      features: ['Incendios, agua y desastres', 'Robo y daños a bienes', 'Responsabilidad civil', 'Gastos adicionales'],
       color: 'bg-green-500'
     },
     {
+      icon: Dog,
+      title: 'Seguro para Perros',
+      description: 'Protección ante accidentes, daños a terceros y gastos veterinarios.',
+      features: ['Responsabilidad civil por daños a terceros', 'Gastos veterinarios', 'Consultas y revisiones generales', 'Asistencia y orientación legal'],
+      color: 'bg-blue-500'
+
+    },
+    {
       icon: Car,
-      title: 'Seguro de Auto',
-      description: 'Protección completa para tu vehículo con cobertura contra accidentes, robo y daños a terceros.',
-      features: ['Cobertura total', 'Asistencia 24/7', 'Talleres autorizados', 'Auto de reemplazo'],
+      title: 'Seguro de Coche',
+      description: 'Protección para tu vehículo frente a accidentes, robos y daños a terceros.',
+      features: ['Daños a terceros', 'Daños a terceros', 'Daños propios', 'Asistencia 24/7'],
       color: 'bg-blue-500'
 
     },
     {
       icon: Shield,
       title: 'Seguro de Vida',
-      description: 'Garantiza el futuro financiero de tu familia con coberturas flexibles y beneficios adicionales.',
-      features: ['Protección familiar', 'Ahorro programado', 'Invalidez total', 'Enfermedades graves'],
+      description: 'Protección financiera para tu familia ante cualquier imprevisto.',
+      features: ['Protección por fallecimiento', 'Indemnización por invalidez', 'Cobertura por enfermedades graves', 'Apoyo económico para gastos funerarios'],
       color: 'bg-purple-500'
     },
     {
       icon: Users,
       title: 'Seguro de Decesos',
       description: 'Cobertura para los gastos funerarios y trámites administrativos para tu tranquilidad y la de tu familia.',
-      features: ['Asistencia 24/7', 'Gestión integral de servicios funerarios', 'Apoyo legal y administrativo', 'Cobertura nacional'],
+      features: ['Organización y gastos funerarios', 'Trámites administrativos y legales', 'Trámites administrativos y legales', 'Asistencia familiar y soporte psicológico'],
       color: 'bg-gray-700'
     },
     {
       icon: Heart,
       title: 'Seguro de Salud',
       description: 'Atención médica de calidad con acceso a la mejor red de hospitales y especialistas.',
-      features: ['Red médica amplia', 'Medicamentos', 'Emergencias', 'Chequeos preventivos'],
+      features: ['Consultas médicas y especialistas', 'Hospitalización y cirugía', 'Estudios y pruebas diagnósticas', 'Atención de urgencias y emergencias'],
       color: 'bg-red-500'
     },
     {
       icon: Building,
       title: 'Seguro de Comunidades',
-      description: 'Protege tu comunidad y áreas comunes contra daños, responsabilidad civil y otros riesgos.',
-      features: ['Daños estructurales', 'Responsabilidad civil', 'Áreas comunes', 'Asistencia legal'],
+      description: 'Protección de tu comunidad y áreas comunes contra daños, responsabilidad civil y otros riesgos.',
+      features: ['Daños a zonas comunes por incendios o siniestros', 'Responsabilidad civil frente a terceros', 'Responsabilidad civil frente a terceros', 'Gastos de defensa jurídica'],
       color: 'bg-indigo-500' // Puedes usar otro color que prefieras
     },
     {
       icon: AlertTriangle,
       title: 'Seguro de Accidentes',
       description: 'Cobertura integral en caso de accidentes para proteger tu bienestar y el de tu familia.',
-      features: ['Indemnización por accidente', 'Gastos médicos cubiertos', 'Asistencia 24/7', 'Cobertura nacional'],
+      features: ['Indemnización por fallecimiento accidental', 'Cobertura por invalidez permanente', 'Gastos médicos y hospitalarios', 'Asistencia y apoyo en caso de accidente'],
       color: 'bg-red-600'
     },
     {
       icon: Plane,
-      title: 'Seguro de Viajes Premium',
-      description: 'Cobertura completa para tus viajes nacionales e internacionales con beneficios exclusivos.',
-      features: ['Cobertura médica internacional', 'Cancelación y retrasos', 'Pérdida de equipaje', 'Asistencia legal 24/7'],
+      title: 'Seguro de Viaje',
+      description: 'Protección y asistencia durante tus viajes, ante imprevistos médicos y pérdidas.',
+      features: ['Asistencia médica y hospitalaria en el extranjero', 'Asistencia médica y hospitalaria en el extranjero', 'Pérdida o robo de equipaje', 'Repatriación y traslado sanitario'],
       color: 'bg-cyan-700'
     },
 
     // 5 cards para segundo grupo
     {
       icon: Building,
-      title: 'Seguro de Comercio',
-      description: 'Protección integral para tu comercio, cubriendo empleados, bienes y riesgos específicos.',
-      features: ['Responsabilidad civil', 'Daños materiales', 'Pérdida de ingresos', 'Cobertura contra robo'],
+      title: 'Seguro de Comercio y Multirriesgo',
+      description: 'Protección para tu negocio ante daños, robos y responsabilidades.',
+      features: ['Daños materiales por incendios, robos y desastres', 'Responsabilidad civil frente a terceros', 'Pérdidas por interrupción del negocio', 'Protección de mercancías y equipos'],
       color: 'bg-orange-500'
     },
     {
       icon: Briefcase,
       title: 'Seguro de Responsabilidad Civil',
-      description: 'Protección contra reclamaciones por daños a terceros en tu negocio.',
-      features: ['Cobertura legal', 'Daños a terceros', 'Defensa jurídica', 'Indemnizaciones'],
+      description: 'Cubre daños que puedas causar a terceros, protegiendo tu patrimonio.',
+      features: ['Daños materiales a terceros', 'Lesiones personales a terceros', 'Defensa jurídica y reclamación de daños', 'Responsabilidad por productos o servicios'],
       color: 'bg-red-600'
     },
     {
       icon: Plane,
-      title: 'Seguro de Viajes Corporativos',
-      description: 'Cobertura para viajes de negocios nacionales e internacionales.',
-      features: ['Asistencia 24/7', 'Gastos médicos', 'Cancelación', 'Equipaje'],
+      title: 'Seguro de Autónomos',
+      description: 'Protección ante imprevistos que afecten tu actividad profesional e ingresos.',
+      features: ['Incapacidad temporal por enfermedad o accidente', 'Ingresos diarios garantizados mientras no puedas trabajar', 'Producto flexible y adaptado a tu actividad', 'Beneficios fiscales para autónomos'],
       color: 'bg-cyan-400'
     },
     {
       icon: Factory,
-      title: 'Seguro Empresarial',
-      description: 'Planes médicos para empleados con amplia cobertura.',
-      features: ['Red hospitalaria', 'Chequeos anuales', 'Medicamentos', 'Urgencias'],
+      title: 'Seguros de Empleados',
+      description: 'Protección para tu equipo ante accidentes, enfermedades o baja laboral.',
+      features: ['Cobertura por accidentes laborales en el puesto de trabajo', 'Indemnización por incapacidad temporal o permanente', 'Fallecimiento por accidente laboral', 'Cumplimiento de obligaciones legales del empleador'],
       color: 'bg-red-400'
     },
-    {
-      icon: Users,
-      title: 'Seguro para Empleados',
-      description: 'Protección integral para la seguridad y bienestar de tus empleados.',
-      features: ['Cobertura médica', 'Indemnizaciones', 'Accidentes laborales', 'Seguro de vida'],
-      color: 'bg-teal-600'
-    },
+    
 
     // 3 cards para tercer grupo
     {
       icon: PiggyBank,
       title: 'Seguro de Ahorro',
-      description: 'Planes de ahorro flexibles para asegurar tu futuro y el de tu familia.',
-      features: ['Crecimiento garantizado', 'Beneficios fiscales', 'Retiros programados', 'Asesoría personalizada'],
+      description: 'Plan diseñado para acumular capital y asegurar tu futuro financiero.',
+      features: ['Rentabilidad garantizada', 'Acumulación y crecimiento de capital', 'Complemento para jubilación o imprevistos', 'Beneficios fiscales'],
       color: 'bg-pink-600'
     },
     {
       icon: TrendingUp,
-      title: 'Inversiones Empresariales',
-      description: 'Soluciones de inversión para el crecimiento de tu empresa.',
-      features: ['Diversificación', 'Asesoría financiera', 'Alta rentabilidad'],
+      title: 'Fondos de Inversión y Unit Linked',
+      description: 'Soluciones de inversión para el crecimiento de tu dinero',
+      features: ['Diversificación de inversiones', 'Gestión profesional', 'Acceso a distintos mercados', 'Liquidez en la compra y venta'],
       color: 'bg-orange-600'
     },
     {
       icon: CreditCard,
-      title: 'Planes de Pensión',
-      description: 'Asegura tu futuro con planes de pensión flexibles y seguros.',
-      features: ['Aportaciones voluntarias', 'Beneficios fiscales', 'Retiros programados'],
+      title: 'Plan de Pensiones',
+      description: 'Ahorro a largo plazo para complementar la jubilación.',
+      features: ['Ahorro a largo plazo', 'Rentabilidad acumulada', 'Complemento a la jubilación','Flexibilidad en las aportaciones' ],
       color: 'bg-indigo-600'
     }
   ];
@@ -134,9 +136,9 @@ const Services = () => {
 
   // Ahora los grupos usan slice para tomar los elementos correctos
   const groups = [
-    { title: 'Seguro Particulares', services: services.slice(0, 8) },
-    { title: 'Seguro para empresas', services: services.slice(8, 13) },
-    { title: 'Ahorro e inversiones', services: services.slice(13, 16) }
+    { title: 'Seguro para Particulares', services: services.slice(0, 9) },
+    { title: 'Seguro para Empresas', services: services.slice(8, 13) },
+    { title: 'Ahorro e Inversiones', services: services.slice(13, 16) }
   ];
 
   const [openGroups, setOpenGroups] = useState({ 0: false, 1: false, 2: false });

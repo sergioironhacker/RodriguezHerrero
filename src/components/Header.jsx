@@ -99,7 +99,7 @@ const Header = ({ darkMode, setDarkMode }) => {
   size="lg"
   onClick={() => scrollToSection('#contacto')}
   className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
-  style={{ backgroundColor: 'rgb(21, 54, 151)' }}
+  style={{ backgroundColor: 'rgb(21, 54, 151 , 0.7)' }}
 >
   Contrata Ahora
 </Button>
@@ -172,7 +172,7 @@ const Header = ({ darkMode, setDarkMode }) => {
   size="lg"
   onClick={() => scrollToSection('#contacto')}
   className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
-  style={{ backgroundColor: 'rgb(21, 54, 151)' }}
+  style={{ backgroundColor: 'rgb(21, 54, 151, 0.7)' }}
 >
   Contrata Ahora
 </Button>
