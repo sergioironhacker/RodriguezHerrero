@@ -412,7 +412,7 @@ const Contact = () => {
       </div>
       <div className="flex items-center">
         <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-        <span className="text-muted-foreground">Más de 10 años de experiencia</span>
+        <span className="text-muted-foreground">Más de 30 años de experiencia</span>
       </div>
       <div className="flex items-center">
         <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />

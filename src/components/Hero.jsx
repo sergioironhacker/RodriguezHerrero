@@ -150,7 +150,7 @@ const Hero = () => {
           >
             <div className="flex items-center gap-2 -translate-y-2">
               <Shield className="h-5 w-5" />
-              <span className="text-sm font-medium">+10 años de experiencia</span>
+              <span className="text-sm font-medium">+30 años de experiencia</span>
             </div>
             <div className="flex items-center gap-2 -translate-y-3">
               <Phone className="h-5 w-5" />

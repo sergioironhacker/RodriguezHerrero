@@ -15,7 +15,7 @@ const Services = () => {
     },
     {
       icon: Dog,
-      title: 'Seguro para Perros',
+      title: 'Seguro para Mascotas',
       description: 'Protección ante accidentes, daños a terceros y gastos veterinarios.',
       features: ['Responsabilidad civil por daños a terceros', 'Gastos veterinarios', 'Consultas y revisiones generales', 'Asistencia y orientación legal'],
       color: 'bg-blue-500'
@@ -25,8 +25,8 @@ const Services = () => {
       icon: Car,
       title: 'Seguro de Coche',
       description: 'Protección para tu vehículo frente a accidentes, robos y daños a terceros.',
-      features: ['Daños a terceros', 'Daños a terceros', 'Daños propios', 'Asistencia 24/7'],
-      color: 'bg-blue-500'
+      features: ['Daños a terceros', 'Robo e incendio', 'Daños propios', 'Asistencia 24/7'],
+      color: 'bg-orange-500'
 
     },
     {
@@ -40,7 +40,7 @@ const Services = () => {
       icon: Users,
       title: 'Seguro de Decesos',
       description: 'Cobertura para los gastos funerarios y trámites administrativos para tu tranquilidad y la de tu familia.',
-      features: ['Organización y gastos funerarios', 'Trámites administrativos y legales', 'Trámites administrativos y legales', 'Asistencia familiar y soporte psicológico'],
+      features: ['Organización y gastos funerarios', 'Trámites administrativos y legales', 'Traslado nacional e internacional', 'Asistencia familiar y soporte psicológico'],
       color: 'bg-gray-700'
     },
     {
@@ -54,7 +54,7 @@ const Services = () => {
       icon: Building,
       title: 'Seguro de Comunidades',
       description: 'Protección de tu comunidad y áreas comunes contra daños, responsabilidad civil y otros riesgos.',
-      features: ['Daños a zonas comunes por incendios o siniestros', 'Responsabilidad civil frente a terceros', 'Responsabilidad civil frente a terceros', 'Gastos de defensa jurídica'],
+      features: ['Daños a zonas comunes por incendios o siniestros', 'Responsabilidad civil frente a terceros', 'Rotura de instalaciones y maquinaria', 'Gastos de defensa jurídica'],
       color: 'bg-indigo-500' // Puedes usar otro color que prefieras
     },
     {
@@ -68,7 +68,7 @@ const Services = () => {
       icon: Plane,
       title: 'Seguro de Viaje',
       description: 'Protección y asistencia durante tus viajes, ante imprevistos médicos y pérdidas.',
-      features: ['Asistencia médica y hospitalaria en el extranjero', 'Asistencia médica y hospitalaria en el extranjero', 'Pérdida o robo de equipaje', 'Repatriación y traslado sanitario'],
+      features: ['Asistencia médica y hospitalaria en el extranjero', 'Cancelación o interrupción del viaje', 'Pérdida o robo de equipaje', 'Repatriación y traslado sanitario'],
       color: 'bg-cyan-700'
     },
 
@@ -137,7 +137,7 @@ const Services = () => {
   // Ahora los grupos usan slice para tomar los elementos correctos
   const groups = [
     { title: 'Seguro para Particulares', services: services.slice(0, 9) },
-    { title: 'Seguro para Empresas', services: services.slice(8, 13) },
+    { title: 'Seguro para Empresas', services: services.slice(9, 13) },
     { title: 'Ahorro e Inversiones', services: services.slice(13, 16) }
   ];
 

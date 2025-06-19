@@ -12,7 +12,7 @@ const About = () => {
   const stats = [
     {
       icon: Shield,
-      number: '+10',
+      number: '+30',
       label: 'Años de Experiencia'
     },
     {
@@ -40,7 +40,7 @@ const About = () => {
     },
     {
       title: 'Experiencia',
-      description: 'Más de 10 años protegiendo a familias y empresas con soluciones integrales.',
+      description: 'Más de 30 años protegiendo a familias y empresas con soluciones integrales.',
       icon: Award
     },
     {
