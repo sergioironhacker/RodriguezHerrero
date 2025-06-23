@@ -98,12 +98,15 @@ const FAQ = () => {
                       607 726 826
                     </a>
                   </p>
-                  <p className="break-words">
-                    📧{' '}
-                    <a href="mailto:segurosrodriguezherrero23@gmail.com" className="hover:underline">
-                      segurosrodriguezherrero23@gmail.com
-                    </a>
-                  </p>
+                 <p className="break-words">
+  <a
+    href="mailto:segurosrodriguezherrero23@gmail.com"
+    className="hover:underline inline-flex items-center space-x-1"
+  >
+    <span>📧</span>
+    <span>segurosrodriguezherrero23@gmail.com</span>
+  </a>
+</p>
                   {/* <p>💬 Chat en vivo disponible</p> */}
                 </div>
               </div>

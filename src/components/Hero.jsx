@@ -122,43 +122,60 @@ const Hero = () => {
     transition={{ duration: 0.5 }}
     className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
   >
-    {/* SEGURO DE HOGAR */}
-    <a
-      href="https://wa.me/34607726826?text=Hola%20Alberto%2C%20estaba%20interesado%20en%20un%20seguro%20de%20hogar"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
-    >
-      <img
-        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-        alt="Seguro de hogar"
-        className="w-full h-48 object-cover"
-      />
-      <div className="p-4 text-black text-center">
-        <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
-        <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
-        <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
-      </div>
-    </a>
+   {/* SEGURO DE HOGAR */}
+<a
+  href="https://wa.me/34607726826?text=Hola%20Alberto%2C%20estaba%20interesado%20en%20un%20seguro%20de%20hogar"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
+>
+  <div className="relative">
+    <img
+      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+      alt="Seguro de hogar"
+      className="w-full h-48 object-cover"
+    />
+    {/* TEXTO SUPERPUESTO EN LA IMAGEN */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <span className="bg-white/60 text-black text-sm px-3 py-1 rounded-md shadow-lg font-semibold">
+        20% descuento hasta Agosto
+      </span>
+    </div>
+  </div>
+  <div className="p-4 text-black text-center">
+    <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
+    <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
+    <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
+  </div>
+</a>
 
-    {/* SEGURO DE VIDA */}
-    <a
-      href="https://wa.me/34607726826?text=Hola%20Alberto%2C%20estaba%20interesado%20en%20un%20seguro%20de%20vida"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
-    >
-      <img
-        src="https://canzobresegade.com/wp-content/uploads/2024/11/seguro-de-vida-manos.jpg"
-        alt="Seguro de vida"
-        className="w-full h-48 object-cover"
-      />
-      <div className="p-4 text-black text-center">
-        <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
-        <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
-        <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
-      </div>
-    </a>
+{/* SEGURO DE VIDA */}
+<a
+  href="https://wa.me/34607726826?text=Hola%20Alberto%2C%20estaba%20interesado%20en%20un%20seguro%20de%20vida"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
+>
+  <div className="relative">
+    <img
+      src="https://canzobresegade.com/wp-content/uploads/2024/11/seguro-de-vida-manos.jpg"
+      alt="Seguro de vida"
+      className="w-full h-48 object-cover"
+    />
+    {/* TEXTO SUPERPUESTO CENTRADO EN LA IMAGEN */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <span className="bg-white/60 text-black text-sm px-3 py-1 rounded-md shadow-lg font-semibold">
+        30% descuento hasta julio
+      </span>
+    </div>
+  </div>
+  <div className="p-4 text-black text-center">
+    <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
+    <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
+    <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
+  </div>
+</a>
+
   </motion.div>
 )}
 
