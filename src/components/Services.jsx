@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Car, Home, Heart, Shield, Building, Plane, ArrowRight, Users, AlertTriangle, Briefcase, Factory, PiggyBank, TrendingUp, CreditCard, Dog } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FaUserTie } from 'react-icons/fa';
+import { FaHardHat } from "react-icons/fa";
+
+
+
 
 const Services = () => {
   const services = [
@@ -88,14 +93,14 @@ const Services = () => {
       color: 'bg-red-600'
     },
     {
-      icon: Plane,
+      icon: FaUserTie,
       title: 'Seguro de Autónomos',
       description: 'Protección ante imprevistos que afecten tu actividad profesional e ingresos.',
       features: ['Incapacidad temporal por enfermedad o accidente', 'Ingresos diarios garantizados mientras no puedas trabajar', 'Producto flexible y adaptado a tu actividad', 'Beneficios fiscales para autónomos'],
       color: 'bg-cyan-400'
     },
     {
-      icon: Factory,
+      icon: FaHardHat,
       title: 'Seguros de Empleados',
       description: 'Protección para tu equipo ante accidentes, enfermedades o baja laboral.',
       features: ['Cobertura por accidentes laborales en el puesto de trabajo', 'Indemnización por incapacidad temporal o permanente', 'Fallecimiento por accidente laboral', 'Cumplimiento de obligaciones legales del empleador'],
