@@ -118,7 +118,7 @@ const Hero = () => {
               transition={{ duration: 0.5 }}
               className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
             >
-              <div className="bg-white rounded-xl overflow-hidden shadow-xl w-[300px]">
+              <div className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px]">
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
                   alt="Seguro de hogar"
@@ -130,9 +130,9 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl overflow-hidden shadow-xl w-[300px]">
+              <div className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px]">
                 <img
-                  src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+                  src="https://canzobresegade.com/wp-content/uploads/2024/11/seguro-de-vida-manos.jpg"
                   alt="Seguro de vida"
                   className="w-full h-48 object-cover"
                 />
