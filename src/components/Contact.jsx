@@ -69,12 +69,12 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    {
+    /* {
       icon: MapPin,
       title: 'Dirección',
       content: 'Av. Padre Claret 12\nSegovia, España',
       link: 'https://www.google.com/maps?q=Av.+Padre+Claret+12,+Segovia,+España'
-    },
+    }, */
     {
       icon: Phone,
       title: 'Teléfono',
@@ -87,12 +87,12 @@ const Contact = () => {
       content: 'segurosrodriguezherrero23@gmail.com',
       link: 'mailto:segurosrodriguezherrero23@gmail.com'
     },
-   /*  {
-      icon: Clock,
-      title: 'Horarios',
-      content: 'Lun - Vie: 8:00 AM - 6:00 PM\nSáb: 9:00 AM - 2:00 PM',
-      link: null
-    } */
+    /*  {
+       icon: Clock,
+       title: 'Horarios',
+       content: 'Lun - Vie: 8:00 AM - 6:00 PM\nSáb: 9:00 AM - 2:00 PM',
+       link: null
+     } */
   ];
 
   const insuranceTypes = [
@@ -254,50 +254,50 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Info & Map */}
-<motion.div
-  initial={{ opacity: 0, x: 50 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
-  className="space-y-8 fade-in"
->
-  {/* Contact Info */}
-  <div className="grid gap-4 sm:gap-6">
-    {contactInfo.map((info, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        viewport={{ once: true }}
-        className="bg-card rounded-xl p-4 sm:p-6 border border-border hover:shadow-lg transition-all duration-300"
-      >
-        <div className="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
-          <div className="bg-primary/10 rounded-lg p-2 sm:p-3 flex-shrink-0 self-start">
-            <info.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-          </div>
-          <div className="flex-1">
-            <h4 className="font-semibold text-foreground mb-1 sm:mb-2">{info.title}</h4>
-            {info.link ? (
-              <a
-                href={info.link}
-                target={info.link.startsWith('http') ? '_blank' : '_self'}
-                rel={info.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 break-words whitespace-normal"
-              >
-                {info.content}
-              </a>
-            ) : (
-              <p className="text-muted-foreground break-words whitespace-normal">{info.content}</p>
-            )}
-          </div>
-        </div>
-      </motion.div>
-    ))}
-  </div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-8 fade-in"
+          >
+            {/* Contact Info */}
+            <div className="grid gap-4 sm:gap-6">
+              {contactInfo.map((info, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-card rounded-xl p-4 sm:p-6 border border-border hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
+                    <div className="bg-primary/10 rounded-lg p-2 sm:p-3 flex-shrink-0 self-start">
+                      <info.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-foreground mb-1 sm:mb-2">{info.title}</h4>
+                      {info.link ? (
+                        <a
+                          href={info.link}
+                          target={info.link.startsWith('http') ? '_blank' : '_self'}
+                          rel={info.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                          className="text-muted-foreground hover:text-primary transition-colors duration-200 break-words whitespace-normal"
+                        >
+                          {info.content}
+                        </a>
+                      ) : (
+                        <p className="text-muted-foreground break-words whitespace-normal">{info.content}</p>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
 
-  {/* Oficina Segovia */}
-{/* <div className="bg-card rounded-2xl p-6 border border-border">
+            {/* Oficina Segovia */}
+            {/* <div className="bg-card rounded-2xl p-6 border border-border">
   <h4 className="font-semibold text-foreground mb-4">Oficina Segovia</h4>
   <div className="aspect-video rounded-lg overflow-hidden">
     <iframe
@@ -314,41 +314,43 @@ const Contact = () => {
 </div> */}
 
 
-<div className="bg-card rounded-2xl p-6 border border-border">
-  <h4 className="font-semibold text-foreground mb-4 text-2xl">
-    Oficina Segovia
-  </h4>
-  <div className="aspect-video rounded-lg overflow-hidden mb-4">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.123456789!2d-4.1187654321!3d40.9501234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4faaa123456789%3A0xabcdef123456!2sAvda.%20del%20Padre%20Claret%2C%2012%2C%2040001%20Segovia%2C%20España!5e0!3m2!1ses!2ses!4v1700000000000"
-      width="100%"
-      height="100%"
-      style={{ border: 0 }}
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      title="Ubicación Rodríguez Herrero - Segovia"
-    ></iframe>
-  </div>
+            <div className="bg-card rounded-2xl p-6 border border-border">
+              <h4 className="font-semibold text-foreground mb-4 text-2xl">
+                Oficina Segovia
+              </h4>
+              <div className="aspect-video rounded-lg overflow-hidden mb-4">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.123456789!2d-4.1187654321!3d40.9501234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4faaa123456789%3A0xabcdef123456!2sAvda.%20del%20Padre%20Claret%2C%2012%2C%2040001%20Segovia%2C%20España!5e0!3m2!1ses!2ses!4v1700000000000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Rodríguez Herrero - Segovia"
+                ></iframe>
+              </div>
 
-  {/* Horario de atención */}
-  <div className="bg-blue-500/60 p-4 rounded-lg border-2 border-blue-500">
-    <h5 className="font-semibold text-black mb-2 text-2xl">
-      Horario de Atención
-    </h5>
-    <ul className="font-semibold text-black space-y-1">
-      <li>Lun - Vie: 8:00 AM - 6:00 PM</li>
-      <li>Sábado: 9:00 AM - 2:00 PM</li>
-    </ul>
-  </div>
-</div>
+              {/* Horario de atención */}
+              <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500">
+                <h5 className="font-semibold text-black mb-2 text-2xl">
+                  Horario de Atención ( Verano )
+                </h5>
+                <ul className="font-semibold text-black space-y-1">
+
+                  <li>LUNES – MIERCOLES – VIERNES : 09:00 – 14:00</li>
+                  {/* <li>Lunes - Miercoles - Viernes : 8:00 - 6:00</li>
+      <li>Sábado: 9:00  - 14:00 </li> */}
+                </ul>
+              </div>
+            </div>
 
 
 
 
 
-{/* Oficina Navas de Oro */}
-{/* <div className="bg-card rounded-2xl p-6 border border-border">
+            {/* Oficina Navas de Oro */}
+            {/* <div className="bg-card rounded-2xl p-6 border border-border">
   <h4 className="font-semibold text-foreground mb-4">Oficina Navas de Oro </h4>
   <div className="aspect-video rounded-lg overflow-hidden">
     <iframe
@@ -365,64 +367,68 @@ const Contact = () => {
 </div> */}
 
 
-<div className="bg-card rounded-2xl p-6 border border-border">
-  <h4 className="font-semibold text-foreground mb-4 text-2xl">
-    Oficina Navas de Oro
-  </h4>
-  <div className="aspect-video rounded-lg overflow-hidden mb-4">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.789153676813!2d-4.441360524034265!3d41.19582257131395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd472ad5558f64e9%3A0x91b960cd7f8eaabd!2sPl.%20Mayor%2C%2016%2C%2040470%20Navas%20de%20Oro%2C%20Segovia!5e0!3m2!1ses!2ses!4v1718028023456!5m2!1ses!2ses"
-      width="100%"
-      height="100%"
-      style={{ border: 0 }}
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      title="Ubicación Navas de Oro - Plaza Mayor 16"
-    ></iframe>
-  </div>
+            <div className="bg-card rounded-2xl p-6 border border-border">
+              <h4 className="font-semibold text-foreground mb-4 text-2xl">
+                Oficina Navas de Oro
+              </h4>
+              <div className="aspect-video rounded-lg overflow-hidden mb-4">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.789153676813!2d-4.441360524034265!3d41.19582257131395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd472ad5558f64e9%3A0x91b960cd7f8eaabd!2sPl.%20Mayor%2C%2016%2C%2040470%20Navas%20de%20Oro%2C%20Segovia!5e0!3m2!1ses!2ses!4v1718028023456!5m2!1ses!2ses"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Navas de Oro - Plaza Mayor 16"
+                ></iframe>
+              </div>
 
-  {/* Horario de atención */}
-  <div className="bg-blue-500/60 p-4 rounded-lg border-2 border-blue-500">
-    <h5 className="font-semibold text-black mb-2 text-2xl">
-      Horario de Atención
-    </h5>
-    <ul className="font-semibold text-black space-y-1">
-      <li>Martes: 9:00 AM - 2:00 PM</li>
-      <li>Jueves: 9:00 AM - 2:00 PM</li>
-    </ul>
-  </div>
-</div>
+              {/* Horario de atención */}
+              <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500">
+                <h5 className="font-semibold text-black mb-2 text-2xl">
+                  Horario de Atención
+                </h5>
+                <ul className="font-semibold text-black space-y-1">
+
+                  <li>MARTES – JUEVES :
+                    09:30 A 13:30
+                  </li>
+                  {/* <li>Martes: 9:00 AM - 2:00 PM</li>
+      <li>Jueves: 9:00 AM - 2:00 PM</li> */}
+                </ul>
+              </div>
+            </div>
 
 
 
-  {/* Trust Badges */}
-  <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
-    <h4 className="font-semibold text-foreground mb-4 text-center">
-      ¿Por qué elegirnos?
-    </h4>
-    <div className="space-y-3">
-      <div className="flex items-center">
-        <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-        <span className="text-muted-foreground">Respuesta en menos de 24 horas</span>
-      </div>
-      <div className="flex items-center">
-        <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-        <span className="text-muted-foreground">Asesoría personalizada gratuita</span>
-      </div>
-      <div className="flex items-center">
-        <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-        <span className="text-muted-foreground">Más de 30 años de experiencia</span>
-      </div>
-      <div className="flex items-center">
-        <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-        <span className="text-muted-foreground">Precios competitivos garantizados</span>
-      </div>
-    </div>
-  </div>
-</motion.div>
+            {/* Trust Badges */}
+            <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
+              <h4 className="font-semibold text-foreground mb-4 text-center">
+                ¿Por qué elegirnos?
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span className="text-muted-foreground">Respuesta en menos de 24 horas</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span className="text-muted-foreground">Asesoría personalizada gratuita</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span className="text-muted-foreground">Más de 30 años de experiencia</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span className="text-muted-foreground">Precios competitivos garantizados</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
-              
+
         </div>
       </div>
     </section>

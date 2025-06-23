@@ -90,8 +90,9 @@ const Footer = () => {
     </div>
   </div>
   <p className="text-muted-foreground leading-relaxed mt-4">
-    Protegemos lo que más valoras desde 2014. Somos tu socio confiable en seguros, 
-    brindando tranquilidad y seguridad a más de 2000 familias y empresas.
+   Desde 1992 protegemos lo que más valoras.
+Somos tu aliado de confianza en seguros e inversiones, ofreciendo tranquilidad y seguridad a más de 2.000 familias y empresas. Nuestra experiencia y compromiso nos avalan para acompañarte en cada etapa de tu vida.
+
   </p>
 </motion.div>
 
@@ -116,12 +117,12 @@ const Footer = () => {
                   <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
                   <span className="text-sm">Av. Padre Claret, 12 P1 40001 (Negocios Exitus)</span>
                   <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                  <span className="text-sm">Plz. Mayor, 16 40470 (Navas de Oro)</span>
+                  <span className="text-sm">Plz. Mayor, 16 40470 Navas de Oro (Segovia)</span>
                 </div>
                 <div className="flex items-center text-muted-foreground">
                   <Phone className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
                   <a href="tel:+34607726826" className="text-sm hover:underline">
-                    +34 607 726 826
+                    607 726 826
                   </a>
                 </div>
                 <div className="flex items-center text-muted-foreground">
