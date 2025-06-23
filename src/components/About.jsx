@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Users, Award, Clock } from 'lucide-react';
+import { Shield, Users, Award, Clock, BookOpen, UserCheck,  Briefcase, GraduationCap } from 'lucide-react';
 
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -11,7 +11,7 @@ import { Shield, Users, Award, Clock } from 'lucide-react';
 const About = () => {
   const stats = [
     {
-      icon: Shield,
+      icon:  GraduationCap,
       number: '+30',
       label: 'Años de Experiencia'
     },

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Phone, MessageCircle } from 'lucide-react';
+import { Shield, Phone, MessageCircle, Award,  Briefcase, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -100,6 +100,10 @@ const Hero = () => {
               Habla con un Asesor
             </Button>
 
+
+
+           {/*  ////////////////////////////////////////// */}
+
             {/* Botón de Oferta que despliega las imágenes */}
             <Button
               size="lg"
@@ -112,37 +116,57 @@ const Hero = () => {
 
           {/* Contenedor de las imágenes que aparece con la oferta */}
           {showOffers && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
-            >
-              <div className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px]">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-                  alt="Seguro de hogar"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4 text-black text-center">
-                  <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
-                  <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
-                </div>
-              </div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
+  >
+    {/* SEGURO DE HOGAR */}
+    <a
+      href="https://wa.me/34607726826?text=Hola%20Alberto%2C%20estaba%20interesado%20en%20un%20seguro%20de%20hogar"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+        alt="Seguro de hogar"
+        className="w-full h-48 object-cover"
+      />
+      <div className="p-4 text-black text-center">
+        <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
+        <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
+        <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
+      </div>
+    </a>
 
-              <div className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px]">
-                <img
-                  src="https://canzobresegade.com/wp-content/uploads/2024/11/seguro-de-vida-manos.jpg"
-                  alt="Seguro de vida"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4 text-black text-center">
-                  <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
-                  <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
-                </div>
-              </div>
-            </motion.div>
-          )}
+    {/* SEGURO DE VIDA */}
+    <a
+      href="https://wa.me/34607726826?text=Hola%20Alberto%2C%20estaba%20interesado%20en%20un%20seguro%20de%20vida"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
+    >
+      <img
+        src="https://canzobresegade.com/wp-content/uploads/2024/11/seguro-de-vida-manos.jpg"
+        alt="Seguro de vida"
+        className="w-full h-48 object-cover"
+      />
+      <div className="p-4 text-black text-center">
+        <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
+        <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
+        <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
+      </div>
+    </a>
+  </motion.div>
+)}
+
+
+
+
+
+        {/*   ////////////////////////////////// */}
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -151,7 +175,7 @@ const Hero = () => {
             className="mt-16 flex flex-wrap justify-center items-center gap-8 text-white/70 -translate-y-3"
           >
             <div className="flex items-center gap-2 -translate-y-2">
-              <Shield className="h-5 w-5" />
+              <GraduationCap className="h-5 w-5" />
               <span className="text-sm font-medium">+30 años de experiencia</span>
             </div>
             <div className="flex items-center gap-2 -translate-y-3">
@@ -165,6 +189,9 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
+
+
+     {/*  //////////////////////////////////////////////////////////// */}
 
       {/* Indicador de scroll */}
       <motion.div
