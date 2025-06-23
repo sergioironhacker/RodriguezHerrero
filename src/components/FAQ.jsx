@@ -9,35 +9,39 @@ const FAQ = () => {
   const faqs = [
     {
       question: '¿Qué tipos de seguros ofrecen?',
-      answer: 'Ofrecemos una amplia gama de seguros incluyendo auto, hogar, salud, vida, empresarial y viajes. Cada uno está diseñado para cubrir necesidades específicas con coberturas flexibles y precios competitivos.'
+      answer: 'Contamos con una amplia gama de seguros diseñados para adaptarse a tus necesidades. Ofrecemos seguros para particulares (como hogar, salud, vida o automóvil), seguros para empresas, y también opciones de ahorro e inversión. Todos nuestros productos cuentan con coberturas personalizables y precios competitivos, pensados para proteger lo que más valoras.'
     },
     {
       question: '¿Cómo puedo obtener un presupuesto?',
-      answer: 'Puedes obtener un presupuesto de manera rápida y sencilla a través de nuestro formulario de contacto, llamando a nuestro número de atención al cliente, o visitando nuestras oficinas. Nuestros asesores te ayudarán a encontrar la mejor opción para ti.'
-    },
-    {
-      question: '¿Cuánto tiempo toma procesar un reclamo?',
-      answer: 'El tiempo de procesamiento varía según el tipo de reclamo, pero nos comprometemos a responder dentro de 24-48 horas para casos urgentes. Para reclamos estándar, el proceso típicamente toma entre 5-10 días hábiles.'
-    },
-    {
-      question: '¿Puedo modificar mi póliza después de contratarla?',
-      answer: 'Sí, puedes modificar tu póliza en cualquier momento. Ofrecemos flexibilidad para ajustar coberturas, cambiar beneficiarios, o actualizar información personal. Contacta a tu asesor para realizar cualquier cambio.'
-    },
-    {
-      question: '¿Ofrecen descuentos por múltiples pólizas?',
-      answer: 'Absolutamente. Ofrecemos descuentos atractivos cuando contratas múltiples seguros con nosotros. También tenemos descuentos por buen historial, pago anual, y para ciertos grupos profesionales.'
+      answer: 'Obtener un presupuesto es muy fácil y sin ningún compromiso. Puedes solicitarlo a través de nuestro formulario en la web, enviándonos un mensaje por WhatsApp o llamándonos directamente por teléfono. Te ofreceremos una propuesta personalizada según tus necesidades.'
     },
     {
       question: '¿Qué documentos necesito para contratar un seguro?',
-      answer: 'Los documentos varían según el tipo de seguro, pero generalmente necesitas identificación oficial, comprobante de domicilio, y documentos específicos del bien a asegurar (como tarjeta de circulación para autos).'
+      answer: 'Los documentos necesarios pueden variar según el tipo de seguro que desees contratar. Por lo general, se requiere el DNI o NIE y algunos datos personales básicos. En seguros específicos, como los de coche o salud, puede que se solicite información adicional. No te preocupes, nuestro equipo te asesorará en cada paso para que tengas todo lo que necesitas.'
     },
     {
-      question: '¿Tienen atención al cliente 24/7?',
-      answer: 'Sí, contamos con atención al cliente las 24 horas del día, los 7 días de la semana para emergencias y reclamos urgentes. Para consultas generales, nuestro horario es de lunes a viernes de 8:00 AM a 6:00 PM.'
+      question: '¿Cuánto tarda en activarse el seguro una vez contratado?',
+      answer: 'La activación del seguro depende del tipo de póliza, pero en muchos casos es inmediata tras la confirmación del pago y la firma del contrato. Te informamos claramente de los plazos desde el primer momento.'
     },
     {
       question: '¿Cómo puedo pagar mi póliza?',
-      answer: 'Aceptamos múltiples formas de pago incluyendo transferencia bancaria, tarjeta de crédito/débito, domiciliación bancaria, y pago en efectivo en nuestras oficinas. También ofrecemos planes de pago flexibles.'
+      answer: 'Ofrecemos varias opciones de pago para tu comodidad: puedes abonar tu póliza mediante domiciliación bancaria, tarjeta de crédito o débito, o transferencia bancaria. Te facilitamos el proceso para que elijas la forma que mejor se adapte a ti.'
+    },
+    {
+      question: '¿Ofrecen descuentos por contratar varias pólizas?',
+      answer: 'Sí, ofrecemos descuentos exclusivos para clientes que contratan más de un seguro con nosotros. Al combinar varias pólizas, no solo ahorras, sino que también simplificas la gestión de tus seguros en un solo lugar.'
+    },
+    {
+      question: '¿Puedo cancelar mi póliza si ya no la necesito?',
+      answer: 'Sí, puedes solicitar la cancelación de tu póliza, respetando los plazos y condiciones establecidos en el contrato. Nuestro equipo te explicará el procedimiento y resolverá cualquier duda.'
+    },
+    {
+      question: '¿Tienen atención al cliente 24/7?',
+      answer: 'Nuestro equipo de atención al cliente está disponible en horario comercial para ayudarte con cualquier consulta o gestión habitual. Sin embargo, en caso de emergencia, contamos con líneas de asistencia disponibles las 24 horas. Te indicaremos cómo contactar con el servicio de emergencia según las condiciones de tu póliza.'
+    },
+    {
+      question: '¿Qué debo hacer en caso de siniestro o emergencia?',
+      answer: 'En caso de siniestro, debes contactarnos lo antes posible. Te guiaremos en todo el proceso y gestionaremos tu parte con rapidez. Para emergencias, disponemos de teléfonos de asistencia 24/7 que te proporcionamos según tu póliza.'
     }
   ];
 

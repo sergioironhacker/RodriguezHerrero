@@ -1,11 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Phone, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const [showOffers, setShowOffers] = useState(false);
+
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
@@ -18,32 +20,17 @@ const Hero = () => {
       id="inicio"
       className="relative min-h-screen flex items-center justify-center bg-black z-0"
     >
-      {/* Background Layer */}
-      {/*  <div className="absolute inset-0 hero-gradient">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <img
-          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay "
-          alt="Familia feliz protegida por seguros"
-          src="https://images.unsplash.com/photo-1694185752018-2ff397cb99b4"
-          style={{ opacity: 1 }}
-        />
-      </div> */}
-
+      {/* Imagen de fondo */}
       <div className="absolute inset-0">
-        {/* Imagen de fondo con brillo ligeramente reducido */}
         <img
           className="w-full h-full object-cover brightness-95 contrast-95"
           alt="Familia feliz protegida por seguros"
           src="https://images.unsplash.com/photo-1694185752018-2ff397cb99b4"
         />
-
-        {/* Overlay sutil: negro clarito para claro, azul intenso para oscuro */}
         <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] dark:bg-blue-950/55"></div>
       </div>
 
-      {/* bg-[rgba(240,240,240,0.15)] */}
-
-      {/* Floating Decorations */}
+      {/* Efectos flotantes */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
@@ -62,7 +49,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Main Content */}
+      {/* Contenido principal */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center text-white">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -70,13 +57,6 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-8"
-          ></motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,10 +64,6 @@ const Hero = () => {
             className="mt-24 text-2xl sm:text-5xl md:text-5xl font-bold mb-7 leading-tight text-center"
           >
             Tu <span style={{ color: 'rgb(12, 46, 148)' }}>futuro</span> protegido por quienes se preocupan de verdad.
-            <br />
-            {/*  <span className="text-base sm:text-lg md:text-4xl font-medium">
-              Protegemos lo que más <span className="text-yellow-400">valoras</span>
-            </span> */}
           </motion.h1>
 
           <motion.p
@@ -99,30 +75,21 @@ const Hero = () => {
             Soluciones diseñadas para cuidar lo que más valoras, con respaldo, experiencia y cercanía.
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-base sm:text-lg md:text-xl mb-12 text-white/80 max-w-3xl mx-auto"
-          >
-            {/* <span className="text-yellow-400">Seguros</span> diseñados para personas, familias y empresas con respaldo,
-            experiencia y confianza */}
-          </motion.p>
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-       <Button
-  size="lg"
-  onClick={() => scrollToSection('#contacto')}
-  className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
-  style={{ backgroundColor: 'rgb(21, 54, 151 , 0.7)' }}
->
-  Contrata Ahora
-</Button>
+            <Button
+              size="lg"
+              onClick={() => scrollToSection('#contacto')}
+              className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
+              style={{ backgroundColor: 'rgb(21, 54, 151 , 0.7)' }}
+            >
+              Contrata Ahora
+            </Button>
+
             <Button
               size="lg"
               variant="outline"
@@ -132,15 +99,50 @@ const Hero = () => {
               <MessageCircle className="mr-2 h-5 w-5" />
               Habla con un Asesor
             </Button>
-            {/* nuevo botón Descuento */}
+
+            {/* Botón de Oferta que despliega las imágenes */}
             <Button
               size="lg"
-              onClick={() => scrollToSection("#contacto")} // Misma funcionalidad
-              className=" text-white font-semibold px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:shadow-red-500/25 hover:shadow-2xl hover:scale-105 bg-blue-500/50"
+              onClick={() => setShowOffers(!showOffers)}
+              className="text-white font-semibold px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:shadow-red-500/25 hover:shadow-2xl hover:scale-105 bg-blue-500/50"
             >
               Oferta el primer año
             </Button>
           </motion.div>
+
+          {/* Contenedor de las imágenes que aparece con la oferta */}
+          {showOffers && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
+            >
+              <div className="bg-white rounded-xl overflow-hidden shadow-xl w-[300px]">
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+                  alt="Seguro de hogar"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4 text-black text-center">
+                  <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
+                  <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl overflow-hidden shadow-xl w-[300px]">
+                <img
+                  src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+                  alt="Seguro de vida"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4 text-black text-center">
+                  <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
+                  <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
+                </div>
+              </div>
+            </motion.div>
+          )}
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -164,7 +166,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Indicador de scroll */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
