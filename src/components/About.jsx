@@ -87,7 +87,9 @@ const About = () => {
             Nuestra Historia
           </h3>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            Desde 1992, nuestra agencia se ha comprometido a cuidar lo que más valoran nuestros clientes. Comenzamos como un pequeño negocio familiar y, gracias al respaldo de quienes nos eligieron, hemos crecido hasta convertirnos en un apoyo sólido para quienes depositan en nosotros su seguridad.
+           Desde 1992 protegemos lo que más valoras.
+Somos tu aliado de confianza en seguros e inversiones, ofreciendo tranquilidad y seguridad a más de 2.000 familias y empresas. Nuestra experiencia y compromiso nos avalan para acompañarte en cada etapa de tu vida.
+
           </p>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
             Con un enfoque personalizado y un compromiso constante con la calidad, hemos construido relaciones sólidas y duraderas con más de 2000 clientes satisfechos.
