@@ -43,8 +43,8 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: LinkedIn, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: TikTok, href: 'https://tiktok.com', label: 'TikTok' }
+    { icon: LinkedIn, href: 'http://www.linkedin.com/in/albertojorgerodriguez', label: 'LinkedIn' },
+    { icon: TikTok, href: 'http://www.tiktok.com/@tuseguroconrh', label: 'TikTok' }
   ];
 
   const scrollToSection = (href) => {

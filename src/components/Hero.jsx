@@ -70,7 +70,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-lg sm:text-xl md:text-2xl mb-4 text-white/90 font-light"
+            className="text-lg sm:text-xl md:text-2xl mb-4 text-white font-semibold"
           >
             Soluciones diseñadas para cuidar lo que más valoras, con respaldo, experiencia y cercanía.
           </motion.p>
@@ -122,59 +122,75 @@ const Hero = () => {
               transition={{ duration: 0.5 }}
               className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
             >
-              {/* SEGURO DE HOGAR */}
-              <a
-                href="/Allianz Hogar_960x1200px.jpg.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
-              >
-                <div className="relative">
-                  <img
-                    src="/Allianz Hogar_960x1200px.jpg.jpg"
-                    alt="Seguro de hogar"
-                    className="w-full h-48 object-cover"
-                  />
-                  {/* TEXTO SUPERPUESTO EN LA IMAGEN */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-white/60 text-black text-sm px-3 py-1 rounded-md shadow-lg font-semibold">
-                      20% descuento hasta Agosto
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 text-black text-center">
-                  <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
-                  <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
-                  <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
-                </div>
-              </a>
+            {/* SEGURO DE HOGAR */}
+<a
+  href="/Allianz Hogar_960x1200px.jpg.jpg"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
+>
+  <div className="relative">
+    <img
+      src="/Allianz Hogar_960x1200px.jpg.jpg"
+      alt="Seguro de hogar"
+      className="w-full h-48 object-cover"
+    />
+    {/* TEXTO SUPERPUESTO EN LA IMAGEN */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">
+        30% descuento
+      </span>
+    </div>
+  </div>
+  <div className="p-4 text-black text-center">
+    <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
+    <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
+    {/* Aquí el link a WhatsApp */}
+    <a
+      href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20hogar"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-2 block text-blue-900 text-xs underline cursor-pointer"
+    >
+      Haz clic para más información
+    </a>
+  </div>
+</a>
 
-              {/* SEGURO DE VIDA */}
-              <a
-                href="/Vida 2.jpg.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
-              >
-                <div className="relative">
-                  <img
-                    src="/Vida 2.jpg.jpg"
-                    alt="Seguro de vida"
-                    className="w-full h-48 object-cover"
-                  />
-                  {/* TEXTO SUPERPUESTO CENTRADO EN LA IMAGEN */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-white/60 text-black text-sm px-3 py-1 rounded-md shadow-lg font-semibold">
-                      30% descuento hasta julio
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 text-black text-center">
-                  <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
-                  <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
-                  <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
-                </div>
-              </a>
+{/* SEGURO DE VIDA */}
+<a
+  href="/Vida 2.jpg.jpg"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
+>
+  <div className="relative">
+    <img
+      src="/Vida 2.jpg.jpg"
+      alt="Seguro de vida"
+      className="w-full h-48 object-cover"
+    />
+    {/* TEXTO SUPERPUESTO CENTRADO EN LA IMAGEN */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">
+        60% descuento 
+      </span>
+    </div>
+  </div>
+  <div className="p-4 text-black text-center">
+    <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
+    <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
+    {/* Link a WhatsApp */}
+    <a
+      href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-2 block text-blue-900 text-xs underline cursor-pointer"
+    >
+      Haz clic para más información
+    </a>
+  </div>
+</a>
 
             </motion.div>
           )}
