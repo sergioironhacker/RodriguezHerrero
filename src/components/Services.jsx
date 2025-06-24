@@ -140,11 +140,42 @@ const Services = () => {
   };
 
   // Ahora los grupos usan slice para tomar los elementos correctos
-  const groups = [
-    { title: 'Seguro para Particulares', services: services.slice(0, 9) },
-    { title: 'Seguro para Empresas', services: services.slice(9, 13) },
-    { title: 'Ahorro e Inversiones', services: services.slice(13, 16) }
-  ];
+const groups = [
+  {
+    title: (
+      <>
+        Seguro para{' '}
+        <span className="text-primary" style={{ fontSize: '1.325rem' }}>
+          Particulares
+        </span>
+      </>
+    ),
+    services: services.slice(0, 9),
+  },
+  {
+    title: (
+      <>
+        Seguro para{' '}
+        <span className="text-primary" style={{ fontSize: '1.325rem' }}>
+          Empresas
+        </span>
+      </>
+    ),
+    services: services.slice(9, 13),
+  },
+  {
+    title: (
+      <>
+        Ahorro e{' '}
+        <span className="text-primary" style={{ fontSize: '1.325rem' }}>
+          Inversiones
+        </span>
+      </>
+    ),
+    services: services.slice(13, 16),
+  },
+];
+
 
   const [openGroups, setOpenGroups] = useState({ 0: false, 1: false, 2: false });
 

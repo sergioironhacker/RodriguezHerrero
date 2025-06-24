@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, /* Facebook, Twitter, Instagram, */ Linkedin as LinkedIn, Mail, Phone, MapPin } from 'lucide-react';
+import { Shield, Linkedin as LinkedIn, Mail, Phone, MapPin } from 'lucide-react';
 
 const TikTok = (props) => (
   <svg
@@ -12,8 +12,6 @@ const TikTok = (props) => (
     <path d="M223.9 80.4c-22.1 0-40-17.9-40-40V24h-39.2v135.2c0 14.6-11.9 26.4-26.5 26.4-14.6 0-26.5-11.8-26.5-26.4 0-14.6 11.9-26.5 26.5-26.5 2.2 0 4.4.3 6.5.9v-37.6a64.2 64.2 0 00-6.5-.3c-35.3 0-64 28.7-64 64.1 0 35.3 28.7 64 64 64 35.4 0 64.1-28.7 64.1-64.1v-58.6c10.9 9.4 25 15.1 40.1 15.1v-39.2z" />
   </svg>
 );
-
-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,12 +43,8 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    /*  { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-     { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-     { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' }, */
     { icon: LinkedIn, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: TikTok, href: 'https://tiktok.com', label: 'TikTok' },
-
+    { icon: TikTok, href: 'https://tiktok.com', label: 'TikTok' }
   ];
 
   const scrollToSection = (href) => {
@@ -65,59 +59,51 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4">
-        {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid lg:grid-cols-5 gap-8">
-            {/* Company Info */}
             <div className="lg:col-span-2">
-           <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  viewport={{ once: true }}
-  className="mb-6 cursor-pointer"
-  onClick={() => scrollToSection("#inicio")}
->
-  <div className="flex items-center space-x-2 shrink-0">
-    <img src="/logoMain.png" alt="Rodríguez Herrero 23" className="h-10 w-auto" />
-    <div className="flex flex-col justify-center">
-      <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-none">
-        Rodríguez Herrero 23
-      </span>
-      <span className="text-[13px] sm:text-xs font-medium text-center mt-0.5 text-foreground/70">
-        Seguros e Inversiones
-      </span>
-    </div>
-  </div>
-  <p className="text-muted-foreground leading-relaxed mt-4">
-   Desde 1992 protegemos lo que más valoras.
-Somos tu aliado de confianza en seguros e inversiones, ofreciendo tranquilidad y seguridad a más de 2.000 familias y empresas. Nuestra experiencia y compromiso nos avalan para acompañarte en cada etapa de tu vida.
-
-  </p>
-</motion.div>
-
-
-              {/* Contact Info */}
-              {/*  <div className="space-y-3">
-                <div className="flex items-center text-muted-foreground">
-                  <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                  <span className="text-sm">Av. Padre Claret, 12 P1 (Negocios Exitus)</span>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="mb-6 cursor-pointer"
+                onClick={() => scrollToSection("#inicio")}
+              >
+                <div className="flex items-center space-x-2 shrink-0">
+                  <img src="/logoMain.png" alt="Rodríguez Herrero 23" className="h-10 w-auto" />
+                  <div className="flex flex-col justify-center">
+                    <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-none">
+                      Rodríguez Herrero 23
+                    </span>
+                    <span className="text-[13px] sm:text-xs font-medium text-center mt-0.5 text-foreground/70">
+                      Seguros e Inversiones
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Phone className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                  <span className="text-sm">+34 607 726 826</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Mail className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                  <span className="text-sm">segurosrogriguezherrero23@gmail.com</span>
-                </div>
-              </div> */}
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  Desde 1992 protegemos lo que más valoras. Somos tu aliado de confianza en seguros e inversiones, ofreciendo tranquilidad y seguridad a más de 2.000 familias y empresas. Nuestra experiencia y compromiso nos avalan para acompañarte en cada etapa de tu vida.
+                </p>
+              </motion.div>
+
               <div className="space-y-3">
-                <div className="flex items-center text-muted-foreground">
-                  <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                  <span className="text-sm">Av. Padre Claret, 12 P1 40001 (Negocios Exitus)</span>
-                  <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                  <span className="text-sm">Plz. Mayor, 16 40470 Navas de Oro (Segovia)</span>
+                <div className="flex flex-col md:flex-row md:items-start gap-4 text-muted-foreground">
+                  <div className="flex items-start">
+                    <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0 mt-1" />
+                    <div className="text-sm leading-tight">
+                      Av. Padre Claret, P1 12 (Negocios Exitus)
+                      <br />
+                      <span className="whitespace-nowrap">40001 Segovia</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <MapPin className="h-4 w-4 mr-3 text-primary flex-shrink-0 mt-1" />
+                    <div className="text-sm leading-tight">
+                      Pz. Mayor, 16
+                      <br />
+                      <span className="whitespace-nowrap">40470 Navas de Oro (Segovia)</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center text-muted-foreground">
                   <Phone className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
@@ -128,12 +114,11 @@ Somos tu aliado de confianza en seguros e inversiones, ofreciendo tranquilidad y
                 <div className="flex items-center text-muted-foreground">
                   <Mail className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
                   <a href="mailto:segurosrogriguezherrero23@gmail.com" className="text-sm hover:underline">
-                    segurosrogriguezherrero23@gmail.com
+                    segurosrodriguezherrero23@gmail.com
                   </a>
                 </div>
               </div>
 
-              {/* Social Links */}
               <div className="flex space-x-4 mt-6">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -152,7 +137,6 @@ Somos tu aliado de confianza en seguros e inversiones, ofreciendo tranquilidad y
               </div>
             </div>
 
-            {/* Services Links */}
             <div>
               <h3 className="font-semibold text-foreground mb-4">Servicios</h3>
               <ul className="space-y-3">
@@ -169,7 +153,6 @@ Somos tu aliado de confianza en seguros e inversiones, ofreciendo tranquilidad y
               </ul>
             </div>
 
-            {/* Company Links */}
             <div>
               <h3 className="font-semibold text-foreground mb-4">Empresa</h3>
               <ul className="space-y-3">
@@ -186,7 +169,6 @@ Somos tu aliado de confianza en seguros e inversiones, ofreciendo tranquilidad y
               </ul>
             </div>
 
-            {/* Legal Links */}
             <div>
               <h3 className="font-semibold text-foreground mb-4">Legal</h3>
               <ul className="space-y-3">
@@ -205,32 +187,6 @@ Somos tu aliado de confianza en seguros e inversiones, ofreciendo tranquilidad y
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        {/*   <div className="py-8 border-t border-border">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                Mantente Informado
-              </h3>
-              <p className="text-muted-foreground break-words whitespace-normal">
-                Recibe consejos de seguridad, noticias del sector y ofertas especiales
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Tu email"
-                className="flex-1 px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-              <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-colors duration-200">
-                Suscribirse
-              </button>
-            </div>
-          </div>
-        </div> */}
-
-
-        {/* Bottom Bar */}
         <div className="py-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">

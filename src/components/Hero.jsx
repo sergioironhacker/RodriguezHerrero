@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Phone, MessageCircle, Award,  Briefcase, GraduationCap } from 'lucide-react';
+import { Shield, Phone, MessageCircle, Award, Briefcase, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -25,7 +25,7 @@ const Hero = () => {
         <img
           className="w-full h-full object-cover brightness-95 contrast-95"
           alt="Familia feliz protegida por seguros"
-          src="https://images.unsplash.com/photo-1694185752018-2ff397cb99b4"
+          src="/heroimg.jpg"   /* https://images.unsplash.com/photo-1694185752018-2ff397cb99b4 */
         />
         <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] dark:bg-blue-950/55"></div>
       </div>
@@ -102,88 +102,88 @@ const Hero = () => {
 
 
 
-           {/*  ////////////////////////////////////////// */}
+            {/*  ////////////////////////////////////////// */}
 
             {/* Botón de Oferta que despliega las imágenes */}
             <Button
-              size="lg"
+              size="sm"
               onClick={() => setShowOffers(!showOffers)}
-              className="text-white font-semibold px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:shadow-red-500/25 hover:shadow-2xl hover:scale-105 bg-blue-500/50"
+              className="text-white font-semibold px-10 py-6 text-sm rounded-full transition-all duration-300 transform hover:shadow-red-500/25 hover:shadow-2xl hover:scale-105 bg-blue-500/50"
             >
-              Oferta el primer año
+              Oferta especial hasta AGOSTO
             </Button>
           </motion.div>
 
           {/* Contenedor de las imágenes que aparece con la oferta */}
           {showOffers && (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
-  >
-   {/* SEGURO DE HOGAR */}
-<a
-  href="https://wa.me/34607726826?text=Hola%20Alberto%2C%20estaba%20interesado%20en%20un%20seguro%20de%20hogar"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
->
-  <div className="relative">
-    <img
-      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-      alt="Seguro de hogar"
-      className="w-full h-48 object-cover"
-    />
-    {/* TEXTO SUPERPUESTO EN LA IMAGEN */}
-    <div className="absolute inset-0 flex items-center justify-center">
-      <span className="bg-white/60 text-black text-sm px-3 py-1 rounded-md shadow-lg font-semibold">
-        20% descuento hasta Agosto
-      </span>
-    </div>
-  </div>
-  <div className="p-4 text-black text-center">
-    <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
-    <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
-    <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
-  </div>
-</a>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
+            >
+              {/* SEGURO DE HOGAR */}
+              <a
+                href="/Allianz Hogar_960x1200px.jpg.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
+              >
+                <div className="relative">
+                  <img
+                    src="/Allianz Hogar_960x1200px.jpg.jpg"
+                    alt="Seguro de hogar"
+                    className="w-full h-48 object-cover"
+                  />
+                  {/* TEXTO SUPERPUESTO EN LA IMAGEN */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="bg-white/60 text-black text-sm px-3 py-1 rounded-md shadow-lg font-semibold">
+                      20% descuento hasta Agosto
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4 text-black text-center">
+                  <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
+                  <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
+                  <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
+                </div>
+              </a>
 
-{/* SEGURO DE VIDA */}
-<a
-  href="https://wa.me/34607726826?text=Hola%20Alberto%2C%20estaba%20interesado%20en%20un%20seguro%20de%20vida"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
->
-  <div className="relative">
-    <img
-      src="https://canzobresegade.com/wp-content/uploads/2024/11/seguro-de-vida-manos.jpg"
-      alt="Seguro de vida"
-      className="w-full h-48 object-cover"
-    />
-    {/* TEXTO SUPERPUESTO CENTRADO EN LA IMAGEN */}
-    <div className="absolute inset-0 flex items-center justify-center">
-      <span className="bg-white/60 text-black text-sm px-3 py-1 rounded-md shadow-lg font-semibold">
-        30% descuento hasta julio
-      </span>
-    </div>
-  </div>
-  <div className="p-4 text-black text-center">
-    <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
-    <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
-    <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
-  </div>
-</a>
+              {/* SEGURO DE VIDA */}
+              <a
+                href="/Vida 2.jpg.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
+              >
+                <div className="relative">
+                  <img
+                    src="/Vida 2.jpg.jpg"
+                    alt="Seguro de vida"
+                    className="w-full h-48 object-cover"
+                  />
+                  {/* TEXTO SUPERPUESTO CENTRADO EN LA IMAGEN */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="bg-white/60 text-black text-sm px-3 py-1 rounded-md shadow-lg font-semibold">
+                      30% descuento hasta julio
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4 text-black text-center">
+                  <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
+                  <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
+                  <p className="mt-2 text-blue-900 text-xs underline">Haz clic para más información</p>
+                </div>
+              </a>
 
-  </motion.div>
-)}
-
-
+            </motion.div>
+          )}
 
 
 
-        {/*   ////////////////////////////////// */}
+
+
+          {/*   ////////////////////////////////// */}
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -208,7 +208,7 @@ const Hero = () => {
       </div>
 
 
-     {/*  //////////////////////////////////////////////////////////// */}
+      {/*  //////////////////////////////////////////////////////////// */}
 
       {/* Indicador de scroll */}
       <motion.div
