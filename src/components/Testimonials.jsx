@@ -9,42 +9,42 @@ const Testimonials = () => {
       role: 'Madre de familia',
       content: 'Alberto nos ha brindado la tranquilidad que necesitábamos. Cuando tuvimos un accidente, su respuesta fue inmediata y profesional. Recomiendo sus servicios sin dudarlo.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/44.jpg'
+      /* image: 'https://randomuser.me/api/portraits/women/44.jpg' */
     },
     {
       name: 'Carlos Rodríguez',
       role: 'Empresario',
       content: 'Como dueño de una empresa, necesitaba un seguro confiable. El equipo de Alberto diseñó una póliza perfecta para mis necesidades. Su atención al cliente es excepcional.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/32.jpg'
+      /* image: 'https://randomuser.me/api/portraits/men/32.jpg' */
     },
     {
       name: 'Ana Martínez',
       role: 'Profesional independiente',
       content: 'El seguro de salud que contraté me ha salvado de gastos enormes. La red de médicos es excelente y los trámites son muy sencillos. Estoy muy satisfecha.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/21.jpg'
+      /* image: 'https://randomuser.me/api/portraits/women/21.jpg' */
     },
     {
       name: 'Roberto Silva',
       role: 'Jubilado',
       content: 'Después de 40 años trabajando, quería proteger mi patrimonio. Alberto me ofreció opciones claras y honestas. Su asesoría fue fundamental para tomar la mejor decisión.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/47.jpg'
+      /* image: 'https://randomuser.me/api/portraits/men/47.jpg' */
     },
     {
       name: 'Laura Fernández',
       role: 'Joven profesional',
       content: 'Como recién graduada, pensé que los seguros eran muy caros. Alberto me mostró opciones accesibles y me explicó todo de manera muy clara. Excelente servicio.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/35.jpg'
+      /* image: 'https://randomuser.me/api/portraits/women/35.jpg' */
     },
     {
       name: 'Miguel Torres',
       role: 'Conductor frecuente',
       content: 'Mi seguro de auto con Alberto me ha dado mucha confianza. Cuando necesité asistencia en carretera, llegaron en menos de 30 minutos. Servicio de primera.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/79.jpg'
+      /* image: 'https://randomuser.me/api/portraits/men/79.jpg' */
     }
   ];
 
@@ -111,11 +111,11 @@ const Testimonials = () => {
 
             {/* Author */}
             <div className="flex items-center">
-              <img
+           {/*    <img
                 src={testimonial.image}
                 alt={`${testimonial.name} - Cliente satisfecho`}
                 className="w-12 h-12 rounded-full object-cover mr-4"
-              />
+              /> */}
               <div>
                 <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
                 <p className="text-sm text-muted-foreground">{testimonial.role}</p>

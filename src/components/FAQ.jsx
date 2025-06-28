@@ -85,12 +85,13 @@ const FAQ = () => {
               viewport={{ once: true }}
               className="lg:col-span-1 fade-in"
             >
-              <div className="bg-primary/10 rounded-2xl p-8 text-center border border-primary/20">
+              <div className="bg-primary/10 rounded-2xl p-8 text-center border border-primary/20 max-w-full overflow-hidden">
                 <HelpCircle className="h-20 w-20 text-primary mx-auto mb-6" />
                 <h3 className="text-2xl font-bold mb-4 text-foreground">¿Tienes dudas?</h3>
                 <p className="text-muted-foreground mb-6">
                   Estamos aquí para ayudarte. Si no encuentras la respuesta que buscas, contáctanos directamente.
                 </p>
+
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <p>
                     📞{' '}
@@ -98,18 +99,18 @@ const FAQ = () => {
                       607 726 826
                     </a>
                   </p>
-                 <p className="break-words">
-  <a
-    href="mailto:segurosrodriguezherrero23@gmail.com"
-    className="hover:underline inline-flex items-center space-x-1"
-  >
-    <span>📧</span>
-    <span>segurosrodriguezherrero23@gmail.com</span>
-  </a>
-</p>
-                  {/* <p>💬 Chat en vivo disponible</p> */}
+                  <p className="truncate sm:whitespace-normal sm:break-all">
+                    📧{' '}
+                    <a
+                      href="mailto:segurosrodriguezherrero23@gmail.com"
+                      className="hover:underline"
+                    >
+                      segurosrodriguezherrero23@gmail.com
+                    </a>
+                  </p>
                 </div>
               </div>
+
             </motion.div>
 
             {/* FAQ List */}

@@ -153,9 +153,9 @@ const Hero = () => {
                     href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20hogar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 block text-blue-900 text-xs underline cursor-pointer"
+                    className="mt-2 block text-blue-900 text-xs /*  */ cursor-pointer"
                   >
-                    Haz clic para más información
+                  👉 Haz clic para más información
                   </a>
                 </div>
               </a>
@@ -188,9 +188,9 @@ const Hero = () => {
                     href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 block text-blue-900 text-xs underline cursor-pointer"
+                    className="mt-2 block text-blue-900 text-xs  cursor-pointer"
                   >
-                    Haz clic para más información
+                  👉 Haz clic para más información
                   </a>
                 </div>
               </a>

@@ -335,13 +335,13 @@ const Contact = () => {
               {/* Horario de atención */}
               <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500">
                 <h3 className="font-semibold text-black  mb-2 text-1xl">
-                  Horario de Atención (Verano)
+                  Horario de Oficina
                 </h3>
                 <ul className="font-semibold text-black text-xs space-y-1">
 
-                  <li>LUNES – MIERCOLES – VIERNES 
+                  <li>Lunes – Miercoles – Vernes
                     <br />
-                     09:00 – 14:00</li>
+                     09:00 a 14:00</li>
                   {/* <li>Lunes - Miercoles - Viernes : 8:00 - 6:00</li>
       <li>Sábado: 9:00  - 14:00 </li> */}
                 </ul>
@@ -390,13 +390,13 @@ const Contact = () => {
               {/* Horario de atención */}
               <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500">
                 <h5 className="font-semibold text-black mb-2 text-1xl">
-                  Horario de Atención
+                  Horario de Oficina
                 </h5>
                 <ul className="font-semibold text-black text-xs space-y-1">
 
-                  <li>MARTES – JUEVES 
+                  <li>Martes – Jueves
                     <br />
-                    09:30 A 13:30
+                    09:30 a 14:00
                   </li>
                   {/* <li>Martes: 9:00 AM - 2:00 PM</li>
       <li>Jueves: 9:00 AM - 2:00 PM</li> */}
