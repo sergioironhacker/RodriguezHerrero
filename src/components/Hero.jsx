@@ -23,6 +23,7 @@ const Hero = () => {
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
+          loading="lazy"
           className="w-full h-full object-cover brightness-95 contrast-95"
           alt="Familia feliz protegida por seguros"
           src="/heroimg.jpg"   /* https://images.unsplash.com/photo-1694185752018-2ff397cb99b4 */
