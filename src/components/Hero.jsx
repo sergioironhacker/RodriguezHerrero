@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Phone, MessageCircle, Award, Briefcase, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,12 +8,18 @@ import { Button } from '@/components/ui/button';
 const Hero = () => {
   const [showOffers, setShowOffers] = useState(false);
 
-  const scrollToSection = (href) => {
+  const scrollToSection = useCallback((href) => {
+    if (!href.startsWith('#')) {
+      console.warn(`El selector '${href}' no es válido para scrollIntoView. Debe comenzar con '#'`);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn(`No se encontró el elemento con selector: ${href}`);
     }
-  };
+  }, []);
 
   return (
     <section
@@ -23,10 +29,10 @@ const Hero = () => {
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
-          /* loading="lazy" */ loading="eager"
+          loading="eager"
           className="w-full h-full object-cover brightness-95 contrast-95"
           alt="Familia feliz protegida por seguros"
-          src="/heroimg.jpg"   /* https://images.unsplash.com/photo-1694185752018-2ff397cb99b4 */
+          src="/heroimg.jpg"
         />
         <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] dark:bg-blue-950/55"></div>
       </div>
@@ -86,7 +92,7 @@ const Hero = () => {
               size="lg"
               onClick={() => scrollToSection('#contacto')}
               className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
-              style={{ backgroundColor: 'rgb(21, 54, 151 , 0.7)' }}
+              style={{ backgroundColor: 'rgba(21, 54, 151, 0.7)' }}
             >
               Contrata Ahora
             </Button>
@@ -103,10 +109,6 @@ const Hero = () => {
               </a>
             </Button>
 
-
-
-            {/*  ////////////////////////////////////////// */}
-
             {/* Botón de Oferta que despliega las imágenes */}
             <Button
               size="sm"
@@ -119,93 +121,76 @@ const Hero = () => {
 
           {/* Contenedor de las imágenes que aparece con la oferta */}
           {showOffers && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
-            >
-              {/* SEGURO DE HOGAR */}
-              <a
-             
-                href="/Allianz Hogar_960x1200px.jpg.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
-              >
-                <div className="relative">
-                  <img
-                  loading="lazy"
-                    src="/Allianz Hogar_960x1200px.jpg.jpg"
-                    alt="Seguro de hogar"
-                    className="w-full h-48 object-cover"
-                  />
-                  {/* TEXTO SUPERPUESTO EN LA IMAGEN */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">
-                      30% descuento
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 text-black text-center">
-                  <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
-                  <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
-                  {/* Aquí el link a WhatsApp */}
-                  <a
-                    href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20hogar"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 block text-blue-900 text-xs /*  */ cursor-pointer"
-                  >
-                  👉 Haz clic para más información
-                  </a>
-                </div>
-              </a>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8"
+  >
+    {/* SEGURO DE HOGAR */}
+    <div
+      className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-default"
+    >
+      <div className="relative">
+        <img
+          loading="lazy"
+          src="/Allianz Hogar_960x1200px.jpg.jpg"
+          alt="Seguro de hogar"
+          className="w-full h-48 object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">
+            30% descuento
+          </span>
+        </div>
+      </div>
+      <div className="p-4 text-black text-center">
+        <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
+        <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
+        <a
+          href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20hogar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 block text-blue-800 text-xs cursor-pointer"
+        >
+          👉 Haz clic para más información
+        </a>
+      </div>
+    </div>
 
-              {/* SEGURO DE VIDA */}
-              <a
-                href="/Vida 2.jpg.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer"
-              >
-                <div className="relative">
-                  <img
-                  loading="lazy"
-                    src="/Vida 2.jpg.jpg"
-                    alt="Seguro de vida"
-                    className="w-full h-48 object-cover"
-                  />
-                  {/* TEXTO SUPERPUESTO CENTRADO EN LA IMAGEN */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">
-                      60% descuento
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 text-black text-center">
-                  <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
-                  <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
-                  {/* Link a WhatsApp */}
-                  <a
-                    href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 block text-blue-900 text-xs  cursor-pointer"
-                  >
-                  👉 Haz clic para más información
-                  </a>
-                </div>
-              </a>
+    {/* SEGURO DE VIDA */}
+    <div
+      className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-default"
+    >
+      <div className="relative">
+        <img
+          loading="lazy"
+          src="/Vida 2.jpg.jpg"
+          alt="Seguro de vida"
+          className="w-full h-48 object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">
+            60% descuento
+          </span>
+        </div>
+      </div>
+      <div className="p-4 text-black text-center">
+        <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
+        <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
+        <a
+          href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 block text-blue-800 text-xs cursor-pointer"
+        >
+          👉 Haz clic para más información
+        </a>
+      </div>
+    </div>
+  </motion.div>
+)}
 
-            </motion.div>
-          )}
-
-
-
-
-
-          {/*   ////////////////////////////////// */}
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -226,12 +211,8 @@ const Hero = () => {
               <span className="text-sm font-bold">Asesoría personalizada</span>
             </div>
           </motion.div>
-
         </motion.div>
       </div>
-
-
-      {/*  //////////////////////////////////////////////////////////// */}
 
       {/* Indicador de scroll */}
       <motion.div
