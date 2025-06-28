@@ -23,19 +23,21 @@ const Hero = () => {
 
   return (
     <section
-      id="inicio"
-      className="relative min-h-screen flex items-center justify-center bg-black z-0"
-    >
-      {/* Imagen de fondo */}
-      <div className="absolute inset-0">
-        <img
-          loading="eager"
-          className="w-full h-full object-cover brightness-95 contrast-95"
-          alt="Familia feliz protegida por seguros"
-          src="/heroimg.jpg"
-        />
-        <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] dark:bg-blue-950/55"></div>
-      </div>
+  id="inicio"
+  className="relative min-h-screen flex items-center justify-center bg-black z-0"
+>
+  {/* Imagen de fondo */}
+  <div className="absolute inset-0 -z-10 overflow-hidden">
+    <img
+      loading="eager"
+      className="w-full h-full object-cover brightness-95 contrast-95 will-change-transform"
+      alt="Familia feliz protegida por seguros"
+      src="/heroimg.jpg"
+      style={{ backfaceVisibility: 'hidden' }}
+      draggable={false}
+    />
+    <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] dark:bg-blue-950/55"></div>
+  </div>
 
       {/* Efectos flotantes */}
       <div className="absolute inset-0 pointer-events-none">
