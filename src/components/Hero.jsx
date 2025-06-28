@@ -23,7 +23,7 @@ const Hero = () => {
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
-          loading="lazy"
+          /* loading="lazy" */ loading="eager"
           className="w-full h-full object-cover brightness-95 contrast-95"
           alt="Familia feliz protegida por seguros"
           src="/heroimg.jpg"   /* https://images.unsplash.com/photo-1694185752018-2ff397cb99b4 */
@@ -127,6 +127,7 @@ const Hero = () => {
             >
               {/* SEGURO DE HOGAR */}
               <a
+             
                 href="/Allianz Hogar_960x1200px.jpg.jpg"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -134,6 +135,7 @@ const Hero = () => {
               >
                 <div className="relative">
                   <img
+                  loading="lazy"
                     src="/Allianz Hogar_960x1200px.jpg.jpg"
                     alt="Seguro de hogar"
                     className="w-full h-48 object-cover"
@@ -169,6 +171,7 @@ const Hero = () => {
               >
                 <div className="relative">
                   <img
+                  loading="lazy"
                     src="/Vida 2.jpg.jpg"
                     alt="Seguro de vida"
                     className="w-full h-48 object-cover"
