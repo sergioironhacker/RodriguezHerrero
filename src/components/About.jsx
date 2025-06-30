@@ -23,13 +23,13 @@ const About = () => {
     {
       icon: Award,
       number: '98%',
-      label: 'Satisfacción del Cliente'
+      label: 'Confianza del Cliente'
     },
-    {
+    /* {
       icon: Clock,
       number: '24/7',
       label: 'Atención al Cliente'
-    }
+    } */
   ];
 
   const values = [
@@ -94,22 +94,24 @@ const About = () => {
           </p>
 
           {/* Stats aquí, justo debajo del texto anterior */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 fade-in">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-all duration-300"
-              >
-                <stat.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
-                <div className="text-muted-foreground font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+          <div className="flex justify-center mb-16 fade-in">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full px-4">
+    {stats.map((stat, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        viewport={{ once: true }}
+        className="text-center p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-all duration-300"
+      >
+        <stat.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+        <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
+        <div className="text-muted-foreground font-medium">{stat.label}</div>
+      </motion.div>
+    ))}
+  </div>
+</div>
 
 
           {/* Misión y Visión */}

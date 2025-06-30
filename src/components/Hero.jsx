@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, memo } from 'react';
-import { Phone, MessageCircle, GraduationCap } from 'lucide-react';
+import { Phone, MessageCircle, GraduationCap , Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
@@ -147,8 +147,8 @@ const Hero = () => {
               <span className="text-sm font-bold">+30 años de experiencia</span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="h-5 w-5" />
-              <span className="text-sm font-bold">Atención 24/7</span>
+              <Users className="h-5 w-5" />
+              <span className="text-sm font-bold">+2000 clientes</span>
             </div>
             <div className="flex items-center gap-2">
               <MessageCircle className="h-5 w-5" />

@@ -158,7 +158,7 @@ const Testimonials = () => {
               </div>
               <div>
                 <div className="text-4xl font-bold text-primary mb-2">4.9/5</div>
-                <div className="text-muted-foreground">Calificación Promedio</div>
+                <div className="text-muted-foreground">Valoración media</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-primary mb-2">+2000</div>
