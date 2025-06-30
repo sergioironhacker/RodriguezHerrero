@@ -197,7 +197,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Nuestros Valores
+           Nuestros <span className="text-blue-600">Productos</span>
           </motion.h3>
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
