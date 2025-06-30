@@ -13,6 +13,21 @@ const TikTok = (props) => (
   </svg>
 );
 
+
+const Google = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 256 262"
+    fill="currentColor"
+    {...props}
+  >
+    <path fill="#4285F4" d="M255.9 133.5c0-10.2-.9-20-2.6-29.5H130v55.9h71.5c-3.1 16.4-12.3 30.3-26.2 39.5v32h42.3c24.8-22.9 38.3-56.6 38.3-97.9z" />
+    <path fill="#34A853" d="M130 262c35.1 0 64.5-11.6 86-31.5l-42.3-32c-11.8 7.9-27 12.6-43.7 12.6-33.6 0-62.1-22.7-72.3-53.2H14.7v33.3C36.2 234.2 79.9 262 130 262z" />
+    <path fill="#FBBC04" d="M57.7 157.9c-2.8-8.4-4.4-17.4-4.4-26.6s1.6-18.2 4.4-26.6V71.4H14.7C5.3 90.2 0 110.4 0 131.3s5.3 41.1 14.7 59.9l43-33.3z" />
+    <path fill="#EA4335" d="M130 51.8c19.1 0 36.2 6.6 49.7 19.5l37.4-37.4C194.5 12.5 165.1 0 130 0 79.9 0 36.2 27.8 14.7 71.4l43 33.3c10.2-30.5 38.7-53.2 72.3-53.2z" />
+  </svg>
+);
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -44,7 +59,12 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: LinkedIn, href: 'http://www.linkedin.com/in/albertojorgerodriguez', label: 'LinkedIn' },
-    { icon: TikTok, href: 'http://www.tiktok.com/@tuseguroconrh', label: 'TikTok' }
+    { icon: TikTok, href: 'http://www.tiktok.com/@tuseguroconrh', label: 'TikTok' },
+    {
+      icon: Google,
+      href: 'https://g.co/kgs/q4mSUw6',
+      label: 'Google'
+    }
   ];
 
   const scrollToSection = (href) => {

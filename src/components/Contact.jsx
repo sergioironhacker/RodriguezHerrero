@@ -339,9 +339,9 @@ const Contact = () => {
                 </h3>
                 <ul className="font-semibold text-black text-xs space-y-1">
 
-                  <li>Lunes – Miercoles – Vernes
+                  <li>Lunes – Miércoles – Viernes
                     <br />
-                     09:00 a 14:00</li>
+                     09:30 a 13:30</li>
                   {/* <li>Lunes - Miercoles - Viernes : 8:00 - 6:00</li>
       <li>Sábado: 9:00  - 14:00 </li> */}
                 </ul>
@@ -396,7 +396,7 @@ const Contact = () => {
 
                   <li>Martes – Jueves
                     <br />
-                    09:30 a 14:00
+                    09:30 a 13:30
                   </li>
                   {/* <li>Martes: 9:00 AM - 2:00 PM</li>
       <li>Jueves: 9:00 AM - 2:00 PM</li> */}
