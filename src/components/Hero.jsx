@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useCallback, memo } from 'react';
-import { motion } from 'framer-motion';
 import { Phone, MessageCircle, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -52,21 +51,34 @@ const Hero = () => {
       id="inicio"
       className="relative min-h-screen flex items-center justify-center bg-black z-0"
     >
-      {/* Imagen de fondo optimizada */}
+      {/* Imagen de fondo optimizada y responsive */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <img
-          loading="eager"
-          decoding="async"
-          src="/heroimg.webp"
-          alt="Familia feliz protegida por seguros"
-          className="w-full h-full object-cover brightness-[.95] contrast-[.95]"
-          draggable={false}
-          width={1920}
-          height={1080}
-        />
+        <picture>
+          <source
+            srcSet="/heroimg-mobile.webp"
+            media="(max-width: 768px)"
+            type="image/webp"
+          />
+          <source
+            srcSet="/heroimg-desktop.webp"
+            media="(min-width: 769px)"
+            type="image/webp"
+          />
+          <img
+            src="/heroimg-desktop.webp"
+            alt="Familia feliz protegida por seguros"
+            className="w-full h-full object-cover brightness-[.95] contrast-[.95]"
+            loading="eager"
+            decoding="async"
+            draggable={false}
+            width={1280}
+            height={720}
+          />
+        </picture>
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
+      {/* Contenido principal */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="max-w-4xl mx-auto">
           <h1 className="mt-20 text-2xl sm:text-5xl font-bold mb-6 leading-tight">
@@ -108,6 +120,7 @@ const Hero = () => {
             </Button>
           </div>
 
+          {/* Ofertas dinámicas */}
           {showOffers && (
             <div className="mt-12 flex flex-wrap justify-center items-center gap-6">
               <OfferCard
