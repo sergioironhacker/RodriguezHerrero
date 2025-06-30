@@ -1,9 +1,39 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, memo } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
+const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
+  <a
+    href={link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-[1.02] cursor-pointer block"
+  >
+    <div className="relative">
+      <img
+        loading="lazy"
+        src={imgSrc}
+        alt={title}
+        className="w-full h-48 object-cover"
+      />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">
+          {discount}
+        </span>
+      </div>
+    </div>
+    <div className="p-4 text-black text-center">
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="text-sm">{description}</p>
+      <span className="mt-2 block text-blue-900 underline font-bold text-xs">
+        👉 Haz clic para más información
+      </span>
+    </div>
+  </a>
+));
 
 const Hero = () => {
   const [showOffers, setShowOffers] = useState(false);
@@ -11,43 +41,38 @@ const Hero = () => {
   const scrollToSection = useCallback((href) => {
     if (!href.startsWith('#')) return;
     const element = document.querySelector(href);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center bg-black z-0">
-      {/* Imagen de fondo */}
+    <section
+      id="inicio"
+      className="relative min-h-screen flex items-center justify-center bg-black z-0"
+    >
+      {/* Imagen de fondo optimizada */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img
-          loading="eager"
-          className="w-full h-full object-cover brightness-95 contrast-95 will-change-transform"
+          loading="lazy"
+          className="w-full h-full object-cover brightness-95 contrast-95"
           alt="Familia feliz protegida por seguros"
           src="/heroimg.jpg"
-          style={{ backfaceVisibility: 'hidden' }}
           draggable={false}
         />
-        <div className="absolute inset-0 bg-[rgba(0,0,0,0.1)] dark:bg-blue-950/55"></div>
-      </div>
-
-      {/* Efectos flotantes */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ duration: 6, repeat: Infinity }} className="absolute top-20 left-10 w-16 h-16 bg-white/10 rounded-full backdrop-blur-sm" />
-        <motion.div animate={{ y: [0, 30, 0], rotate: [0, -5, 0] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-40 right-20 w-24 h-24 bg-white/5 rounded-full backdrop-blur-sm" />
-        <motion.div animate={{ y: [0, -15, 0], x: [0, 10, 0] }} transition={{ duration: 7, repeat: Infinity }} className="absolute bottom-40 left-1/4 w-12 h-12 bg-white/15 rounded-full backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-[rgba(0,0,0,0.2)] dark:bg-blue-950/55"></div>
       </div>
 
       {/* Contenido principal */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center text-white">
-        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto">
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }} className="mt-24 text-2xl sm:text-5xl md:text-5xl font-bold mb-7 leading-tight text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="mt-24 text-2xl sm:text-5xl font-bold mb-7 leading-tight text-center">
             Tu <span style={{ color: 'rgb(12, 46, 148)' }}>futuro</span> protegido por quienes se preocupan de verdad.
-          </motion.h1>
+          </h1>
 
-          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }} className="text-lg sm:text-xl md:text-2xl mb-4 text-white font-semibold">
+          <p className="text-lg sm:text-xl md:text-2xl mb-4 text-white font-semibold">
             Soluciones diseñadas para cuidar lo que más valoras, con respaldo, experiencia y cercanía.
-          </motion.p>
+          </p>
 
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.8 }} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               size="lg"
               onClick={() => scrollToSection('#contacto')}
@@ -76,58 +101,30 @@ const Hero = () => {
             >
               Oferta especial hasta AGOSTO
             </Button>
-          </motion.div>
+          </div>
 
-          {/* Contenedor de las ofertas */}
+          {/* Ofertas */}
           {showOffers && (
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8">
-              {/* Seguro de Hogar */}
-              <a
-                href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20hogar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer no-underline"
-              >
-                <div className="relative">
-                  <img loading="lazy" src="/Allianz Hogar_960x1200px.jpg.jpg" alt="Seguro de hogar" className="w-full h-48 object-cover" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">30% descuento</span>
-                  </div>
-                </div>
-                <div className="p-4 text-black text-center">
-                  <h3 className="text-xl font-bold mb-2">Seguro de Hogar</h3>
-                  <p className="text-sm">Protege tu vivienda con las mejores coberturas desde el primer día.</p>
-                  <span className="mt-2 block text-blue-900 text-xs font-semibold underline">
-                    👉 Haz clic para más información
-                  </span>
-                </div>
-              </a>
-
-              {/* Seguro de Vida */}
-              <a
-                href="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-105 cursor-pointer no-underline"
-              >
-                <div className="relative">
-                  <img loading="lazy" src="/Vida 2.jpg.jpg" alt="Seguro de vida" className="w-full h-48 object-cover" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">60% descuento</span>
-                  </div>
-                </div>
-                <div className="p-4 text-black text-center">
-                  <h3 className="text-xl font-bold mb-2">Seguro de Vida</h3>
-                  <p className="text-sm">Tranquilidad para ti y tu familia con una cobertura completa.</p>
-                  <span className="mt-2 block text-blue-900 text-xs font-semibold underline">
-                    👉 Haz clic para más información
-                  </span>
-                </div>
-              </a>
-            </motion.div>
+            <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8">
+              <OfferCard
+                title="Seguro de Hogar"
+                imgSrc="/Allianz Hogar_960x1200px.jpg.jpg"
+                discount="30% descuento"
+                description="Protege tu vivienda con las mejores coberturas desde el primer día."
+                link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20hogar"
+              />
+              <OfferCard
+                title="Seguro de Vida"
+                imgSrc="/Vida 2.jpg.jpg"
+                discount="60% descuento"
+                description="Tranquilidad para ti y tu familia con una cobertura completa."
+                link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
+              />
+            </div>
           )}
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1, duration: 0.8 }} className="mt-16 flex flex-wrap justify-center items-center gap-8 text-white/90 -translate-y-3">
+          {/* Características */}
+          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-white/90 -translate-y-3">
             <div className="flex items-center gap-2 -translate-y-2">
               <GraduationCap className="h-5 w-5" />
               <span className="text-sm font-bold">+30 años de experiencia</span>
@@ -140,18 +137,11 @@ const Hero = () => {
               <MessageCircle className="h-5 w-5" />
               <span className="text-sm font-bold">Asesoría personalizada</span>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
-
-      {/* Indicador de scroll */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 0.8 }} className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <motion.div animate={{ y: [0, 12, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-1 h-3 bg-white/70 rounded-full mt-2" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
 
-export default Hero;
+export default memo(Hero);
