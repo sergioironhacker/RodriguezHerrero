@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Users, Award, Clock, BookOpen, UserCheck,  Briefcase, GraduationCap } from 'lucide-react';
+import { Shield, Users, Award, Clock, BookOpen, UserCheck, Briefcase, GraduationCap } from 'lucide-react';
 
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -11,7 +11,7 @@ import { Shield, Users, Award, Clock, BookOpen, UserCheck,  Briefcase, Graduatio
 const About = () => {
   const stats = [
     {
-      icon:  GraduationCap,
+      icon: GraduationCap,
       number: '+30',
       label: 'Años de Experiencia'
     },
@@ -83,13 +83,13 @@ const About = () => {
           viewport={{ once: true }}
           className="fade-in"
         >
-          <h3 className="text-3xl font-bold mb-6 text-foreground">
-            Nuestra Historia
+          <h3 className="text-center text-3xl font-bold mb-6 text-foreground">
+            Nuestra <span className="text-blue-600">Historia</span>
           </h3>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+          <p className="text-center text-lg text-muted-foreground mb-6 leading-relaxed">
             Desde 1992, nuestra agencia se ha comprometido a cuidar lo que más valoran nuestros clientes. Comenzamos como un pequeño negocio familiar y, gracias al respaldo de quienes nos eligieron, hemos crecido hasta convertirnos en un apoyo sólido para quienes depositan en nosotros su seguridad.
           </p>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-center text-lg text-muted-foreground mb-8 leading-relaxed">
             Con un enfoque personalizado y un compromiso constante con la calidad, hemos construido relaciones sólidas y duraderas con más de 2000 clientes satisfechos.
           </p>
 
@@ -111,74 +111,18 @@ const About = () => {
             ))}
           </div>
 
-          {/* Slider comentado */}
-          {/*
-          <div className="relative w-full mb-12">
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              navigation
-              pagination={{ clickable: true }}
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
-              loop={true}
-              spaceBetween={20}
-              slidesPerView={1}
-              className="rounded-xl overflow-hidden shadow-lg"
-            >
-              <SwiperSlide>
-                <div className="relative w-full h-64 sm:h-96">
-                  <img
-                    src="/iStock.jpg"
-                    alt="Compromiso con el cliente"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <h4 className="text-white text-xl sm:text-2xl font-semibold text-center px-4">
-                      Compromiso con el Cliente
-                    </h4>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="relative w-full h-64 sm:h-96">
-                  <img
-                    src="/Poliza-Hogar.avif"
-                    alt="Innovación y Confianza"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <h4 className="text-white text-xl sm:text-2xl font-semibold text-center px-4">
-                      Innovación y Confianza
-                    </h4>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="relative w-full h-64 sm:h-96">
-                  <img
-                    src="/SEGUROS-1024x576.jpg"
-                    alt="Protección Integral"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <h4 className="text-white text-xl sm:text-2xl font-semibold text-center px-4">
-                      Protección Integral
-                    </h4>
-                  </div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-          */}
 
           {/* Misión y Visión */}
-          <div className="space-y-6 mb-16">
+          <div className="space-y-6 mb-6">
             <div>
-              <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Misión</h4>
-              <p className="text-muted-foreground">
+             <h3 className="text-center text-3xl font-bold mb-6 text-foreground">
+  Nuestra <span className="text-blue-600">Misión</span>
+</h3>
+              <p className="text-center text-lg text-muted-foreground">
                 Brindar tranquilidad y protección integral a nuestros clientes, mediante soluciones personalizadas en seguros e inversiones, acompañadas de un servicio excepcional.
               </p>
             </div>
-          {/*   <div>
+            {/*   <div>
               <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Visión</h4>
               <p className="text-muted-foreground">
                 Ser una agencia líder reconocida por nuestra innovación, confiabilidad
@@ -197,7 +141,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-           Nuestros <span className="text-blue-600">Productos</span>
+
           </motion.h3>
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (

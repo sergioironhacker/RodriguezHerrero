@@ -82,7 +82,7 @@ const Hero = () => {
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="max-w-4xl mx-auto">
           <h1 className="mt-20 text-2xl sm:text-5xl font-bold mb-6 leading-tight">
-            Tu <span className="text-blue-900">futuro</span> protegido por quienes se preocupan de verdad.
+            Tu <span className="text-blue-600">futuro</span> protegido por quienes se preocupan de verdad.
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl mb-4 font-semibold">
