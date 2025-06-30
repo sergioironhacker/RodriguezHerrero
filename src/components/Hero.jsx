@@ -55,7 +55,7 @@ const Hero = () => {
           loading="lazy"
           className="w-full h-full object-cover brightness-95 contrast-95"
           alt="Familia feliz protegida por seguros"
-          src="/heroimg.jpg"
+          src="/heroimg.webp"
           draggable={false}
         />
         <div className="absolute inset-0 bg-[rgba(0,0,0,0.2)] dark:bg-blue-950/55"></div>
@@ -108,14 +108,14 @@ const Hero = () => {
             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8">
               <OfferCard
                 title="Seguro de Hogar"
-                imgSrc="/Allianz Hogar_960x1200px.jpg.jpg"
+                imgSrc="/Allianz Hogar_960x1200px.webp"
                 discount="30% descuento"
                 description="Protege tu vivienda con las mejores coberturas desde el primer día."
                 link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20hogar"
               />
               <OfferCard
                 title="Seguro de Vida"
-                imgSrc="/Vida 2.jpg.jpg"
+                imgSrc="/Vida 2.webp"
                 discount="60% descuento"
                 description="Tranquilidad para ti y tu familia con una cobertura completa."
                 link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
