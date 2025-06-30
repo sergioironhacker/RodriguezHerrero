@@ -10,26 +10,29 @@ const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
     href={link}
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-blue-300/60 rounded-xl overflow-hidden shadow-xl w-[300px] transition-transform transform hover:scale-[1.02] cursor-pointer block"
+    className="bg-blue-300/60 rounded-xl overflow-hidden shadow-md w-[280px] transition-transform transform hover:scale-[1.02] cursor-pointer block"
   >
     <div className="relative">
       <img
         loading="lazy"
+        decoding="async"
         src={imgSrc}
         alt={title}
-        className="w-full h-48 object-cover"
+        className="w-full h-44 object-cover"
+        width={280}
+        height={176}
       />
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="bg-white/60 text-black text-xl px-3 py-1 rounded-md shadow-lg font-semibold">
+        <span className="bg-white/60 text-black text-base px-2 py-1 rounded-md shadow font-semibold">
           {discount}
         </span>
       </div>
     </div>
-    <div className="p-4 text-black text-center">
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
+    <div className="p-3 text-black text-center">
+      <h3 className="text-lg font-bold mb-1">{title}</h3>
       <p className="text-sm">{description}</p>
       <span className="mt-2 block text-blue-900 underline font-bold text-xs">
-        👉 Haz clic para más información
+        👉 Más información
       </span>
     </div>
   </a>
@@ -52,23 +55,25 @@ const Hero = () => {
       {/* Imagen de fondo optimizada */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img
-          loading="lazy"
-          className="w-full h-full object-cover brightness-95 contrast-95"
-          alt="Familia feliz protegida por seguros"
+          loading="eager"
+          decoding="async"
           src="/heroimg.webp"
+          alt="Familia feliz protegida por seguros"
+          className="w-full h-full object-cover brightness-[.95] contrast-[.95]"
           draggable={false}
+          width={1920}
+          height={1080}
         />
-        <div className="absolute inset-0 bg-[rgba(0,0,0,0.2)] dark:bg-blue-950/55"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      {/* Contenido principal */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="max-w-4xl mx-auto">
-          <h1 className="mt-24 text-2xl sm:text-5xl font-bold mb-7 leading-tight text-center">
-            Tu <span style={{ color: 'rgb(12, 46, 148)' }}>futuro</span> protegido por quienes se preocupan de verdad.
+          <h1 className="mt-20 text-2xl sm:text-5xl font-bold mb-6 leading-tight">
+            Tu <span className="text-blue-900">futuro</span> protegido por quienes se preocupan de verdad.
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl mb-4 text-white font-semibold">
+          <p className="text-lg sm:text-xl md:text-2xl mb-4 font-semibold">
             Soluciones diseñadas para cuidar lo que más valoras, con respaldo, experiencia y cercanía.
           </p>
 
@@ -76,7 +81,7 @@ const Hero = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection('#contacto')}
-              className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
+              className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg transition duration-300 transform hover:scale-105"
               style={{ backgroundColor: 'rgba(21, 54, 151, 0.7)' }}
             >
               Contrata Ahora
@@ -86,7 +91,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               asChild
-              className="border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-lg rounded-full backdrop-blur-sm bg-white/10 transition-all duration-300 transform hover:scale-105"
+              className="border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-lg rounded-full bg-white/10 transition duration-300 transform hover:scale-105"
             >
               <a href="tel:607726826">
                 <MessageCircle className="mr-2 h-5 w-5" />
@@ -97,15 +102,14 @@ const Hero = () => {
             <Button
               size="sm"
               onClick={() => setShowOffers(!showOffers)}
-              className="text-white font-semibold px-10 py-6 text-sm rounded-full transition-all duration-300 transform hover:shadow-red-500/25 hover:shadow-2xl hover:scale-105 bg-blue-500/50"
+              className="text-white font-semibold px-10 py-6 text-sm rounded-full transition duration-300 transform hover:shadow-xl hover:scale-105 bg-blue-500/50"
             >
               Oferta especial hasta AGOSTO
             </Button>
           </div>
 
-          {/* Ofertas */}
           {showOffers && (
-            <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8">
+            <div className="mt-12 flex flex-wrap justify-center items-center gap-6">
               <OfferCard
                 title="Seguro de Hogar"
                 imgSrc="/Allianz Hogar_960x1200px.webp"
@@ -124,16 +128,16 @@ const Hero = () => {
           )}
 
           {/* Características */}
-          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-white/90 -translate-y-3">
-            <div className="flex items-center gap-2 -translate-y-2">
+          <div className="mt-14 flex flex-wrap justify-center items-center gap-8 text-white/90">
+            <div className="flex items-center gap-2">
               <GraduationCap className="h-5 w-5" />
               <span className="text-sm font-bold">+30 años de experiencia</span>
             </div>
-            <div className="flex items-center gap-2 -translate-y-3">
+            <div className="flex items-center gap-2">
               <Phone className="h-5 w-5" />
               <span className="text-sm font-bold">Atención 24/7</span>
             </div>
-            <div className="flex items-center gap-2 -translate-y-3">
+            <div className="flex items-center gap-2">
               <MessageCircle className="h-5 w-5" />
               <span className="text-sm font-bold">Asesoría personalizada</span>
             </div>
