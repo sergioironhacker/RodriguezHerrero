@@ -24,7 +24,7 @@ const Header = ({ darkMode, setDarkMode }) => {
   const navItems = [
     { href: '#inicio', label: 'Inicio' },
     { href: '#nosotros', label: 'Nosotros' },
-    { href: '#servicios', label: 'Servicios' },
+    { href: '#servicios', label: 'Seguros' },
     { href: '#testimonios', label: 'Testimonios' },
     { href: '#contacto', label: 'Contacto' },
   ];

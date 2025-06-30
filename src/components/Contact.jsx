@@ -229,7 +229,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     rows={4}
                     className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Cuéntanos más sobre tus necesidades de seguro, eres autónomo, particular, empresa..."
+                    placeholder="Cuéntanos qué necesitas asegurar y si eres particular o empresa. Por ejemplo: “Seguro de vida para mi familia” o “Seguro para mi negocio”."
                   />
                 </div>
 
