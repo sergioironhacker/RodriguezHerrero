@@ -127,7 +127,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-           Te ayudamos a encontrar la solución ideal en seguros y ahorro, tanto para particulares como para empresas.
+            Te ayudamos a encontrar la solución ideal en seguros y ahorro, tanto para particulares como para empresas.
           </motion.p>
         </div>
 
@@ -142,7 +142,7 @@ const Contact = () => {
           >
             <div className="bg-card rounded-2xl p-4 sm:p-6 md:p-8 border border-border shadow-lg">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">
-                Solicita tu presupuesto
+                Solicita tu <span className="text-blue-600">presupuesto</span>
               </h3>
 
               <form
@@ -341,7 +341,7 @@ const Contact = () => {
 
                   <li>Lunes – Miércoles – Viernes
                     <br />
-                     09:30 a 13:30</li>
+                    09:30 a 13:30</li>
                   {/* <li>Lunes - Miercoles - Viernes : 8:00 - 6:00</li>
       <li>Sábado: 9:00  - 14:00 </li> */}
                 </ul>
