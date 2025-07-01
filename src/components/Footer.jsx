@@ -33,12 +33,12 @@ const Footer = () => {
 
   const footerLinks = {
     servicios: [
-      { name: 'Seguro de Auto', href: '#servicios' },
-      { name: 'Seguro de Hogar', href: '#servicios' },
-      { name: 'Seguro de Salud', href: '#servicios' },
-      { name: 'Seguro de Vida', href: '#servicios' },
+      { name: 'Seguro para Particulares', href: '#servicios' },
+      { name: 'Seguro para Empresas', href: '#servicios' },
+      { name: 'Ahorro e Inversiones', href: '#servicios' },
+      /* { name: 'Seguro de Vida', href: '#servicios' },
       { name: 'Seguro Empresarial', href: '#servicios' },
-      { name: 'Seguro de Viajes', href: '#servicios' }
+      { name: 'Seguro de Viajes', href: '#servicios' } */
     ],
     empresa: [
       { name: 'Sobre Nosotros', href: '#nosotros' },
@@ -158,7 +158,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3 className="font-semibold text-foreground mb-4">Servicios</h3>
+              <h3 className="font-semibold text-foreground mb-4">Seguros</h3>
               <ul className="space-y-3">
                 {footerLinks.servicios.map((link, index) => (
                   <li key={index}>

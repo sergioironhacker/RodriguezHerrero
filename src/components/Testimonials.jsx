@@ -154,7 +154,7 @@ const Testimonials = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <div className="text-4xl font-bold text-primary mb-2">98%</div>
-                <div className="text-muted-foreground">Satisfacción del Cliente</div>
+                <div className="text-muted-foreground">Confianza del Cliente</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-primary mb-2">4.9/5</div>

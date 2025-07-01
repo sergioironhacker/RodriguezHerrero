@@ -127,7 +127,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Estamos aquí para ayudarte a encontrar la protección perfecta para ti y tu familia
+           Te ayudamos a encontrar la solución ideal en seguros y ahorro, tanto para particulares como para empresas.
           </motion.p>
         </div>
 

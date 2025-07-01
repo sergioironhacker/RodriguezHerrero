@@ -45,7 +45,7 @@ const About = () => {
     },
     {
       title: 'Compromiso',
-      description: 'Estamos aquí cuando más nos necesitas, con atención personalizada 24/7.',
+      description: 'Estamos aquí cuando más nos necesitas, con atención personalizada.',
       icon: Clock
     }
   ];
