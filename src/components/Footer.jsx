@@ -43,10 +43,10 @@ const Footer = () => {
     empresa: [
       { name: 'Sobre Nosotros', href: '#nosotros' },
       { name: 'Testimonios', href: '#testimonios' },
-      { name: 'Preguntas Frecuentes', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Carreras', href: '#' },
-      { name: 'Contacto', href: '#contacto' }
+      { name: 'Preguntas Frecuentes', href: '#preguntas-frecuentes' },
+      { name: 'Contacto', href: '#' },
+      /* { name: 'Carreras', href: '#' }, */
+      { name: 'Blog', href: '#contacto' },
     ],
     legal: [
       { name: 'Aviso de Privacidad', href: '#' },
