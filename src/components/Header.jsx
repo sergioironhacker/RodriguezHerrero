@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,11 +24,12 @@ const Header = ({ darkMode, setDarkMode }) => {
   }, [isMenuOpen]);
 
   const navItems = [
-    { href: '#inicio', label: 'Inicio' },
+    { href: '/', label: 'Inicio' },
     { href: '#nosotros', label: 'Nosotros' },
     { href: '#servicios', label: 'Seguros' },
     { href: '#testimonios', label: 'Testimonios' },
     { href: '#contacto', label: 'Contacto' },
+    { href: '/blog', label: 'Blog' }
   ];
 
   const scrollToSection = (href) => {
@@ -43,6 +46,20 @@ const Header = ({ darkMode, setDarkMode }) => {
     }, 100);
   };
 
+  const handleNavClick = (href) => {
+    setIsMenuOpen(false);
+    if (href === '/blog') {
+      navigate('/blog');
+    } else if (href === '/') {
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    } else {
+      scrollToSection(href);
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -57,7 +74,13 @@ const Header = ({ darkMode, setDarkMode }) => {
           <motion.div
             className="flex items-center space-x-2 shrink-0 cursor-pointer"
             whileHover={{ scale: 1.05 }}
-            onClick={() => scrollToSection('#inicio')}
+            onClick={() => {
+              setIsMenuOpen(false);
+              navigate('/');
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }, 100);
+            }}
           >
             <img src="/logoMain.png" alt="Rodríguez Herrero 23" className="h-10 w-auto" />
 
@@ -76,7 +99,7 @@ const Header = ({ darkMode, setDarkMode }) => {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavClick(item.href)}
                 className="text-gray-100 hover:text-yellow-400 transition-colors duration-200 font-semibold"
               >
                 {item.label}
@@ -95,14 +118,14 @@ const Header = ({ darkMode, setDarkMode }) => {
             >
               {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
-         <Button
-  size="lg"
-  onClick={() => scrollToSection('#contacto')}
-  className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
-  style={{ backgroundColor: 'rgb(21, 54, 151 , 0.7)' }}
->
-  Contrata Ahora
-</Button>
+            <Button
+              size="lg"
+              onClick={() => scrollToSection('#contacto')}
+              className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
+              style={{ backgroundColor: 'rgb(21, 54, 151 , 0.7)' }}
+            >
+              Contrata Ahora
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -162,20 +185,20 @@ const Header = ({ darkMode, setDarkMode }) => {
                 {navItems.map((item) => (
                   <button
                     key={item.href}
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={() => handleNavClick(item.href)}
                     className="text-gray-100 text-2xl font-semibold hover:text-yellow-400 transition-colors duration-200"
                   >
                     {item.label}
                   </button>
                 ))}
-              <Button
-  size="lg"
-  onClick={() => scrollToSection('#contacto')}
-  className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
-  style={{ backgroundColor: 'rgb(21, 54, 151, 0.7)' }}
->
-  Contrata Ahora
-</Button>
+                <Button
+                  size="lg"
+                  onClick={() => scrollToSection('#contacto')}
+                  className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-blue-800/25 transition-all duration-300 transform hover:scale-105"
+                  style={{ backgroundColor: 'rgb(21, 54, 151, 0.7)' }}
+                >
+                  Contrata Ahora
+                </Button>
               </div>
             </motion.div>
           )}

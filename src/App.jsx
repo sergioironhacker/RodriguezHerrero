@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // <-- Importa Router, Routes, Route
 import { motion } from 'framer-motion';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
@@ -11,15 +11,28 @@ import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import Blog from '@/components/Blog';
+
+function Home() {
+  return (
+    <main id="inicio">
+      <Hero />
+      <About />
+      <Services />
+      <Testimonials />
+      <FAQ />
+      <Contact />
+    </main>
+  );
+}
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check system preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const savedTheme = localStorage.getItem('theme');
-    
+
     if (savedTheme) {
       setDarkMode(savedTheme === 'dark');
     } else {
@@ -58,20 +71,18 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Testimonials />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-      <WhatsAppFloat />
-      <Toaster />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-background text-foreground">
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+        <Footer />
+        <WhatsAppFloat />
+        <Toaster />
+      </div>
+    </Router>
   );
 }
 
