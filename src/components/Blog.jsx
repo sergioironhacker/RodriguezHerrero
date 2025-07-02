@@ -21,7 +21,7 @@ const Blog = () => {
         }}
         aria-label="Banana saltando"
       >
-        🍌
+        🚀
       </motion.p>
     </div>
   );
