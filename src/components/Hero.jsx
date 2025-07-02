@@ -51,7 +51,7 @@ const Hero = () => {
       id="inicio"
       className="relative min-h-screen flex items-center justify-center bg-black z-0"
     >
-      {/* Imagen de fondo optimizada y responsive */}
+      {/* Imagen de fondo */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <picture>
           <source
@@ -153,6 +153,21 @@ const Hero = () => {
             <div className="flex items-center gap-2">
               <MessageCircle className="h-5 w-5" />
               <span className="text-sm font-bold">Asesoría personalizada</span>
+            </div>
+          </div>
+
+          {/* Flecha animada */}
+          <div className="mt-10 flex justify-center">
+            <div className="animate-bounce text-white/80">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
           </div>
         </div>
