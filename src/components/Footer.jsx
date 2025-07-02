@@ -241,42 +241,61 @@ const Footer = () => {
 
       {/* Modal Política de Cookies */}
       {showCookiesPolicy && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-3xl w-full max-h-[80vh] overflow-y-auto p-6 relative">
-            <button
-              onClick={() => setShowCookiesPolicy(false)}
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-lg font-bold"
-              aria-label="Cerrar Política de Cookies"
-            >
-              ×
-            </button>
-            <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-  <CookieIcon className="w-8 h-8 text-yellow-500" />
-  Política de Cookies
-</h2>
-<p className="mb-4 text-gray-700 leading-relaxed">
-  En Rodríguez Herrero 23 SL utilizamos cookies para mejorar tu experiencia como usuario, optimizar el funcionamiento de nuestra página web y ofrecerte contenido personalizado.
-</p>
-<p className="mb-4 text-gray-700 leading-relaxed">
-  Las cookies son pequeños archivos que se almacenan en tu dispositivo cuando navegas por nuestro sitio web. Nos ayudan a recordar tus preferencias y a analizar cómo usas nuestros servicios para mejorar continuamente.
-</p>
-<p className="mb-4 text-gray-700 leading-relaxed">
-  Utilizamos cookies propias y de terceros con las siguientes finalidades:
-  <ul className="list-disc list-inside mt-2 space-y-1 text-gray-600">
-    <li>Cookies técnicas: para garantizar el correcto funcionamiento del sitio.</li>
-    <li>Cookies de análisis: para entender el uso y rendimiento de nuestra web mediante herramientas como Google Analytics.</li>
-    <li>Cookies de personalización: para adaptar contenidos y ofertas según tus intereses.</li>
-  </ul>
-</p>
-<p className="mb-4 text-gray-700 leading-relaxed">
-  Puedes configurar, bloquear o eliminar las cookies mediante las opciones de tu navegador. Ten en cuenta que si decides deshabilitarlas, algunas funcionalidades de la web podrían no estar disponibles o no funcionar correctamente.
-</p>
-<p className="text-gray-700 leading-relaxed">
-  Para más información, consulta nuestra <button className="text-primary underline hover:text-primary-dark" onClick={() => { alert('Redirigir a Aviso de Privacidad') }}>Política de Privacidad</button>.
-</p>
-          </div>
-        </div>
-      )}
+  <div
+    className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cookies-title"
+  >
+    <div className="bg-white rounded-lg max-w-3xl w-full max-h-[80vh] overflow-y-auto p-6 relative shadow-lg">
+      <button
+        onClick={() => setShowCookiesPolicy(false)}
+        className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-3xl font-bold"
+        aria-label="Cerrar Política de Cookies"
+      >
+        ×
+      </button>
+
+      <h2
+        id="cookies-title"
+        className="text-2xl font-bold mb-6 flex items-center gap-3"
+      >
+        <CookieIcon className="w-8 h-8 text-yellow-500 flex-shrink-0" />
+        Política de Cookies
+      </h2>
+
+      <p className="mb-4 text-gray-700 leading-relaxed">
+        En Rodríguez Herrero 23 SL utilizamos cookies para mejorar tu experiencia como usuario, optimizar el funcionamiento de nuestra página web y ofrecerte contenido personalizado.
+      </p>
+      <p className="mb-4 text-gray-700 leading-relaxed">
+        Las cookies son pequeños archivos que se almacenan en tu dispositivo cuando navegas por nuestro sitio web. Nos ayudan a recordar tus preferencias y a analizar cómo usas nuestros servicios para mejorar continuamente.
+      </p>
+      <p className="mb-4 text-gray-700 leading-relaxed">
+        Utilizamos cookies propias y de terceros con las siguientes finalidades:
+      </p>
+      <ul className="list-disc list-inside mb-6 text-gray-600 space-y-1">
+        <li>Cookies técnicas: para garantizar el correcto funcionamiento del sitio.</li>
+        <li>Cookies de análisis: para entender el uso y rendimiento de nuestra web mediante herramientas como Google Analytics.</li>
+        <li>Cookies de personalización: para adaptar contenidos y ofertas según tus intereses.</li>
+      </ul>
+      <p className="mb-4 text-gray-700 leading-relaxed">
+        Puedes configurar, bloquear o eliminar las cookies mediante las opciones de tu navegador. Ten en cuenta que si decides deshabilitarlas, algunas funcionalidades de la web podrían no estar disponibles o no funcionar correctamente.
+      </p>
+      <p className="text-gray-700 leading-relaxed">
+        Para más información, consulta nuestra{' '}
+        <button
+          className="text-primary underline hover:text-primary-dark"
+          onClick={() => {
+            alert('Redirigir a Política de Privacidad');
+          }}
+        >
+          Política de Privacidad
+        </button>
+        .
+      </p>
+    </div>
+  </div>
+)}
     </footer>
   );
 };
