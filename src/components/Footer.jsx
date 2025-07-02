@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Linkedin as LinkedIn, Mail, Phone, MapPin } from 'lucide-react';
+
+const CookieIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <circle cx="12" cy="12" r="10" fill="#FCD34D" />
+    <circle cx="8" cy="9" r="1.5" fill="#A16207" />
+    <circle cx="14" cy="7" r="1" fill="#A16207" />
+    <circle cx="16" cy="14" r="1.5" fill="#A16207" />
+    <circle cx="10" cy="15" r="1" fill="#A16207" />
+  </svg>
+);
 
 const TikTok = (props) => (
   <svg
@@ -12,7 +27,6 @@ const TikTok = (props) => (
     <path d="M223.9 80.4c-22.1 0-40-17.9-40-40V24h-39.2v135.2c0 14.6-11.9 26.4-26.5 26.4-14.6 0-26.5-11.8-26.5-26.4 0-14.6 11.9-26.5 26.5-26.5 2.2 0 4.4.3 6.5.9v-37.6a64.2 64.2 0 00-6.5-.3c-35.3 0-64 28.7-64 64.1 0 35.3 28.7 64 64 64 35.4 0 64.1-28.7 64.1-64.1v-58.6c10.9 9.4 25 15.1 40.1 15.1v-39.2z" />
   </svg>
 );
-
 
 const Google = (props) => (
   <svg
@@ -29,6 +43,7 @@ const Google = (props) => (
 );
 
 const Footer = () => {
+  const [showCookiesPolicy, setShowCookiesPolicy] = useState(false);
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
@@ -36,22 +51,18 @@ const Footer = () => {
       { name: 'Seguro para Particulares', href: '#servicios' },
       { name: 'Seguro para Empresas', href: '#servicios' },
       { name: 'Ahorro e Inversiones', href: '#servicios' },
-      /* { name: 'Seguro de Vida', href: '#servicios' },
-      { name: 'Seguro Empresarial', href: '#servicios' },
-      { name: 'Seguro de Viajes', href: '#servicios' } */
     ],
     empresa: [
       { name: 'Sobre Nosotros', href: '#nosotros' },
       { name: 'Testimonios', href: '#testimonios' },
       { name: 'Preguntas Frecuentes', href: '#preguntas-frecuentes' },
       { name: 'Contacto', href: '#' },
-      /* { name: 'Carreras', href: '#' }, */
       { name: 'Blog', href: '#contacto' },
     ],
     legal: [
       { name: 'Aviso de Privacidad', href: '#' },
       { name: 'Términos y Condiciones', href: '#' },
-      { name: 'Política de Cookies', href: '#' },
+      { name: 'Política de Cookies', href: 'cookies' }, // <-- Aquí detectaremos para mostrar modal
       { name: 'Código de Ética', href: '#' },
       { name: 'Regulaciones', href: '#' }
     ]
@@ -68,6 +79,11 @@ const Footer = () => {
   ];
 
   const scrollToSection = (href) => {
+    if (href === 'cookies') {
+      setShowCookiesPolicy(true);
+      return;
+    }
+
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element) {
@@ -133,7 +149,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center text-muted-foreground">
                   <Mail className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                  <a href="mailto:segurosrogriguezherrero23@gmail.com" className="text-sm hover:underline">
+                  <a href="mailto:segurosrodriguezherrero23@gmail.com" className="text-sm hover:underline">
                     segurosrodriguezherrero23@gmail.com
                   </a>
                 </div>
@@ -222,6 +238,45 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal Política de Cookies */}
+      {showCookiesPolicy && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-3xl w-full max-h-[80vh] overflow-y-auto p-6 relative">
+            <button
+              onClick={() => setShowCookiesPolicy(false)}
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-lg font-bold"
+              aria-label="Cerrar Política de Cookies"
+            >
+              ×
+            </button>
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+  <CookieIcon className="w-8 h-8 text-yellow-500" />
+  Política de Cookies
+</h2>
+<p className="mb-4 text-gray-700 leading-relaxed">
+  En Rodríguez Herrero 23 SL utilizamos cookies para mejorar tu experiencia como usuario, optimizar el funcionamiento de nuestra página web y ofrecerte contenido personalizado.
+</p>
+<p className="mb-4 text-gray-700 leading-relaxed">
+  Las cookies son pequeños archivos que se almacenan en tu dispositivo cuando navegas por nuestro sitio web. Nos ayudan a recordar tus preferencias y a analizar cómo usas nuestros servicios para mejorar continuamente.
+</p>
+<p className="mb-4 text-gray-700 leading-relaxed">
+  Utilizamos cookies propias y de terceros con las siguientes finalidades:
+  <ul className="list-disc list-inside mt-2 space-y-1 text-gray-600">
+    <li>Cookies técnicas: para garantizar el correcto funcionamiento del sitio.</li>
+    <li>Cookies de análisis: para entender el uso y rendimiento de nuestra web mediante herramientas como Google Analytics.</li>
+    <li>Cookies de personalización: para adaptar contenidos y ofertas según tus intereses.</li>
+  </ul>
+</p>
+<p className="mb-4 text-gray-700 leading-relaxed">
+  Puedes configurar, bloquear o eliminar las cookies mediante las opciones de tu navegador. Ten en cuenta que si decides deshabilitarlas, algunas funcionalidades de la web podrían no estar disponibles o no funcionar correctamente.
+</p>
+<p className="text-gray-700 leading-relaxed">
+  Para más información, consulta nuestra <button className="text-primary underline hover:text-primary-dark" onClick={() => { alert('Redirigir a Aviso de Privacidad') }}>Política de Privacidad</button>.
+</p>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };
