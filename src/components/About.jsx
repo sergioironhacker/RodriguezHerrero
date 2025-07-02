@@ -1,35 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Users, Award, Clock, BookOpen, UserCheck, Briefcase, GraduationCap } from 'lucide-react';
+import { Shield, Users, Award, Clock, GraduationCap } from 'lucide-react';
 
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
+const AnimatedNumber = ({ value, duration = 5, suffix = '' }) => {
+  const [displayValue, setDisplayValue] = useState(0);
+
+  return (
+    <motion.span
+      initial={{ count: 0 }}
+      animate={{ count: value }}
+      transition={{ duration, ease: 'easeOut' }}
+      onUpdate={latest => setDisplayValue(Math.floor(latest.count))}
+    >
+      {displayValue}{suffix}
+    </motion.span>
+  );
+};
 
 const About = () => {
   const stats = [
     {
       icon: GraduationCap,
-      number: '+30',
+      number: 30,
+      suffix: '+',
       label: 'Años de Experiencia'
     },
     {
       icon: Users,
-      number: '+2000',
+      number: 2000,
+      suffix: '+',
       label: 'Clientes Satisfechos'
     },
     {
       icon: Award,
-      number: '98%',
+      number: 98,
+      suffix: '%',
       label: 'Confianza del Cliente'
     },
-    /* {
-      icon: Clock,
-      number: '24/7',
-      label: 'Atención al Cliente'
-    } */
   ];
 
   const values = [
@@ -93,44 +100,38 @@ const About = () => {
             Con un enfoque personalizado y un compromiso constante con la calidad, hemos construido relaciones sólidas y duraderas con más de 2000 clientes satisfechos.
           </p>
 
-          {/* Stats aquí, justo debajo del texto anterior */}
+          {/* Stats con animación */}
           <div className="flex justify-center mb-16 fade-in">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full px-4">
-    {stats.map((stat, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: index * 0.1 }}
-        viewport={{ once: true }}
-        className="text-center p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-all duration-300"
-      >
-        <stat.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-        <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
-        <div className="text-muted-foreground font-medium">{stat.label}</div>
-      </motion.div>
-    ))}
-  </div>
-</div>
-
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full px-4">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-all duration-300"
+                >
+                  <stat.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <div className="text-3xl font-bold text-foreground mb-2">
+                    <AnimatedNumber value={stat.number} suffix={stat.suffix} />
+                  </div>
+                  <div className="text-muted-foreground font-medium">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
           {/* Misión y Visión */}
           <div className="space-y-6 mb-6">
             <div>
-             <h3 className="text-center text-3xl font-bold mb-6 text-foreground">
-  Nuestra <span className="text-blue-600">Misión</span>
-</h3>
+              <h3 className="text-center text-3xl font-bold mb-6 text-foreground">
+                Nuestra <span className="text-blue-600">Misión</span>
+              </h3>
               <p className="text-center text-lg text-muted-foreground">
                 Brindar tranquilidad y protección integral a nuestros clientes, mediante soluciones personalizadas en seguros e inversiones, acompañadas de un servicio excepcional.
               </p>
             </div>
-            {/*   <div>
-              <h4 className="text-xl font-semibold mb-2 text-foreground">Nuestra Visión</h4>
-              <p className="text-muted-foreground">
-                Ser una agencia líder reconocida por nuestra innovación, confiabilidad
-                y compromiso con el bienestar de nuestros clientes.
-              </p>
-            </div> */}
           </div>
         </motion.div>
 
@@ -143,7 +144,6 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-
           </motion.h3>
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
