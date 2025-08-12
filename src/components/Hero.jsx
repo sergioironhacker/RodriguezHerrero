@@ -116,7 +116,7 @@ const Hero = () => {
               onClick={() => setShowOffers(!showOffers)}
               className="text-white font-semibold px-10 py-6 text-sm rounded-full transition duration-300 transform hover:shadow-xl hover:scale-105 bg-blue-500/50"
             >
-              Oferta especial hasta AGOSTO
+              Oferta especial hasta DICIEMBRE
             </Button>
           </div>
 
