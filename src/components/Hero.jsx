@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, memo } from 'react';
-import { Phone, MessageCircle, GraduationCap , Users } from 'lucide-react';
+import { Phone, MessageCircle, GraduationCap, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
@@ -9,7 +9,7 @@ const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
     href={link}
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-blue-300/60 rounded-xl overflow-hidden shadow-md w-[280px] transition-transform transform hover:scale-[1.02] cursor-pointer block"
+    className="bg-blue-300/60 rounded-xl overflow-hidden shadow-md w-[280px] h-[370px] flex flex-col transition-transform transform hover:scale-[1.02] cursor-pointer"
   >
     <div className="relative">
       <img
@@ -27,9 +27,11 @@ const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
         </span>
       </div>
     </div>
-    <div className="p-3 text-black text-center">
-      <h3 className="text-lg font-bold mb-1">{title}</h3>
-      <p className="text-sm">{description}</p>
+    <div className="p-3 text-black text-center flex-1 flex flex-col justify-between">
+      <div>
+        <h3 className="text-lg font-bold mb-1">{title}</h3>
+        <p className="text-sm">{description}</p>
+      </div>
       <span className="mt-2 block text-blue-900 underline font-bold text-xs">
         👉 Más información
       </span>
@@ -136,6 +138,13 @@ const Hero = () => {
                 discount="60% descuento"
                 description="Tranquilidad para ti y tu familia con una cobertura completa."
                 link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
+              />
+              <OfferCard
+                title="Ahorro e Inversión"
+                imgSrc="/Imagen de WhatsApp 2025-09-24 a las 12.55.25_db986b64.jpg"
+                discount="Rentabilidad asegurada"
+                description="Haz crecer tu patrimonio con seguridad. Planes de ahorro personalizados y asesoría experta."
+                link="https://wa.me/34607726826?text=Hola%20Alberto,%20quiero%20más%20info%20sobre%20planes%20de%20ahorro%20e%20inversión"
               />
             </div>
           )}
