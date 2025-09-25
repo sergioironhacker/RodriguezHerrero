@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useCallback, memo } from 'react';
-import { Phone, MessageCircle, GraduationCap, Users } from 'lucide-react';
+import { GraduationCap, Users, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Rocket, PiggyBank } from "lucide-react"
 
 const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
   <a
@@ -41,6 +42,7 @@ const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
 
 const Hero = () => {
   const [showOffers, setShowOffers] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const scrollToSection = useCallback((href) => {
     if (!href.startsWith('#')) return;
@@ -101,16 +103,15 @@ const Hero = () => {
               Contrata Ahora
             </Button>
 
-            <Button
+            {/* Nuevo botón Ahorro e Inversiones */}
+            <Button 
               size="lg"
               variant="outline"
-              asChild
+              onClick={() => setShowPopup(true)}
               className="border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-lg rounded-full bg-white/10 transition duration-300 transform hover:scale-105"
             >
-              <a href="tel:607726826">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Habla con un Asesor
-              </a>
+              <Rocket className="w-6 h-6 pd-2 text-white" />
+              Ahorro e Inversiones
             </Button>
 
             <Button
@@ -121,6 +122,73 @@ const Hero = () => {
               Oferta especial hasta DICIEMBRE
             </Button>
           </div>
+
+
+
+
+{showPopup && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50 px-4">
+    <div className="bg-blue-100 rounded-2xl shadow-2xl w-full max-w-lg p-6 sm:p-8 relative overflow-y-auto max-h-[90vh]">
+      
+      {/* Título con ícono cohete */}
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-blue-900 flex items-center justify-center gap-3">
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500">
+          <Rocket className="w-6 h-6 text-white" />
+        </span>
+        Ahorro en Inversión
+      </h2>
+
+      {/* Imagen */}
+      <img
+        src="/Imagen de WhatsApp 2025-09-24 a las 12.55.25_db986b64.jpg"
+        alt="Inversión"
+        className="w-full h-52 sm:h-64 object-cover rounded-xl mb-6 shadow-md"
+      />
+
+      {/* Ícono de cerdito */}
+      <div className="flex justify-center mb-4">
+        <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-pink-200 text-pink-700 shadow-md">
+          <PiggyBank className="w-8 h-8" />
+        </span>
+      </div>
+
+      {/* Texto descriptivo */}
+      <p className="text-black text-sm sm:text-base mb-6 text-left leading-relaxed whitespace-pre-line">
+        Te presento el <strong>Fondo Objetivo Inflación 2030</strong>:
+        {"\n"}👉 Invierte en bonos en euros.
+        {"\n"}👉 Rentabilidad ligada al IPC de la Unión Europea.
+        {"\n"}👉 Vencimiento fijo: 30/12/2030.
+        {"\n"}👉 Disponible solo hasta el 14/11/2025.
+        {"\n\n"}🔑 Una forma sencilla de proteger tu dinero frente a la inflación con rendimientos atractivos.
+        {"\n\n"}¿Quieres que te cuente más detalles?
+      </p>
+
+      {/* Botones */}
+      <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <Button
+          onClick={() => setShowPopup(false)}
+          className="bg-gray-300 text-black font-semibold rounded-full px-6 py-3 hover:bg-gray-400 w-full sm:w-auto"
+        >
+          Cerrar
+        </Button>
+        <Button
+          asChild
+          className="bg-green-500 text-white font-semibold rounded-full px-6 py-3 hover:bg-green-600 w-full sm:w-auto"
+        >
+          <a
+            href="https://wa.me/34607726826?text=Hola%20Alberto,%20cara%20huevo,%20estoy%20interesado%20en%20Ahorro%20en%20Inversi%C3%B3n%20gracias."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contactar por WhatsApp
+          </a>
+        </Button>
+      </div>
+    </div>
+  </div>
+)}
+
+
 
           {/* Ofertas dinámicas */}
           {showOffers && (
@@ -139,13 +207,13 @@ const Hero = () => {
                 description="Tranquilidad para ti y tu familia con una cobertura completa."
                 link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
               />
-              <OfferCard
+             {/*  <OfferCard
                 title="Ahorro e Inversión"
                 imgSrc="/Imagen de WhatsApp 2025-09-24 a las 12.55.25_db986b64.jpg"
                 discount="Rentabilidad asegurada"
                 description="Haz crecer tu patrimonio con seguridad. Planes de ahorro personalizados y asesoría experta."
                 link="https://wa.me/34607726826?text=Hola%20Alberto,%20quiero%20más%20info%20sobre%20planes%20de%20ahorro%20e%20inversión"
-              />
+              /> */}
             </div>
           )}
 
