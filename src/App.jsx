@@ -12,6 +12,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import Blog from '@/components/Blog';
+import PopupWhatsApp from '@/components/PopupWhatsApp';
 
 function Home() {
   return (
@@ -29,6 +30,7 @@ function Home() {
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
+  // Detectar tema preferido
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const savedTheme = localStorage.getItem('theme');
@@ -40,6 +42,7 @@ function App() {
     }
   }, []);
 
+  // Aplicar tema
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -50,6 +53,7 @@ function App() {
     }
   }, [darkMode]);
 
+  // Animaciones fade-in
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -81,6 +85,9 @@ function App() {
         <Footer />
         <WhatsAppFloat />
         <Toaster />
+
+        {/* Popup de WhatsApp */}
+        <PopupWhatsApp imageUrl="/promo.jpg" />
       </div>
     </Router>
   );
