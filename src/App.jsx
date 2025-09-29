@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // <-- Importa Router, Routes, Route
-import { motion } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -35,12 +34,8 @@ function App() {
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme) {
-      setDarkMode(savedTheme === 'dark');
-    } else {
-      setDarkMode(prefersDark);
-    }
+    if (savedTheme) setDarkMode(savedTheme === 'dark');
+    else setDarkMode(prefersDark);
   }, []);
 
   // Aplicar tema
@@ -56,22 +51,15 @@ function App() {
 
   // Animaciones fade-in
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, observerOptions);
 
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => observer.observe(el));
-
     return () => observer.disconnect();
   }, []);
 
@@ -87,8 +75,10 @@ function App() {
         <WhatsAppFloat />
         <Toaster />
 
-        {/* Popup de WhatsApp */}
+        {/* Popup de WhatsApp con z-index alto */}
         <PopupWhatsApp imageUrl="/promo.jpg" />
+
+        {/* Popup de instalación PWA con z-index menor */}
         <InstallPrompt />
       </div>
     </Router>

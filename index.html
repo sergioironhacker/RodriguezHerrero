@@ -1,66 +1,62 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logoMain.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#0d1b2a" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Seguros profesionales para personas, familias y empresas. Protegemos lo que más valoras con respaldo, experiencia y confianza."
-    />
-    <meta
-      name="keywords"
-      content="seguros, auto, hogar, salud, vida, empresarial, viajes, cotización"
-    />
-    <title>
-      Rodríguez Herrero 23 SL - Seguros Profesionales | Protegemos lo que más
-      valoras
-    </title>
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="T-2FlrIhpkSiw9XLoPpJV6vxm0rpdaG55YurhMdRH_s" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Descripción del sitio -->
+  <meta name="description" content="Seguros profesionales para personas, familias y empresas. Protegemos lo que más valoras con respaldo, experiencia y confianza." />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-9RDECDKH5F"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-9RDECDKH5F");
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <!-- FAVICONS -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/logoMain.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/logoMain.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/logoMain.png" sizes="180x180" />
 
-    <!-- Registro del Service Worker -->
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/sw.js")
-            .then((reg) =>
-              console.log("✅ Service Worker registrado en:", reg.scope)
-            )
-            .catch((err) =>
-              console.log("❌ Error al registrar el Service Worker:", err)
-            );
-        });
-      }
-    </script>
-  </body>
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0d1b2a" />
+
+  <!-- Open Graph (Facebook, WhatsApp, etc.) -->
+  <meta property="og:title" content="Rodríguez Herrero 23 SL - Seguros Profesionales" />
+  <meta property="og:description" content="Seguros profesionales para personas, familias y empresas. Protegemos lo que más valoras con respaldo, experiencia y confianza." />
+  <meta property="og:image" content="https://tusitio.com/logoMain.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:url" content="https://tusitio.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rodríguez Herrero 23 SL - Seguros Profesionales" />
+  <meta name="twitter:description" content="Protegemos lo que más valoras con respaldo, experiencia y confianza." />
+  <meta name="twitter:image" content="https://tusitio.com/logoMain.png" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rodríguez Herrero 23 SL",
+    "url": "https://tusitio.com",
+    "logo": "https://tusitio.com/logoMain.png"
+  }
+  </script>
+
+  <!-- Título -->
+  <title>Rodríguez Herrero 23 SL - Seguros Profesionales | Protegemos lo que más valoras</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>
