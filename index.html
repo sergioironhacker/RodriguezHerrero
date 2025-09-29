@@ -65,23 +65,27 @@
       e.preventDefault();
       deferredPrompt = e;
 
-      // Botón discreto arriba a la derecha
-      const installBtn = document.createElement('button');
-      installBtn.textContent = "Instalar App";
-      installBtn.style.position = "fixed";
-      installBtn.style.top = "20px";
-      installBtn.style.right = "20px";
-      installBtn.style.padding = "8px 15px";
-      installBtn.style.background = "#0d1b2a";
-      installBtn.style.color = "#fff";
-      installBtn.style.border = "none";
-      installBtn.style.borderRadius = "5px";
-      installBtn.style.zIndex = "9999";
-      installBtn.style.cursor = "pointer";
-      installBtn.style.fontSize = "14px";
-      document.body.appendChild(installBtn);
+      // Alerta deslizante desde arriba a la izquierda
+      const alertDiv = document.createElement('div');
+      alertDiv.textContent = "¡Instala nuestra web en tu dispositivo!";
+      alertDiv.style.position = "fixed";
+      alertDiv.style.top = "-60px"; // empieza fuera de pantalla
+      alertDiv.style.left = "20px"; // a la izquierda
+      alertDiv.style.background = "#0d1b2a";
+      alertDiv.style.color = "#fff";
+      alertDiv.style.padding = "12px 20px";
+      alertDiv.style.borderRadius = "0 0 8px 8px";
+      alertDiv.style.zIndex = "9999";
+      alertDiv.style.cursor = "pointer";
+      alertDiv.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
+      alertDiv.style.transition = "top 0.5s ease";
+      document.body.appendChild(alertDiv);
 
-      installBtn.addEventListener('click', () => {
+      // Desliza hacia abajo
+      setTimeout(() => { alertDiv.style.top = "20px"; }, 100);
+
+      // Click para instalar
+      alertDiv.addEventListener('click', () => {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
           if (choiceResult.outcome === 'accepted') {
@@ -90,9 +94,17 @@
             console.log('Usuario rechazó la instalación');
           }
           deferredPrompt = null;
-          installBtn.remove();
+          // Desliza alerta hacia arriba y elimina
+          alertDiv.style.top = "-60px";
+          setTimeout(() => alertDiv.remove(), 500);
         });
       });
+
+      // Ocultar automáticamente después de 8 segundos
+      setTimeout(() => {
+        alertDiv.style.top = "-60px";
+        setTimeout(() => alertDiv.remove(), 500);
+      }, 8000);
     });
   </script>
 
