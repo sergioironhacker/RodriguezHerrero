@@ -20,7 +20,17 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#0d1b2a" />
 
-  <!-- Open Graph (Facebook, WhatsApp, etc.) -->
+  <!-- iOS PWA support -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="RH Seguros" />
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+  <!-- Open Graph -->
   <meta property="og:title" content="Rodríguez Herrero 23 SL - Seguros Profesionales" />
   <meta property="og:description" content="Seguros profesionales para personas, familias y empresas. Protegemos lo que más valoras con respaldo, experiencia y confianza." />
   <meta property="og:image" content="https://tusitio.com/logoMain.png" />
@@ -35,6 +45,12 @@
   <meta name="twitter:description" content="Protegemos lo que más valoras con respaldo, experiencia y confianza." />
   <meta name="twitter:image" content="https://tusitio.com/logoMain.png" />
 
+<link rel="apple-touch-icon" sizes="180x180" href="/logoMain-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/logoMain-152.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/logoMain-120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/logoMain-76.png">
+
+
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
@@ -46,7 +62,6 @@
   }
   </script>
 
-  <!-- Título -->
   <title>Rodríguez Herrero 23 SL - Seguros Profesionales | Protegemos lo que más valoras</title>
 
   <!-- Fuentes -->
@@ -57,6 +72,16 @@
 
 <body>
   <div id="root"></div>
+
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registrado ✅'))
+        .catch(err => console.log('Service Worker fallo ❌', err));
+    }
+  </script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
