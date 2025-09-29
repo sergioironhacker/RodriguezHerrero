@@ -13,6 +13,7 @@ import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import Blog from '@/components/Blog';
 import PopupWhatsApp from '@/components/PopupWhatsApp';
+import InstallPrompt from '@/components/InstallPrompt';
 
 function Home() {
   return (
@@ -88,6 +89,7 @@ function App() {
 
         {/* Popup de WhatsApp */}
         <PopupWhatsApp imageUrl="/promo.jpg" />
+        <InstallPrompt />
       </div>
     </Router>
   );
