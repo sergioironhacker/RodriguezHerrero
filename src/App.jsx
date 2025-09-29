@@ -63,7 +63,7 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  // ALERT como fallback para iOS/otros navegadores
+ /*  // ALERT como fallback para iOS/otros navegadores
   useEffect(() => {
     const isIOS = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
     const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
@@ -80,7 +80,7 @@ function App() {
       }
       localStorage.setItem('installAlertShown', 'true');
     }
-  }, []);
+  }, []); */
 
   return (
     <Router>
