@@ -63,24 +63,7 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
- /*  // ALERT como fallback para iOS/otros navegadores
-  useEffect(() => {
-    const isIOS = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
-    const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
 
-    if (!isStandalone && !localStorage.getItem('installAlertShown')) {
-      if (isIOS) {
-        alert(
-          'Para agregar esta web a tu pantalla de inicio en iOS, pulsa el botón de compartir y luego "Añadir a pantalla de inicio".'
-        );
-      } else {
-        alert(
-          '¡Añade nuestra web a tu pantalla de inicio!\nPulsa el menú de tu navegador y selecciona "Añadir a pantalla de inicio".'
-        );
-      }
-      localStorage.setItem('installAlertShown', 'true');
-    }
-  }, []); */
 
   return (
     <Router>
