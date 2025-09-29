@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import Blog from '@/components/Blog';
 import PopupWhatsApp from '@/components/PopupWhatsApp';
-import InstallPrompt from '@/components/InstallPrompt';
+
 
 function Home() {
   return (
@@ -77,8 +77,7 @@ function App() {
         <WhatsAppFloat />
         <Toaster />
 
-        {/* Popup de instalación PWA con z-index menor */}
-        <InstallPrompt />
+        
 
         {/* Popup de WhatsApp con z-index alto */}
         <PopupWhatsApp imageUrl="/promo.jpg" />

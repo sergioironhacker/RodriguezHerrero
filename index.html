@@ -65,14 +65,7 @@
 <body>
   <div id="root"></div>
 
-  <!-- Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then(() => console.log('Service Worker registrado ✅'))
-        .catch(err => console.log('Service Worker fallo ❌', err));
-    }
-  </script>
+
 
   <script type="module" src="/src/main.jsx"></script>
 </body>
