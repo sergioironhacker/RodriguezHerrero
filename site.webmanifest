@@ -1,6 +1,6 @@
 {
   "name": "Rodríguez Herrero 23 SL - Seguros Profesionales",
-  "short_name": "Rodríguez Herrero 23 SL",
+  "short_name": "RH23 SL",
   "description": "Seguros profesionales para personas, familias y empresas. Protegemos lo que más valoras con respaldo, experiencia y confianza.",
   "start_url": "/",
   "display": "standalone",
@@ -8,45 +8,13 @@
   "theme_color": "#0d1b2a",
   "orientation": "portrait",
   "icons": [
-    {
-      "src": "/logoMain-48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "/logoMain-72.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "/logoMain-96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/logoMain-128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "/logoMain-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/logoMain-256.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "/logoMain-384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "/logoMain-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    { "src": "/logoMain-48.png", "sizes": "48x48", "type": "image/png" },
+    { "src": "/logoMain-72.png", "sizes": "72x72", "type": "image/png" },
+    { "src": "/logoMain-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/logoMain-128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "/logoMain-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/logoMain-256.png", "sizes": "256x256", "type": "image/png" },
+    { "src": "/logoMain-384.png", "sizes": "384x384", "type": "image/png" },
+    { "src": "/logoMain-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }
