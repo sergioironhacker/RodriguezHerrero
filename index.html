@@ -65,18 +65,20 @@
       e.preventDefault();
       deferredPrompt = e;
 
+      // Botón discreto arriba a la derecha
       const installBtn = document.createElement('button');
       installBtn.textContent = "Instalar App";
       installBtn.style.position = "fixed";
-      installBtn.style.bottom = "20px";
+      installBtn.style.top = "20px";
       installBtn.style.right = "20px";
-      installBtn.style.padding = "10px 20px";
+      installBtn.style.padding = "8px 15px";
       installBtn.style.background = "#0d1b2a";
       installBtn.style.color = "#fff";
       installBtn.style.border = "none";
       installBtn.style.borderRadius = "5px";
-      installBtn.style.zIndex = "1000";
+      installBtn.style.zIndex = "9999";
       installBtn.style.cursor = "pointer";
+      installBtn.style.fontSize = "14px";
       document.body.appendChild(installBtn);
 
       installBtn.addEventListener('click', () => {
