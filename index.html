@@ -41,12 +41,13 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Rodríguez Herrero 23 SL",
+    "name": "RH23SL",
     "url": "https://tusitio.com",
     "logo": "https://tusitio.com/logoMain.png"
   }
   </script>
 
+  <!-- Título de la pestaña -->
   <title>Rodríguez Herrero 23 SL - Seguros Profesionales | Protegemos lo que más valoras</title>
 
   <!-- Fuentes -->
@@ -58,56 +59,7 @@
 <body>
   <div id="root"></div>
 
-  <!-- Script de instalación PWA -->
-  <script>
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-
-      // Alerta deslizante desde arriba a la izquierda
-      const alertDiv = document.createElement('div');
-      alertDiv.textContent = "¡Instala nuestra web en tu dispositivo!";
-      alertDiv.style.position = "fixed";
-      alertDiv.style.top = "-60px"; // empieza fuera de pantalla
-      alertDiv.style.left = "20px"; // a la izquierda
-      alertDiv.style.background = "#0d1b2a";
-      alertDiv.style.color = "#fff";
-      alertDiv.style.padding = "12px 20px";
-      alertDiv.style.borderRadius = "0 0 8px 8px";
-      alertDiv.style.zIndex = "9999";
-      alertDiv.style.cursor = "pointer";
-      alertDiv.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
-      alertDiv.style.transition = "top 0.5s ease";
-      document.body.appendChild(alertDiv);
-
-      // Desliza hacia abajo
-      setTimeout(() => { alertDiv.style.top = "20px"; }, 100);
-
-      // Click para instalar
-      alertDiv.addEventListener('click', () => {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('Usuario instaló la app');
-          } else {
-            console.log('Usuario rechazó la instalación');
-          }
-          deferredPrompt = null;
-          // Desliza alerta hacia arriba y elimina
-          alertDiv.style.top = "-60px";
-          setTimeout(() => alertDiv.remove(), 500);
-        });
-      });
-
-      // Ocultar automáticamente después de 8 segundos
-      setTimeout(() => {
-        alertDiv.style.top = "-60px";
-        setTimeout(() => alertDiv.remove(), 500);
-      }, 8000);
-    });
-  </script>
-
+  <!-- Script principal de tu app -->
   <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
