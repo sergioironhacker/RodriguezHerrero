@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +15,7 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [captchaClicked, setCaptchaClicked] = useState(false); // Simula captcha
+  const [captchaToken, setCaptchaToken] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,10 +25,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!captchaClicked) {
+    if (!captchaToken) {
       toast({
         title: "Completa el captcha",
-        description: "Por favor haz clic en el recuadro para verificar que no eres un robot.",
+        description: "Por favor verifica que no eres un robot.",
         variant: 'destructive'
       });
       return;
@@ -58,7 +59,7 @@ const Contact = () => {
       });
 
       setFormData({ name: '', email: '', phone: '', insuranceType: '', message: '' });
-      setCaptchaClicked(false);
+      setCaptchaToken(null);
     } catch (error) {
       toast({
         title: "Error al enviar el mensaje",
@@ -165,24 +166,17 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* Captcha simulado */}
-                <div className="flex items-center mb-4">
-                  <button
-                    type="button"
-                    onClick={() => setCaptchaClicked(true)}
-                    className={`flex items-center justify-center px-4 py-2 border rounded-lg ${captchaClicked ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700'}`}
-                  >
-                    {captchaClicked ? (
-                      <span>✅ Verificado</span>
-                    ) : (
-                      <span>Haz clic para verificar</span>
-                    )}
-                  </button>
+                {/* Google reCAPTCHA */}
+                <div className="my-4">
+                  <ReCAPTCHA
+                    sitekey="6Ld0Mt0rAAAAADRZbfIDR6MfV9wrgqSBgRi--nFb"
+                    onChange={(token) => setCaptchaToken(token)}
+                  />
                 </div>
 
                 <Button
                   type="submit"
-                  disabled={isSubmitting || !captchaClicked}
+                  disabled={isSubmitting || !captchaToken}
                   className="w-full bg-primary hover:bg-primary/90 text-white py-2.5 font-semibold"
                 >
                   {isSubmitting ? 'Enviando...' : (
