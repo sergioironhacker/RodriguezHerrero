@@ -309,14 +309,14 @@ const Contact = () => {
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación Rodríguez Herrero - Segovia"
+                  title="Ubicación Oficina Segovia"
                 ></iframe>
               </div>
               <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500 text-center">
-                <h3 className="font-semibold text-black mb-2 text-1xl">
+                <h3 className="font-semibold text-black mb-2 text-xl">
                   Horario de Oficina
                 </h3>
-                <ul className="font-semibold text-black text-xs space-y-1">
+                <ul className="font-semibold text-black text-xs space-y-1 text-center">
                   <li>Lunes – Martes – Jueves – Viernes: 09:30 a 13:30</li>
                 </ul>
               </div>
@@ -339,12 +339,12 @@ const Contact = () => {
                   title="Ubicación Oficina Navas de Oro"
                 ></iframe>
               </div>
-              <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500">
-                <h3 className="font-semibold text-black mb-2 text-xl text-center">
+              <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500 text-center">
+                <h3 className="font-semibold text-black mb-2 text-xl">
                   Horario de Oficina
                 </h3>
                 <ul className="font-semibold text-black text-xs space-y-1 text-center">
-                  <li>Lunes a Viernes: 09:00 a 13:00</li>
+                  <li>Miércoles: 09:00 a 13:00</li>
                 </ul>
               </div>
             </div>
