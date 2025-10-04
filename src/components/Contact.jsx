@@ -297,7 +297,7 @@ const Contact = () => {
 
             {/* Oficina Segovia */}
             <div className="bg-card rounded-2xl p-6 border border-border">
-              <h4 className="font-semibold text-foreground mb-4 text-2xl">
+              <h4 className="font-semibold text-foreground mb-4 text-2xl text-center">
                 Oficina Segovia
               </h4>
               <div className="aspect-video rounded-lg overflow-hidden mb-4">
@@ -312,41 +312,39 @@ const Contact = () => {
                   title="Ubicación Rodríguez Herrero - Segovia"
                 ></iframe>
               </div>
-              <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500">
+              <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500 text-center">
                 <h3 className="font-semibold text-black mb-2 text-1xl">
                   Horario de Oficina
                 </h3>
                 <ul className="font-semibold text-black text-xs space-y-1">
                   <li>Lunes – Martes – Jueves – Viernes: 09:30 a 13:30</li>
-
                 </ul>
               </div>
             </div>
 
             {/* Oficina Navas de Oro */}
             <div className="bg-card rounded-2xl p-6 border border-border">
-              <h4 className="font-semibold text-foreground mb-4 text-2xl">
+              <h4 className="font-semibold text-foreground mb-4 text-2xl text-center">
                 Oficina Navas de Oro
               </h4>
               <div className="aspect-video rounded-lg overflow-hidden mb-4">
                 <iframe
-                  src="https://www.bing.com/maps/embed?mepi=57~~Embedded~~LargeMapLink&ty=18&v=2&sV=1&FORM=MIRE&q=Plaza+Mayor+16%2C+40470+Navas+de+Oro%2C+Segovia&ppois=40.9504513_-4.1243222_Plaza+Mayor+16%2C+40470+Navas+de+Oro%2C+Segovia_~~&cp=40.950451~-4.124322&lvl=16&style=r"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.123456789!2d-4.4413609!3d41.1958265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd472ad5558f64e9:0x91b960cd7f8eaabd!2sPlaza%20Mayor%2C%2016%2C%2040470%20Navas%20de%20Oro%2C%20Segovia!5e0!3m2!1ses!2ses!4v1700000000000"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación Rodríguez Herrero - Navas de Oro"
-                />
-
+                  title="Ubicación Oficina Navas de Oro"
+                ></iframe>
               </div>
               <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500">
-                <h3 className="font-semibold text-black mb-2 text-1xl">
+                <h3 className="font-semibold text-black mb-2 text-xl text-center">
                   Horario de Oficina
                 </h3>
-                <ul className="font-semibold text-black text-xs space-y-1">
-                  <li>Miércoles: 09:00 a 13:00</li>
+                <ul className="font-semibold text-black text-xs space-y-1 text-center">
+                  <li>Lunes a Viernes: 09:00 a 13:00</li>
                 </ul>
               </div>
             </div>
