@@ -97,7 +97,7 @@ const Contact = () => {
   ];
 
   const insuranceTypes = [
-    'Automóvil','Hogar','Vida','Salud','Decesos','Comercio','Ahorro e inversion','Otros'
+    'Automóvil', 'Hogar', 'Vida', 'Salud', 'Decesos', 'Comercio', 'Ahorro e inversion', 'Otros'
   ];
 
   return (
@@ -318,7 +318,7 @@ const Contact = () => {
                 </h3>
                 <ul className="font-semibold text-black text-xs space-y-1">
                   <li>Lunes – Martes – Jueves – Viernes: 09:30 a 13:30</li>
-                  
+
                 </ul>
               </div>
             </div>
@@ -330,7 +330,7 @@ const Contact = () => {
               </h4>
               <div className="aspect-video rounded-lg overflow-hidden mb-4">
                 <iframe
-                  src="https://www.bing.com/maps/embed?mepi=57%7E%7EEmbedded%7ELargeMapLink&ty=18&v=2&sV=1&FORM=MIRE&q=Plaza+Mayor+16%2C+40001+Segovia&ppois=40.9504513_-4.1243222_Plaza+Mayor+16%2C+40001+Segovia_%7E&cp=40.950451%7E-4.124322&lvl=16&style=r"
+                  src="https://www.bing.com/maps/embed?mepi=57~~Embedded~~LargeMapLink&ty=18&v=2&sV=1&FORM=MIRE&q=Plaza+Mayor+16%2C+40470+Navas+de+Oro%2C+Segovia&ppois=40.9504513_-4.1243222_Plaza+Mayor+16%2C+40470+Navas+de+Oro%2C+Segovia_~~&cp=40.950451~-4.124322&lvl=16&style=r"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -338,7 +338,8 @@ const Contact = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Ubicación Rodríguez Herrero - Navas de Oro"
-                ></iframe>
+                />
+
               </div>
               <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500">
                 <h3 className="font-semibold text-black mb-2 text-1xl">
