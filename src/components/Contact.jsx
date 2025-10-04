@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, Send, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -27,6 +27,19 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const phone = formData.phone.trim();
+
+    // Validación: solo números españoles con +34
+    const spanishPhoneRegex = /^\+34[6789]\d{8}$/;
+    if (!spanishPhoneRegex.test(phone)) {
+      toast({
+        title: "Número no válido",
+        description: "Introduce un número de teléfono español válido con prefijo +34.",
+        variant: 'destructive'
+      });
+      return;
+    }
+
     if (!captchaValue) {
       toast({
         title: "Completa el CAPTCHA",
@@ -41,7 +54,7 @@ const Contact = () => {
     const payload = new URLSearchParams();
     payload.append('name', formData.name);
     payload.append('email', formData.email);
-    payload.append('phone', formData.phone);
+    payload.append('phone', phone);
     payload.append('insuranceType', formData.insuranceType);
     payload.append('message', formData.message);
     payload.append('_captcha', 'false');
@@ -49,9 +62,7 @@ const Contact = () => {
     try {
       const response = await fetch('https://formsubmit.co/ajax/segurosrodriguezherrero23@gmail.com', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: payload.toString()
       });
 
@@ -59,7 +70,7 @@ const Contact = () => {
 
       toast({
         title: "¡Mensaje enviado exitosamente!",
-        description: "Nos pondremos en contacto contigo en las próximas 24 horas.",
+        description: "Nos pondremos en contacto contigo en las próximas 24 horas."
       });
 
       setFormData({
@@ -82,27 +93,16 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    {
-      icon: Phone,
-      title: 'Teléfono',
-      content: '607 726 826',
-      link: 'tel:607726826'
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      content: 'segurosrodriguezherrero23@gmail.com',
-      link: 'mailto:segurosrodriguezherrero23@gmail.com'
-    }
+    { icon: Phone, title: 'Teléfono', content: '607 726 826', link: 'tel:607726826' },
+    { icon: Mail, title: 'Email', content: 'segurosrodriguezherrero23@gmail.com', link: 'mailto:segurosrodriguezherrero23@gmail.com' }
   ];
 
-  const insuranceTypes = [
-    'Automóvil', 'Hogar', 'Vida', 'Salud', 'Decesos', 'Comercio', 'Ahorro e inversion', 'Otros'
-  ];
+  const insuranceTypes = ['Automóvil', 'Hogar', 'Vida', 'Salud', 'Decesos', 'Comercio', 'Ahorro e inversion', 'Otros'];
 
   return (
     <section id="contacto" className="py-16 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 fade-in">
           <motion.h2
@@ -126,6 +126,7 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
+
           {/* Formulario */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -141,9 +142,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1 sm:mb-2">
-                      Nombre Completo *
-                    </label>
+                    <label htmlFor="name" className="block text-sm font-medium mb-1 sm:mb-2">Nombre Completo *</label>
                     <input
                       type="text"
                       id="name"
@@ -156,9 +155,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1 sm:mb-2">
-                      Email *
-                    </label>
+                    <label htmlFor="email" className="block text-sm font-medium mb-1 sm:mb-2">Email *</label>
                     <input
                       type="email"
                       id="email"
@@ -174,9 +171,7 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-1 sm:mb-2">
-                      Teléfono *
-                    </label>
+                    <label htmlFor="phone" className="block text-sm font-medium mb-1 sm:mb-2">Teléfono *</label>
                     <input
                       type="tel"
                       id="phone"
@@ -185,13 +180,11 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                      placeholder="921 44 32 11"
+                      placeholder="+34 612 345 678"
                     />
                   </div>
                   <div>
-                    <label htmlFor="insuranceType" className="block text-sm font-medium mb-1 sm:mb-2">
-                      Tipo de Seguro *
-                    </label>
+                    <label htmlFor="insuranceType" className="block text-sm font-medium mb-1 sm:mb-2">Tipo de Seguro *</label>
                     <select
                       id="insuranceType"
                       name="insuranceType"
@@ -201,7 +194,7 @@ const Contact = () => {
                       className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                     >
                       <option value="">Selecciona un tipo</option>
-                      {insuranceTypes.map((type) => (
+                      {insuranceTypes.map(type => (
                         <option key={type} value={type}>{type}</option>
                       ))}
                     </select>
@@ -209,9 +202,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1 sm:mb-2">
-                    Mensaje
-                  </label>
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1 sm:mb-2">Mensaje</label>
                   <textarea
                     id="message"
                     name="message"
@@ -223,7 +214,6 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* ReCAPTCHA */}
                 <div className="flex justify-center">
                   <ReCAPTCHA
                     sitekey="6Ld0Mt0rAAAAADRZbfIDR6MfV9wrgqSBgRi--nFb"
@@ -260,7 +250,6 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-8 fade-in"
           >
-            {/* Contact Info */}
             <div className="grid gap-4 sm:gap-6">
               {contactInfo.map((info, index) => (
                 <motion.div
@@ -296,63 +285,54 @@ const Contact = () => {
             </div>
 
             {/* Oficina Segovia */}
-<div className="bg-card rounded-2xl p-6 border border-border">
-  <h4 className="font-semibold text-foreground mb-4 text-2xl text-center">
-    Oficina Segovia
-  </h4>
-  <div className="aspect-video rounded-lg overflow-hidden mb-4">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.123456789!2d-4.1187654321!3d40.9501234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4faaa123456789%3A0xabcdef123456!2sAvda.%20del%20Padre%20Claret%2C%2012%2C%2040001%20Segovia%2C%20España!5e0!3m2!1ses!2ses!4v1700000000000"
-      width="100%"
-      height="100%"
-      style={{ border: 0 }}
-      allowFullScreen={true}
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      title="Ubicación Oficina Segovia"
-    ></iframe>
-  </div>
-  <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500 text-center">
-    <h3 className="font-semibold text-black text-lg mb-2">
-      Horario de Oficina
-    </h3>
-    <p className="font-medium text-black text-sm">
-      Lunes – Martes – Jueves – Viernes: 09:30 a 13:30
-    </p>
-  </div>
-</div>
+            <div className="bg-card rounded-2xl p-6 border border-border">
+              <h4 className="font-semibold text-foreground mb-4 text-2xl text-center">Oficina Segovia</h4>
+              <div className="aspect-video rounded-lg overflow-hidden mb-4">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.123456789!2d-4.1187654321!3d40.9501234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4faaa123456789%3A0xabcdef123456!2sAvda.%20del%20Padre%20Claret%2C%2012%2C%2040001%20Segovia%2C%20España!5e0!3m2!1ses!2ses!4v1700000000000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Oficina Segovia"
+                />
+              </div>
+              <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500 text-center">
+                <h3 className="font-semibold text-black text-lg mb-2">Horario de Oficina</h3>
+                <p className="font-medium text-black text-sm">
+                  Lunes – Martes – Jueves – Viernes: 09:30 a 13:30
+                </p>
+              </div>
+            </div>
 
-{/* Oficina Navas de Oro */}
-<div className="bg-card rounded-2xl p-6 border border-border">
-  <h4 className="font-semibold text-foreground mb-4 text-2xl text-center">
-    Oficina Navas de Oro
-  </h4>
-  <div className="aspect-video rounded-lg overflow-hidden mb-4">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.123456789!2d-4.4413609!3d41.1958265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd472ad5558f64e9:0x91b960cd7f8eaabd!2sPlaza%20Mayor%2C%2016%2C%2040470%20Navas%20de%20Oro%2C%20Segovia!5e0!3m2!1ses!2ses!4v1700000000000"
-      width="100%"
-      height="100%"
-      style={{ border: 0 }}
-      allowFullScreen={true}
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      title="Ubicación Oficina Navas de Oro"
-    ></iframe>
-  </div>
-  <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500 text-center">
-    <h3 className="font-semibold text-black text-lg mb-2">
-      Horario de Oficina
-    </h3>
-    <p className="font-medium text-black text-sm">
-      Miércoles: 09:00 a 13:00
-    </p>
-  </div>
-</div>
+            {/* Oficina Navas de Oro */}
+            <div className="bg-card rounded-2xl p-6 border border-border">
+              <h4 className="font-semibold text-foreground mb-4 text-2xl text-center">Oficina Navas de Oro</h4>
+              <div className="aspect-video rounded-lg overflow-hidden mb-4">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.123456789!2d-4.4413609!3d41.1958265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd472ad5558f64e9:0x91b960cd7f8eaabd!2sPlaza%20Mayor%2C%2016%2C%2040470%20Navas%20de%20Oro%2C%20Segovia!5e0!3m2!1ses!2ses!4v1700000000000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Oficina Navas de Oro"
+                />
+              </div>
+              <div className="bg-blue-500/40 p-4 rounded-lg border-2 border-blue-500 text-center">
+                <h3 className="font-semibold text-black text-lg mb-2">Horario de Oficina</h3>
+                <p className="font-medium text-black text-sm">
+                  Miércoles: 09:30 a 13:00
+                </p>
+              </div>
+            </div>
+
             {/* Trust Badges */}
             <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
-              <h4 className="font-semibold text-foreground mb-4 text-center">
-                ¿Por qué elegirnos?
-              </h4>
+              <h4 className="font-semibold text-foreground mb-4 text-center">¿Por qué elegirnos?</h4>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
@@ -372,6 +352,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
+
           </motion.div>
         </div>
       </div>
