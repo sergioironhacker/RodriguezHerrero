@@ -221,7 +221,7 @@ const Hero = () => {
           <div className="mt-14 flex flex-wrap justify-center items-center gap-8 text-white/90">
             <div className="flex items-center gap-2">
               <GraduationCap className="h-5 w-5" />
-              <span className="text-sm font-bold">+30 años de experiencia</span>
+              <span className="text-sm font-bold">+31 años de experiencia</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="h-5 w-5" />
