@@ -21,7 +21,7 @@ const About = () => {
   const stats = [
     {
       icon: GraduationCap,
-      number: 30,
+      number: 31,
       suffix: '+',
       label: 'Años de Experiencia'
     },
@@ -47,7 +47,7 @@ const About = () => {
     },
     {
       title: 'Experiencia',
-      description: 'Más de 30 años protegiendo a familias y empresas con soluciones integrales.',
+      description: 'Más de 31 años protegiendo a familias y empresas con soluciones integrales.',
       icon: Award
     },
     {
