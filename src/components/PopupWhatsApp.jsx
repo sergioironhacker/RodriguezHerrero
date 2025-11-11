@@ -1,49 +1,70 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const PopupWhatsApp = ({ imageUrl }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Mostrar popup al cargar la página
-    const timer = setTimeout(() => setIsVisible(true), 1000); // se muestra 1s después de cargar
+    const timer = setTimeout(() => setIsVisible(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 
-  if (!isVisible) return null;
-
   const whatsappNumber = '+34607726826';
-  const defaultMessage = encodeURIComponent('Hola! Estoy interesado en sus servicios.');
+  const defaultMessage = encodeURIComponent('¡Hola! Estoy interesado en sus servicios.');
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg max-w-sm w-full relative overflow-hidden">
-        {/* Imagen */}
-        <img
-          src={imageUrl}
-          alt="Promoción"
-          className="w-full h-auto object-cover rounded-t-2xl"
-        />
-
-        {/* Botones */}
-        <div className="flex justify-between p-4">
-          <button
-            onClick={() => setIsVisible(false)}
-            className="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-600 transition"
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-blue-950/80 backdrop-blur-md p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="bg-gradient-to-b from-blue-800 via-blue-900 to-blue-950 rounded-2xl shadow-2xl max-w-sm w-full overflow-hidden border border-blue-500/40 relative"
           >
-            Cerrar
-          </button>
+            {/* Imagen */}
+            <img
+              src={imageUrl}
+              alt="Promoción"
+              className="w-full h-auto object-cover rounded-t-2xl shadow-inner"
+            />
 
-          <a
-            href={`https://wa.me/${whatsappNumber}?text=${defaultMessage}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
-          >
-            WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
+            {/* Contenido */}
+            <div className="p-5 text-center text-white">
+              <h2 className="text-xl font-semibold mb-2">¿Quieres hablar con nosotros?</h2>
+              <p className="text-blue-200 mb-4">
+                Estamos disponibles en WhatsApp para resolver tus dudas al instante.
+              </p>
+
+              {/* Botones */}
+              <div className="flex justify-between gap-3">
+                <button
+                  onClick={() => setIsVisible(false)}
+                  className="w-1/2 bg-blue-500/20 text-blue-100 px-4 py-2 rounded-lg hover:bg-blue-500/40 transition shadow-md border border-blue-400/30"
+                >
+                  Cerrar
+                </button>
+
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${defaultMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-1/2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition shadow-lg"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

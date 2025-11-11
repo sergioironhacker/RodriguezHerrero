@@ -75,7 +75,7 @@ function App() {
           <Footer />
           <WhatsAppFloat />
           <Toaster />
-          <PopupWhatsApp imageUrl="/promo.jpg" />
+          <PopupWhatsApp imageUrl="/0.png" />
         </div>
       </Router>
     </HelmetProvider>
