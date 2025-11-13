@@ -59,17 +59,17 @@ const Hero = () => {
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <picture>
           <source
-            srcSet="/heroimg-mobile.webp"
+            srcSet="/Blue modern border corner frame.png"
             media="(max-width: 768px)"
             type="image/webp"
           />
           <source
-            srcSet="/heroimg-desktop.webp"
+            srcSet="/Blue modern border corner frame.png"
             media="(min-width: 769px)"
             type="image/webp"
           />
           <img
-            src="/heroimg-desktop.webp"
+            src="/Blue modern border corner frame.png"
             alt="Familia feliz protegida por seguros"
             className="w-full h-full object-cover brightness-[.95] contrast-[.95]"
             loading="eager"
