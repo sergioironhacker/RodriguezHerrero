@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback, memo } from 'react';
+import React, { useState, useCallback, memo, useEffect } from 'react';
 import { GraduationCap, Users, MessageCircle, Rocket, PiggyBank, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -43,11 +43,23 @@ const Hero = () => {
   const [showOffers, setShowOffers] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
-  const scrollToSection = useCallback((href) => {
-    if (!href.startsWith('#')) return;
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  }, []);
+const scrollToSection = useCallback((href) => {
+  if (!href.startsWith('#')) return;
+  const element = document.querySelector(href);
+  element?.scrollIntoView({ behavior: 'smooth' });
+}, []);
+
+  // Evitar scroll de fondo cuando el popup está abierto
+  useEffect(() => {
+    if (showPopup) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showPopup]);
 
   return (
     <section
@@ -94,14 +106,13 @@ const Hero = () => {
               Contrata Ahora
             </Button>
 
-            {/* Botón Ahorro e Inversiones */}
             <Button
               size="lg"
               variant="outline"
               onClick={() => setShowPopup(true)}
-              className="border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-lg rounded-full bg-white/10 transition duration-300 transform hover:scale-105"
+              className="border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-lg rounded-full bg-white/10 transition duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
             >
-              <Rocket className="w-6 h-6 pd-2 text-white" />
+              <Rocket className="w-6 h-6 text-white" />
               Ahorro e Inversiones
             </Button>
 
@@ -116,92 +127,92 @@ const Hero = () => {
 
           {/* Popup Ahorro e Inversión */}
           {showPopup && (
-  <div
-    className="fixed inset-0 flex items-start sm:items-center justify-center bg-black/70 z-[1000] px-4 pt-20 sm:pt-0"
-    onClick={() => setShowPopup(false)} // Cierra si hace clic fuera
-  >
-    <div
-      className="bg-blue-100 rounded-2xl shadow-2xl w-full max-w-md sm:max-w-lg p-6 sm:p-8 relative overflow-y-auto max-h-[90vh]"
-      onClick={(e) => e.stopPropagation()} // Evita que se cierre al hacer clic dentro
-    >
-      {/* Botón X para cerrar */}
-      <button
-        onClick={() => setShowPopup(false)}
-        className="absolute top-4 right-4 text-blue-900 hover:text-red-600 transition z-50"
-        aria-label="Cerrar"
-      >
-        <X className="w-6 h-6" />
-      </button>
+            <div
+              className="fixed inset-0 flex items-center justify-center bg-black/70 z-[1000] px-4"
+              onClick={() => setShowPopup(false)} // Cierra si hace clic fuera
+            >
+              <div
+                className="bg-blue-100 rounded-2xl shadow-2xl w-full max-w-md sm:max-w-lg p-6 sm:p-8 relative overflow-y-auto max-h-[90vh]"
+                onClick={(e) => e.stopPropagation()} // Evita que se cierre al hacer clic dentro
+              >
+                {/* Botón X para cerrar */}
+                <button
+                  onClick={() => setShowPopup(false)}
+                  className="absolute top-4 right-4 text-blue-900 hover:text-red-600 transition z-50"
+                  aria-label="Cerrar"
+                >
+                  <X className="w-6 h-6" />
+                </button>
 
-      {/* Contenido del popup... */}
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-blue-900 flex items-center justify-center gap-3">
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500">
-          <Rocket className="w-6 h-6 text-white" />
-        </span>
-        Ahorro e Inversión
-      </h2>
+                {/* Contenido */}
+                <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-blue-900 flex items-center justify-center gap-3">
+                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500">
+                    <Rocket className="w-6 h-6 text-white" />
+                  </span>
+                  Ahorro e Inversión
+                </h2>
 
-      <img
-        src="/Imagen de WhatsApp 2025-09-24 a las 12.55.25_db986b64.jpg"
-        alt="Inversión"
-        className="w-full h-48 sm:h-64 object-cover rounded-xl mb-6 shadow-md"
-      />
+                <img
+                  src="/Imagen de WhatsApp 2025-09-24 a las 12.55.25_db986b64.jpg"
+                  alt="Inversión"
+                  className="w-full h-48 sm:h-64 object-cover rounded-xl mb-6 shadow-md"
+                />
 
-      <div className="flex justify-center mb-4">
-        <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-pink-200 text-pink-700 shadow-md">
-          <PiggyBank className="w-8 h-8" />
-        </span>
-      </div>
+                <div className="flex justify-center mb-4">
+                  <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-pink-200 text-pink-700 shadow-md">
+                    <PiggyBank className="w-8 h-8" />
+                  </span>
+                </div>
 
-      <p className="text-black text-sm sm:text-base mb-6 text-center leading-relaxed whitespace-pre-line mx-auto">
-        {"Haz que tu dinero crezca con propósito. 🌱"}
-        {"\n\n"}{"Convierte cada ahorro en una meta,"}
-        {"\n"}{"y cada meta en un paso hacia tu libertad. 💫"}
-        {"\n\n"}{"Diseñamos soluciones que se adaptan a ti:"}
-        {"\n"}{"seguras, flexibles y con verdadera rentabilidad. 💼"}
-        {"\n\n"}{"Tú sueñas."}
-        {"\n"}{"Nosotros te acompañamos. 🚀"}
-      </p>
+                <p className="text-black text-sm sm:text-base mb-6 text-center leading-relaxed whitespace-pre-line mx-auto">
+                  {"Haz que tu dinero crezca con propósito. 🌱"}
+                  {"\n\n"}{"Convierte cada ahorro en una meta,"}
+                  {"\n"}{"y cada meta en un paso hacia tu libertad. 💫"}
+                  {"\n\n"}{"Diseñamos soluciones que se adaptan a ti:"}
+                  {"\n"}{"seguras, flexibles y con verdadera rentabilidad. 💼"}
+                  {"\n\n"}{"Tú sueñas."}
+                  {"\n"}{"Nosotros te acompañamos. 🚀"}
+                </p>
 
-      <div className="flex flex-col sm:flex-row justify-center gap-4">
-        {/* Descargar varios archivos */}
-        <Button
-          onClick={() => {
-            const files = [
-              '/rentavilidad.rar',
-              '/folleto_ahorro_inversion.pdf',
-            ];
-            files.forEach((file) => {
-              const link = document.createElement('a');
-              link.href = file;
-              link.download = file.split('/').pop();
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            });
-          }}
-          className="bg-blue-600 text-white font-semibold rounded-full px-6 py-3 hover:bg-blue-700 w-full sm:w-auto flex items-center justify-center gap-2 shadow-md"
-        >
-          📥 Descargar PDFs
-        </Button>
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  {/* Descargar varios archivos */}
+                  <Button
+                    onClick={() => {
+                      const files = [
+                        '/rentavilidad.rar',
+                        '/folleto_ahorro_inversion.pdf',
+                      ];
+                      files.forEach((file) => {
+                        const link = document.createElement('a');
+                        link.href = file;
+                        link.download = file.split('/').pop();
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                      });
+                    }}
+                    className="bg-blue-600 text-white font-semibold rounded-full px-6 py-3 hover:bg-blue-700 w-full sm:w-auto flex items-center justify-center gap-2 shadow-md"
+                  >
+                    📥 Descargar PDFs
+                  </Button>
 
-        {/* Botón WhatsApp */}
-        <Button
-          asChild
-          className="bg-green-500 text-white font-semibold rounded-full px-6 py-3 hover:bg-green-600 w-full sm:w-auto flex items-center justify-center gap-2 shadow-md"
-        >
-          <a
-            href="https://wa.me/34607726826?text=Hola%20Alberto,%20cara%20huevo,%20estoy%20interesado%20en%20Ahorro%20en%20Inversi%C3%B3n%20gracias."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Contactar por WhatsApp
-          </a>
-        </Button>
-      </div>
-    </div>
-  </div>
-)}
+                  {/* Botón WhatsApp */}
+                  <Button
+                    asChild
+                    className="bg-green-500 text-white font-semibold rounded-full px-6 py-3 hover:bg-green-600 w-full sm:w-auto flex items-center justify-center gap-2 shadow-md"
+                  >
+                    <a
+                      href="https://wa.me/34607726826?text=Hola%20Alberto,%20cara%20huevo,%20estoy%20interesado%20en%20Ahorro%20en%20Inversi%C3%B3n%20gracias."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Contactar por WhatsApp
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Ofertas dinámicas */}
           {showOffers && (
