@@ -158,7 +158,7 @@ const Hero = () => {
                 <div className="flex flex-col sm:flex-row justify-center gap-2">
                   <Button
                     onClick={() => {
-                      const file = 'public/2025_10_31_Cuadro rentabilidad ALLIANZ.pdf';
+                      const file = '/2025_10_31_Cuadro rentabilidad ALLIANZ.pdf';
                       const link = document.createElement('a');
                       link.href = file;
                       link.download = file.split('/').pop();
