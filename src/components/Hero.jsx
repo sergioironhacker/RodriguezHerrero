@@ -9,7 +9,7 @@ const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
     href={link}
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-blue-300/60 rounded-xl overflow-hidden shadow-md w-[280px] h-[370px] flex flex-col transition-transform transform hover:scale-[1.02] cursor-pointer"
+    className="bg-blue-300/60 rounded-xl overflow-hidden shadow-md w-60 h-64 flex flex-col transition-transform transform hover:scale-[1.02] cursor-pointer"
   >
     <div className="relative">
       <img
@@ -17,20 +17,18 @@ const OfferCard = memo(({ title, imgSrc, discount, description, link }) => (
         decoding="async"
         src={imgSrc}
         alt={title}
-        className="w-full h-44 object-cover"
-        width={280}
-        height={176}
+        className="w-full h-32 object-cover"
       />
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="bg-white/60 text-black text-base px-2 py-1 rounded-md shadow font-semibold">
+        <span className="bg-white/60 text-black text-sm px-2 py-1 rounded-md shadow font-semibold">
           {discount}
         </span>
       </div>
     </div>
     <div className="p-3 text-black text-center flex-1 flex flex-col justify-between">
       <div>
-        <h3 className="text-lg font-bold mb-1">{title}</h3>
-        <p className="text-sm">{description}</p>
+        <h3 className="text-md font-bold mb-1">{title}</h3>
+        <p className="text-xs">{description}</p>
       </div>
       <span className="mt-2 block text-blue-900 underline font-bold text-xs">
         👉 Más información
@@ -43,30 +41,21 @@ const Hero = () => {
   const [showOffers, setShowOffers] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
-const scrollToSection = useCallback((href) => {
-  if (!href.startsWith('#')) return;
-  const element = document.querySelector(href);
-  element?.scrollIntoView({ behavior: 'smooth' });
-}, []);
+  const scrollToSection = useCallback((href) => {
+    if (!href.startsWith('#')) return;
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
 
-  // Evitar scroll de fondo cuando el popup está abierto
+  // Bloquear scroll de fondo cuando popup está abierto
   useEffect(() => {
-    if (showPopup) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
+    document.body.style.overflow = showPopup ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
   }, [showPopup]);
 
   return (
-    <section
-      id="inicio"
-      className="relative min-h-screen flex items-center justify-center bg-black z-0"
-    >
-      {/* Imagen de fondo */}
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center bg-black z-0">
+      {/* Fondo */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <picture>
           <source srcSet="/heroimg-mobile.webp" media="(max-width: 768px)" type="image/webp" />
@@ -78,14 +67,12 @@ const scrollToSection = useCallback((href) => {
             loading="eager"
             decoding="async"
             draggable={false}
-            width={1280}
-            height={720}
           />
         </picture>
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      {/* Contenido principal */}
+      {/* Contenido */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="max-w-4xl mx-auto">
           <h1 className="mt-20 text-2xl sm:text-5xl font-bold mb-6 leading-tight">
@@ -100,7 +87,7 @@ const scrollToSection = useCallback((href) => {
             <Button
               size="lg"
               onClick={() => scrollToSection('#contacto')}
-              className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg transition duration-300 transform hover:scale-105"
+              className="text-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg hover:scale-105 transition"
               style={{ backgroundColor: 'rgba(21, 54, 151, 0.7)' }}
             >
               Contrata Ahora
@@ -110,44 +97,42 @@ const scrollToSection = useCallback((href) => {
               size="lg"
               variant="outline"
               onClick={() => setShowPopup(true)}
-              className="border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-lg rounded-full bg-white/10 transition duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+              className="border-white text-white hover:bg-white hover:text-black font-semibold px-6 py-4 text-lg rounded-full bg-white/10 transition hover:scale-105 flex items-center justify-center gap-2"
             >
-              <Rocket className="w-6 h-6 text-white" />
+              <Rocket className="w-5 h-5 text-white" />
               Ahorro e Inversiones
             </Button>
 
             <Button
               size="sm"
               onClick={() => setShowOffers(!showOffers)}
-              className="text-white font-semibold px-10 py-6 text-sm rounded-full transition duration-300 transform hover:shadow-xl hover:scale-105 bg-blue-500/50"
+              className="text-white font-semibold px-8 py-4 text-sm rounded-full bg-blue-500/50 hover:scale-105 transition"
             >
               Oferta especial hasta DICIEMBRE
             </Button>
           </div>
 
-          {/* Popup Ahorro e Inversión */}
+          {/* Popup compacto */}
           {showPopup && (
             <div
               className="fixed inset-0 flex items-center justify-center bg-black/70 z-[1000] px-4"
-              onClick={() => setShowPopup(false)} // Cierra si hace clic fuera
+              onClick={() => setShowPopup(false)}
             >
               <div
-                className="bg-blue-100 rounded-2xl shadow-2xl w-full max-w-md sm:max-w-lg p-6 sm:p-8 relative overflow-y-auto max-h-[90vh]"
-                onClick={(e) => e.stopPropagation()} // Evita que se cierre al hacer clic dentro
+                className="bg-blue-100 rounded-2xl shadow-2xl w-full max-w-sm p-4 sm:p-6 relative overflow-y-auto max-h-[80vh]"
+                onClick={(e) => e.stopPropagation()}
               >
-                {/* Botón X para cerrar */}
                 <button
                   onClick={() => setShowPopup(false)}
-                  className="absolute top-4 right-4 text-blue-900 hover:text-red-600 transition z-50"
+                  className="absolute top-3 right-3 text-blue-900 hover:text-red-600 transition"
                   aria-label="Cerrar"
                 >
-                  <X className="w-6 h-6" />
+                  <X className="w-5 h-5" />
                 </button>
 
-                {/* Contenido */}
-                <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-blue-900 flex items-center justify-center gap-3">
-                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500">
-                    <Rocket className="w-6 h-6 text-white" />
+                <h2 className="text-xl sm:text-2xl font-bold text-center mb-4 text-blue-900 flex items-center justify-center gap-2">
+                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-500">
+                    <Rocket className="w-5 h-5 text-white" />
                   </span>
                   Ahorro e Inversión
                 </h2>
@@ -155,16 +140,16 @@ const scrollToSection = useCallback((href) => {
                 <img
                   src="/Imagen de WhatsApp 2025-09-24 a las 12.55.25_db986b64.jpg"
                   alt="Inversión"
-                  className="w-full h-48 sm:h-64 object-cover rounded-xl mb-6 shadow-md"
+                  className="w-full h-36 sm:h-48 object-cover rounded-xl mb-4 shadow-md"
                 />
 
-                <div className="flex justify-center mb-4">
-                  <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-pink-200 text-pink-700 shadow-md">
-                    <PiggyBank className="w-8 h-8" />
+                <div className="flex justify-center mb-3">
+                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-pink-200 text-pink-700 shadow-md">
+                    <PiggyBank className="w-6 h-6" />
                   </span>
                 </div>
 
-                <p className="text-black text-sm sm:text-base mb-6 text-center leading-relaxed whitespace-pre-line mx-auto">
+                <p className="text-black text-sm sm:text-base mb-4 text-center leading-relaxed whitespace-pre-line">
                   {"Haz que tu dinero crezca con propósito. 🌱"}
                   {"\n\n"}{"Convierte cada ahorro en una meta,"}
                   {"\n"}{"y cada meta en un paso hacia tu libertad. 💫"}
@@ -174,15 +159,10 @@ const scrollToSection = useCallback((href) => {
                   {"\n"}{"Nosotros te acompañamos. 🚀"}
                 </p>
 
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
-                  {/* Descargar varios archivos */}
+                <div className="flex flex-col sm:flex-row justify-center gap-2">
                   <Button
                     onClick={() => {
-                      const files = [
-                        '/rentavilidad.rar',
-                        '/folleto_ahorro_inversion.pdf',
-                      ];
-                      files.forEach((file) => {
+                      ['/rentavilidad.rar','/folleto_ahorro_inversion.pdf'].forEach((file) => {
                         const link = document.createElement('a');
                         link.href = file;
                         link.download = file.split('/').pop();
@@ -191,18 +171,17 @@ const scrollToSection = useCallback((href) => {
                         document.body.removeChild(link);
                       });
                     }}
-                    className="bg-blue-600 text-white font-semibold rounded-full px-6 py-3 hover:bg-blue-700 w-full sm:w-auto flex items-center justify-center gap-2 shadow-md"
+                    className="bg-blue-600 text-white font-semibold rounded-full px-4 py-2 hover:bg-blue-700 flex-1 flex items-center justify-center gap-2"
                   >
                     📥 Descargar PDFs
                   </Button>
 
-                  {/* Botón WhatsApp */}
                   <Button
                     asChild
-                    className="bg-green-500 text-white font-semibold rounded-full px-6 py-3 hover:bg-green-600 w-full sm:w-auto flex items-center justify-center gap-2 shadow-md"
+                    className="bg-green-500 text-white font-semibold rounded-full px-4 py-2 hover:bg-green-600 flex-1 flex items-center justify-center gap-2"
                   >
                     <a
-                      href="https://wa.me/34607726826?text=Hola%20Alberto,%20cara%20huevo,%20estoy%20interesado%20en%20Ahorro%20en%20Inversi%C3%B3n%20gracias."
+                      href="https://wa.me/34607726826?text=Hola%20Alberto,%20cara%20huevo,%20estoy%20interesado%20en%20Ahorro%20en%20Inversión%20gracias."
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -216,7 +195,7 @@ const scrollToSection = useCallback((href) => {
 
           {/* Ofertas dinámicas */}
           {showOffers && (
-            <div className="mt-12 flex flex-wrap justify-center items-center gap-6">
+            <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
               <OfferCard
                 title="Seguro de Hogar"
                 imgSrc="/Allianz Hogar_960x1200px.webp"
@@ -235,7 +214,7 @@ const scrollToSection = useCallback((href) => {
           )}
 
           {/* Características */}
-          <div className="mt-14 flex flex-wrap justify-center items-center gap-8 text-white/90">
+          <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-white/90">
             <div className="flex items-center gap-2">
               <GraduationCap className="h-5 w-5" />
               <span className="text-sm font-bold">+31 años de experiencia</span>
@@ -251,7 +230,7 @@ const scrollToSection = useCallback((href) => {
           </div>
 
           {/* Flecha animada */}
-          <div className="mt-10 flex justify-center">
+          <div className="mt-8 flex justify-center">
             <div className="animate-bounce text-white/80">
               <svg
                 className="w-6 h-6"
