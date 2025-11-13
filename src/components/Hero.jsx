@@ -150,102 +150,100 @@ const Hero = () => {
                 </div>
 
                 <p className="text-black text-sm sm:text-base mb-4 text-center leading-relaxed whitespace-pre-line">
-                  {"Haz que tu dinero crezca con propósito. 🌱"}
-                  {"\n\n"}{"Convierte cada ahorro en una meta,"}
-                  {"\n"}{"y cada meta en un paso hacia tu libertad. 💫"}
-                  {"\n\n"}{"Diseñamos soluciones que se adaptan a ti:"}
-                  {"\n"}{"seguras, flexibles y con verdadera rentabilidad. 💼"}
-                  {"\n\n"}{"Tú sueñas."}
-                  {"\n"}{"Nosotros te acompañamos. 🚀"}
+                  {"Haz crecer tu dinero con soluciones pensadas para ti"}
+                  {"\n\n"}{"Nuestros productos de ahorro e inversión te permiten planificar tu futuro con tranquilidad, combinando seguridad, rentabilidad y flexibilidad."}
+                  {"\n\n"}{"Tú eliges el ritmo, nosotros te acompañamos en cada paso."}
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-2">
                   <Button
                     onClick={() => {
-                      ['/rentavilidad.rar','/folleto_ahorro_inversion.pdf'].forEach((file) => {
-                        const link = document.createElement('a');
-                        link.href = file;
-                        link.download = file.split('/').pop();
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                      });
+                      const file = 'public/2025_10_31_Cuadro rentabilidad ALLIANZ.pdf';
+                      const link = document.createElement('a');
+                      link.href = file;
+                      link.download = file.split('/').pop();
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
                     }}
                     className="bg-blue-600 text-white font-semibold rounded-full px-4 py-2 hover:bg-blue-700 flex-1 flex items-center justify-center gap-2"
                   >
-                    📥 Descargar PDFs
-                  </Button>
-
-                  <Button
-                    asChild
-                    className="bg-green-500 text-white font-semibold rounded-full px-4 py-2 hover:bg-green-600 flex-1 flex items-center justify-center gap-2"
-                  >
-                    <a
-                      href="https://wa.me/34607726826?text=Hola%20Alberto,%20cara%20huevo,%20estoy%20interesado%20en%20Ahorro%20en%20Inversión%20gracias."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Contactar por WhatsApp
-                    </a>
+                    📥 Descargar PDF
                   </Button>
                 </div>
+
+                <br />
+
+                <Button
+                  asChild
+                  className="bg-green-500 text-white font-semibold rounded-full px-4 py-2 hover:bg-green-600 flex-1 flex items-center justify-center gap-2"
+                >
+                  <a
+                    href="https://wa.me/34607726826?text=Hola%20Alberto,%20cara%20huevo,%20estoy%20interesado%20en%20Ahorro%20en%20Inversión%20gracias."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Contactar por WhatsApp
+                  </a>
+                </Button>
               </div>
             </div>
+          
           )}
 
-          {/* Ofertas dinámicas */}
-          {showOffers && (
-            <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
-              <OfferCard
-                title="Seguro de Hogar"
-                imgSrc="/Allianz Hogar_960x1200px.webp"
-                discount="30% descuento"
-                description="Protege tu vivienda con las mejores coberturas desde el primer día."
-                link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20hogar"
-              />
-              <OfferCard
-                title="Seguro de Vida"
-                imgSrc="/Vida 2.webp"
-                discount="60% descuento"
-                description="Tranquilidad para ti y tu familia con una cobertura completa."
-                link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
-              />
-            </div>
-          )}
-
-          {/* Características */}
-          <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-white/90">
-            <div className="flex items-center gap-2">
-              <GraduationCap className="h-5 w-5" />
-              <span className="text-sm font-bold">+31 años de experiencia</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              <span className="text-sm font-bold">+2000 clientes</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <MessageCircle className="h-5 w-5" />
-              <span className="text-sm font-bold">Asesoría personalizada</span>
-            </div>
+        {/* Ofertas dinámicas */}
+        {showOffers && (
+          <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
+            <OfferCard
+              title="Seguro de Hogar"
+              imgSrc="/Allianz Hogar_960x1200px.webp"
+              discount="30% descuento"
+              description="Protege tu vivienda con las mejores coberturas desde el primer día."
+              link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20hogar"
+            />
+            <OfferCard
+              title="Seguro de Vida"
+              imgSrc="/Vida 2.webp"
+              discount="60% descuento"
+              description="Tranquilidad para ti y tu familia con una cobertura completa."
+              link="https://wa.me/34607726826?text=Hola%20Alberto,%20estaba%20interesado%20en%20el%20seguro%20de%20vida"
+            />
           </div>
+        )}
 
-          {/* Flecha animada */}
-          <div className="mt-8 flex justify-center">
-            <div className="animate-bounce text-white/80">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+        {/* Características */}
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-white/90">
+          <div className="flex items-center gap-2">
+            <GraduationCap className="h-5 w-5" />
+            <span className="text-sm font-bold">+31 años de experiencia</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Users className="h-5 w-5" />
+            <span className="text-sm font-bold">+2000 clientes</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <MessageCircle className="h-5 w-5" />
+            <span className="text-sm font-bold">Asesoría personalizada</span>
+          </div>
+        </div>
+
+        {/* Flecha animada */}
+        <div className="mt-8 flex justify-center">
+          <div className="animate-bounce text-white/80">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    </section >
   );
 };
 
