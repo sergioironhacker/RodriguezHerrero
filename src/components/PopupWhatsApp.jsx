@@ -44,7 +44,7 @@ const PopupWhatsApp = () => {
 
   const whatsappNumber = '+34607726826';
   const defaultMessage = encodeURIComponent(
-    '¡Hola! Estoy interesado en la oferta especial del seguro de vida.'
+    '¡Hola! Estoy interesado en la oferta especial del seguro.'
   );
 
   return (
