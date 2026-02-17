@@ -103,11 +103,11 @@ const PopupWhatsApp = () => {
 
             {/* ===== CONTENIDO ===== */}
             <div className="p-5 text-center text-white">
-              <h2 className="text-xl font-semibold mb-2">
+              <h1 className="text-sm font-semibold mb-2">
                 Oferta especial hasta el 31 de marzo
-              </h2>
+              </h1>
 
-              <p className="text-blue-100 font-medium mb-2">
+             {/*  <p className="text-blue-100 font-medium mb-2">
                 Protege lo que más amas.
               </p>
 
@@ -120,6 +120,20 @@ const PopupWhatsApp = () => {
                 Contáctanos y descubre la opción que mejor se adapta a tus
                 necesidades.
               </p>
+ */}
+
+ <br />
+
+<p className="text-blue-200 text-sm mb-4 leading-relaxed">
+               Estamos disponibles en WhassApp para resolver tus dudas al instante.
+              </p>
+              <br />
+
+
+  <h1 className="text-xs font-semibold mb-2">
+                ¿Quieres hablar con nosotros? 
+              </h1>
+              <br />
 
               {/* ===== BOTONES ===== */}
               <div className="flex justify-between gap-3">
