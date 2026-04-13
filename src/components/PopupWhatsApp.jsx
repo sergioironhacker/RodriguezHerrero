@@ -12,11 +12,11 @@ const PopupWhatsApp = () => {
     },
     {
       img: '/123.jpg',
-      text: 'El seguro de hogar protege tu vivienda y todo lo que hay dentro frente a daños o robos.'
+      text: 'El seguro de ahorro e inversión te ayuda a hacer crecer tu dinero a largo plazo.'
     },
     {
       img: '/213.jpg',
-      text: 'El seguro de ahorro e inversión te ayuda a hacer crecer tu dinero a largo plazo.'
+      text: 'El seguro de hogar protege tu vivienda y todo lo que hay dentro frente a daños o robos.'
     }
   ];
 
