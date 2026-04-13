@@ -104,7 +104,7 @@ const PopupWhatsApp = () => {
             {/* ===== CONTENIDO ===== */}
             <div className="p-5 text-center text-white">
               <h1 className="text-sm font-semibold mb-2">
-                Oferta especial hasta el 31 de marzo
+                Oferta especial hasta el 31 de junio
               </h1>
 
              {/*  <p className="text-blue-100 font-medium mb-2">
