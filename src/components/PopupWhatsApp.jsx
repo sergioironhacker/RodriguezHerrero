@@ -7,16 +7,16 @@ const PopupWhatsApp = () => {
 
   const slides = [
     {
-      img: '/321.jpg',
-      text: 'El seguro de responsabilidad civil cubre los daños que causes a otras personas o sus bienes.'
+      img: '1a9c020a-8a1e-4cfc-9101-9a6eab68 (1).png',
+      /* text: 'El seguro de responsabilidad civil cubre los daños que causes a otras personas o sus bienes.' */
     },
     {
-      img: '/123.jpg',
-      text: 'El seguro de ahorro e inversión te ayuda a hacer crecer tu dinero a largo plazo.'
+      img: '/Seguro de VIDA.png',
+      /* text: 'El seguro de ahorro e inversión te ayuda a hacer crecer tu dinero a largo plazo.' */
     },
     {
-      img: '/213.jpg',
-      text: 'El seguro de hogar protege tu vivienda y todo lo que hay dentro frente a daños o robos.'
+      img: '/allianz_3.png',
+      /* text: 'El seguro de hogar protege tu vivienda y todo lo que hay dentro frente a daños o robos.' */
     }
   ];
 
