@@ -56,18 +56,21 @@ const Hero = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center bg-black z-0">
       {/* Fondo */}
-    <div className="absolute inset-0 -z-10 overflow-hidden">
-  <img
-    src="/ChatGPT%20Image%2013%20jul%202026,%2016_10_08.png"
-    alt="Familia feliz protegida por seguros"
-    className="w-full h-full object-cover brightness-[.95] contrast-[.95]"
-    loading="eager"
-    decoding="async"
-    draggable={false}
-  />
-
-  <div className="absolute inset-0 bg-black/30"></div>
-</div>
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <picture>
+          <source srcSet="/1.png" media="(max-width: 768px)" type="image/png" />
+          <source srcSet="/2.png" media="(min-width: 769px)" type="image/png" />
+          <img
+            src="/1.png"
+            alt="Familia feliz protegida por seguros"
+            className="w-full h-full object-cover brightness-[.95] contrast-[.95]"
+            loading="eager"
+            decoding="async"
+            draggable={false}
+          />
+        </picture>
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
 
       {/* Contenido */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center text-white">
